@@ -1,0 +1,154 @@
+﻿@{
+    ViewBag.Title = "Pedidos";
+}
+
+<div class="row">
+    <div class="col-sm-12">
+        <h2>Pedidos</h2>
+    </div>
+</div>
+<div class="row">
+    <div class="col-sm-12">
+        <p>Pedido # 12432335</p>
+        <p>11/12/2014</p>
+    </div>
+</div>
+<div class="row">
+    <div class="col-sm-6">
+        <form role="form">
+            <div class="form-group">
+                <label for="client">Cliente</label>
+                <input class="form-control" id="client" type="text" name="client" value="" />
+            </div>
+            <div class="form-group">
+                <label for="client">Almacen</label>
+                <input class="form-control" id="store" type="text" name="client" value="" />
+            </div>
+            <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#article-modal">
+                Agregar articulo
+            </button>
+        </form>
+    </div>
+</div>
+<div class="row">
+    <div class="col-sm-12">
+        <h3>Articulos</h3>
+        <table id="articles" class="table">
+            <thead>
+                <tr>
+                    <th>Codigo
+                    </th>
+                    <th>Descripcion
+                    </th>
+                    <th>Cantidad
+                    </th>
+                    <th>Precio
+                    </th>
+                    <th>Descuento
+                    </th>
+                    <th>Impuestos
+                    </th>
+                </tr>
+            </thead>
+            <tbody id="articles-body">
+            </tbody>
+        </table>
+    </div>
+</div>
+<div class="row">
+    <div class="col-sm-12">
+        <table id="summary" class="table">
+            <thead>
+                <tr>
+                    <th>Sub-total</th>
+                    <th>Descuentos</th>
+                    <th>Impuestos</th>
+                    <th>Total</th>
+                </tr>
+            </thead>
+            <tbody id="articles-summary">
+                <tr>
+                    <td></td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
+<div class="modal fade" id="article-modal">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Cerrar</span></button>
+                <h4 class="modal-title">Agregar articulo</h4>
+            </div>
+            <div class="modal-body">
+                <div class="form-group">
+                    <label for="codigo">Codigo</label>
+                    <input id="codigo" class="form-control" type="text" name="codigo" value="" />
+                </div>
+                <div class="form-group">
+                    <label for="descripcion">Descripcion</label>
+                    <input id="descripcion" class="form-control" type="text" name="descripcion" value="" disabled />
+                </div>
+                <div class="form-group">
+                    <label for="cantidad">Cantidad</label>
+                    <input id="cantidad" class="form-control" type="text" name="cantidad" value="" />
+                </div>
+                <div class="form-group">
+                    <label for="precio">Precio</label>
+                    <input id="precio" class="form-control" type="text" name="precio" value="" />
+                </div>
+                <div class="form-group">
+                    <label for="descuento">Descuento</label>
+                    <input id="descuento" class="form-control" type="text" name="descuento" value="" />
+                </div>
+                <div class="form-group">
+                    <label for="impuesto">Impuesto</label>
+                    <input id="impuesto" class="form-control" type="text" name="impuesto" value="" />
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">Cancelar</button>
+                <button type="button" id="agregar" class="btn btn-primary">Agregar</button>
+            </div>
+        </div>
+        <!-- /.modal-content -->
+    </div>
+    <!-- /.modal-dialog -->
+</div>
+<!-- /.modal -->
+
+@section scripts{
+    <script src="~/Scripts/mustache.js"></script>  
+    <script>
+        $(function () {
+            $('#agregar').click(function (e) {
+                e.preventDefault();
+
+                var template = ['<tr>', '<td>{{codigo}}</td>', '<td>{{descripcion}}</td>', '<td>{{cantidad}}</td>', '<td>{{precio}}</td>', '<td>{{descuento}}</td>', '<td>{{impuesto}}</td>', '</tr>'].join('');
+                var article = {
+                    codigo: $('#codigo').val(),
+                    descripcion: $('#descripcion').val(),
+                    cantidad: $('#cantidad').val(),
+                    precio: $('#precio').val(),
+                    descuento: $('#descuento').val(),
+                    impuesto: $('#impuesto').val()
+                };
+                var html = Mustache.render(template, article);
+               
+                $('#articles-body').append(html);
+                $('#article-modal').modal('hide');
+                clear();
+            });
+
+            var clear = function () {
+                $('#codigo').val('');
+                $('#descripcion').val('');
+                $('#cantidad').val('');
+                $('#precio').val('');
+                $('#descuento').val('');
+                $('#impuesto').val('');
+            };
+        });
+    </script>
+}

@@ -1,0 +1,855 @@
+﻿@model IEnumerable<PedidosOnline.Models.Articulos>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table>
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Codigo)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Descripcion)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.DescripcionLarga)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Tipo)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.CodigoBarra)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Categoria)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.SubCategoria)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.UnidadCompra)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.UnidadVenta)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.UnidadReporte)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Costo)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.CostoPromedio)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Activo)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ClasificacionABC)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ConfiabilidadServicio)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Observaciones)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Impuesto)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.SuplidorPreferido)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.FrecuenciaInventario)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.RequiereLote)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.MultiploCompra)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.MultiploVenta)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.MetodoCosteo)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Peso)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.UnidadPeso)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Familia)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Fabricante)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.PrecioCompra)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.PermitirNegativos)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.DescripcionCompras)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Serializable)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Assambly)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Photo)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.QuantityDecimals)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.AmountDecimals)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ComissionPercent)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.TaxSchedule)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Reference)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.NonInventory)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Attribute1)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Attribute2)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Income_Account)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Inventory_Account)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Cost_Sales_Account)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Sales_Discount_Account)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Sales_Returns_Account)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Adjustments_Account)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Commisionable)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.OriginID)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ColorID)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.SubFamilyID)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Presentation)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.MaxQuantity)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.MinQuantity)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ProductionItem)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.SalesItem)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Common)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ComissionLevelID)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.WarrantyDays)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.WarrantyCriteria)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.WarrantyQuantity)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.OfferID)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Billable)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.SubCostCenterID)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.BrandID)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Height)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Width)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ProductionCostAccount)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.BarUOID)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.CreateEquipmentRecord)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ExigirDiasEntrega)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ExigirDiasInstalacion)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ExigirDiasGarantia)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.PreviousID)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ProductionFactor)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ReportUOMID3)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ManufacturerReference)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.UOMPlanID)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.FreightAmount)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.PurchasesName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.AlternateName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.PlannerID)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Margin)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.DeductVendorComission)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.BonusAccount)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.WarnIfNegativeOnQuote)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.LandedCostFactor)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.PurchaseItem)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.AttributeList1ID)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.AttributeList2ID)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.RequiresItemLocations)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.PurchaseAccountID)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ItemTaxAmount)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ItemTaxAccount)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ItemTaxPercent)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Custom1)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Custom2)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Custom3)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Custom4)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Custom5)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Custom6)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.CreditSaleExpirationWarning)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.CashSaleExpirationWarning)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Sales_Dispatchs_AccountID)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.DocClassID)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.CalculatePrices)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.PurchasePriceCurrencyID)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.WarehouseID)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Articulos2.Descripcion)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.EquivalentGroup)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.QuarantineDays)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ItemCubicaciones)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ItemAvances)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ItemRetenciones)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.AllowUseOnHold)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.TechnicalComission)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.CreatedBy)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.AllowChangeItemDescription)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Articulos3.Descripcion)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.DontAllowReceptionsWithNoCost)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ManufacturingTolerance)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.MaterialTolerance)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ManagerComissionPercent)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.PlacementDate)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.UnitB_ID)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.IsSparePart)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.MaterialType)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.TransitInventoryAccount)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.LotItemDuplicate)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.CargoDevolucion)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.CtaCostoContrato)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.CtaCostoCompMenuda)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.CtaCostoComision)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.DevContrato)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.DevCompMenuda)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.DevComision)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.PublishAdmWebOrders)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Contrato)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Codigo)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Descripcion)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.DescripcionLarga)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Tipo)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.CodigoBarra)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Categoria)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.SubCategoria)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.UnidadCompra)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.UnidadVenta)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.UnidadReporte)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Costo)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.CostoPromedio)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Activo)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ClasificacionABC)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ConfiabilidadServicio)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Observaciones)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Impuesto)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.SuplidorPreferido)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.FrecuenciaInventario)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.RequiereLote)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.MultiploCompra)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.MultiploVenta)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.MetodoCosteo)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Peso)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.UnidadPeso)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Familia)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Fabricante)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.PrecioCompra)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.PermitirNegativos)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.DescripcionCompras)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Serializable)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Assambly)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Photo)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.QuantityDecimals)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.AmountDecimals)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ComissionPercent)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.TaxSchedule)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Reference)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.NonInventory)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Attribute1)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Attribute2)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Income_Account)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Inventory_Account)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Cost_Sales_Account)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Sales_Discount_Account)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Sales_Returns_Account)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Adjustments_Account)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Commisionable)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.OriginID)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ColorID)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.SubFamilyID)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Presentation)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.MaxQuantity)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.MinQuantity)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ProductionItem)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.SalesItem)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Common)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ComissionLevelID)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.WarrantyDays)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.WarrantyCriteria)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.WarrantyQuantity)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.OfferID)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Billable)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.SubCostCenterID)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.BrandID)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Height)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Width)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ProductionCostAccount)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.BarUOID)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.CreateEquipmentRecord)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ExigirDiasEntrega)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ExigirDiasInstalacion)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ExigirDiasGarantia)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.PreviousID)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ProductionFactor)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ReportUOMID3)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ManufacturerReference)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.UOMPlanID)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.FreightAmount)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.PurchasesName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.AlternateName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.PlannerID)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Margin)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.DeductVendorComission)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.BonusAccount)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.WarnIfNegativeOnQuote)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.LandedCostFactor)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.PurchaseItem)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.AttributeList1ID)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.AttributeList2ID)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.RequiresItemLocations)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.PurchaseAccountID)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ItemTaxAmount)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ItemTaxAccount)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ItemTaxPercent)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Custom1)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Custom2)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Custom3)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Custom4)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Custom5)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Custom6)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.CreditSaleExpirationWarning)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.CashSaleExpirationWarning)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Sales_Dispatchs_AccountID)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.DocClassID)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.CalculatePrices)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.PurchasePriceCurrencyID)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.WarehouseID)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Articulos2.Descripcion)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.EquivalentGroup)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.QuarantineDays)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ItemCubicaciones)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ItemAvances)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ItemRetenciones)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.AllowUseOnHold)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.TechnicalComission)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.CreatedBy)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.AllowChangeItemDescription)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Articulos3.Descripcion)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.DontAllowReceptionsWithNoCost)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ManufacturingTolerance)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.MaterialTolerance)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ManagerComissionPercent)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.PlacementDate)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.UnitB_ID)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.IsSparePart)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.MaterialType)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.TransitInventoryAccount)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.LotItemDuplicate)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.CargoDevolucion)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.CtaCostoContrato)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.CtaCostoCompMenuda)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.CtaCostoComision)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.DevContrato)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.DevCompMenuda)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.DevComision)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.PublishAdmWebOrders)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Contrato)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { /* id=item.PrimaryKey */ }) |
+            @Html.ActionLink("Details", "Details", new { /* id=item.PrimaryKey */ }) |
+            @Html.ActionLink("Delete", "Delete", new { /* id=item.PrimaryKey */ })
+        </td>
+    </tr>
+}
+
+</table>

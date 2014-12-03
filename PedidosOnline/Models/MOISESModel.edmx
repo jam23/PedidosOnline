@@ -1,0 +1,2484 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="MOISESModel.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2008" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityContainer Name="MOISESModelStoreContainer">
+          <EntitySet Name="Almacenes" EntityType="MOISESModel.Store.Almacenes" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Articulos" EntityType="MOISESModel.Store.Articulos" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="ArticulosSuplidores" EntityType="MOISESModel.Store.ArticulosSuplidores" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Clientes" EntityType="MOISESModel.Store.Clientes" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Empleados" EntityType="MOISESModel.Store.Empleados" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="GruposImpuestos_Impuestos" EntityType="MOISESModel.Store.GruposImpuestos_Impuestos" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Monedas" EntityType="MOISESModel.Store.Monedas" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Pedidos" EntityType="MOISESModel.Store.Pedidos" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Pedidos_Detalles" EntityType="MOISESModel.Store.Pedidos_Detalles" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Terminos" EntityType="MOISESModel.Store.Terminos" store:Type="Tables" Schema="dbo" />
+          <AssociationSet Name="FK__Articulos__Artic__2A164134" Association="MOISESModel.Store.FK__Articulos__Artic__2A164134">
+            <End Role="Articulos" EntitySet="Articulos" />
+            <End Role="ArticulosSuplidores" EntitySet="ArticulosSuplidores" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Articulos__Artic__7D439ABD" Association="MOISESModel.Store.FK__Articulos__Artic__7D439ABD">
+            <End Role="Articulos" EntitySet="Articulos" />
+            <End Role="ArticulosSuplidores" EntitySet="ArticulosSuplidores" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Clientes__ARResp__382F5661" Association="MOISESModel.Store.FK__Clientes__ARResp__382F5661">
+            <End Role="Empleados" EntitySet="Empleados" />
+            <End Role="Clientes" EntitySet="Clientes" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Clientes__Curren__3BFFE745" Association="MOISESModel.Store.FK__Clientes__Curren__3BFFE745">
+            <End Role="Monedas" EntitySet="Monedas" />
+            <End Role="Clientes" EntitySet="Clientes" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Clientes__Termin__467D75B8" Association="MOISESModel.Store.FK__Clientes__Termin__467D75B8">
+            <End Role="Terminos" EntitySet="Terminos" />
+            <End Role="Clientes" EntitySet="Clientes" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Clientes__Vended__4A4E069C" Association="MOISESModel.Store.FK__Clientes__Vended__4A4E069C">
+            <End Role="Empleados" EntitySet="Empleados" />
+            <End Role="Clientes" EntitySet="Clientes" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Pedidos__Almacen__6E8B6712" Association="MOISESModel.Store.FK__Pedidos__Almacen__6E8B6712">
+            <End Role="Almacenes" EntitySet="Almacenes" />
+            <End Role="Pedidos" EntitySet="Pedidos" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Pedidos__Cliente__6F7F8B4B" Association="MOISESModel.Store.FK__Pedidos__Cliente__6F7F8B4B">
+            <End Role="Clientes" EntitySet="Clientes" />
+            <End Role="Pedidos" EntitySet="Pedidos" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Pedidos__Termino__7814D14C" Association="MOISESModel.Store.FK__Pedidos__Termino__7814D14C">
+            <End Role="Terminos" EntitySet="Terminos" />
+            <End Role="Pedidos" EntitySet="Pedidos" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Pedidos__Vendedo__7908F585" Association="MOISESModel.Store.FK__Pedidos__Vendedo__7908F585">
+            <End Role="Empleados" EntitySet="Empleados" />
+            <End Role="Pedidos" EntitySet="Pedidos" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Pedidos_D__Artic__7DCDAAA2" Association="MOISESModel.Store.FK__Pedidos_D__Artic__7DCDAAA2">
+            <End Role="Articulos" EntitySet="Articulos" />
+            <End Role="Pedidos_Detalles" EntitySet="Pedidos_Detalles" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Pedidos_D__Numer__7EC1CEDB" Association="MOISESModel.Store.FK__Pedidos_D__Numer__7EC1CEDB">
+            <End Role="Pedidos" EntitySet="Pedidos" />
+            <End Role="Pedidos_Detalles" EntitySet="Pedidos_Detalles" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Articulos_EquivalentItemID" Association="MOISESModel.Store.FK_Articulos_EquivalentItemID">
+            <End Role="Articulos" EntitySet="Articulos" />
+            <End Role="Articulos1" EntitySet="Articulos" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Articulos_OfferItemID" Association="MOISESModel.Store.FK_Articulos_OfferItemID">
+            <End Role="Articulos" EntitySet="Articulos" />
+            <End Role="Articulos1" EntitySet="Articulos" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Clientes_Repartidor" Association="MOISESModel.Store.FK_Clientes_Repartidor">
+            <End Role="Empleados" EntitySet="Empleados" />
+            <End Role="Clientes" EntitySet="Clientes" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Empleados_SupervisorID" Association="MOISESModel.Store.FK_Empleados_SupervisorID">
+            <End Role="Empleados" EntitySet="Empleados" />
+            <End Role="Empleados1" EntitySet="Empleados" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Pedidos_AlmacenEntrada" Association="MOISESModel.Store.FK_Pedidos_AlmacenEntrada">
+            <End Role="Almacenes" EntitySet="Almacenes" />
+            <End Role="Pedidos" EntitySet="Pedidos" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Pedidos_ShipToCustomerID" Association="MOISESModel.Store.FK_Pedidos_ShipToCustomerID">
+            <End Role="Clientes" EntitySet="Clientes" />
+            <End Role="Pedidos" EntitySet="Pedidos" />
+          </AssociationSet>
+        </EntityContainer>
+        <EntityType Name="Almacenes">
+          <Key>
+            <PropertyRef Name="Codigo" />
+          </Key>
+          <Property Name="Codigo" Type="varchar" Nullable="false" MaxLength="20" />
+          <Property Name="Descripcion" Type="varchar" MaxLength="50" />
+          <Property Name="CuentaContable" Type="varchar" MaxLength="20" />
+          <Property Name="Encargado" Type="varchar" MaxLength="50" />
+          <Property Name="Direccion" Type="text" />
+          <Property Name="Ciudad" Type="varchar" MaxLength="20" />
+          <Property Name="Pais" Type="varchar" MaxLength="20" />
+          <Property Name="Telefono" Type="varchar" MaxLength="50" />
+          <Property Name="Facsimil" Type="varchar" MaxLength="50" />
+          <Property Name="Observaciones" Type="text" />
+          <Property Name="DivisionID" Type="varchar" MaxLength="20" />
+          <Property Name="ARDivisionID" Type="varchar" MaxLength="20" />
+          <Property Name="PermitirLotesCuarentenaPendiente" Type="bit" Nullable="false" />
+          <Property Name="PermitirLotesCuarentenaAceptado" Type="bit" Nullable="false" />
+          <Property Name="PermitirLotesCuarentenaRechazado" Type="bit" Nullable="false" />
+          <Property Name="DefaultUOMSalesDocs" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Articulos">
+          <Key>
+            <PropertyRef Name="Codigo" />
+          </Key>
+          <Property Name="Codigo" Type="varchar" Nullable="false" MaxLength="20" />
+          <Property Name="Descripcion" Type="varchar" MaxLength="200" />
+          <Property Name="DescripcionLarga" Type="varchar" MaxLength="500" />
+          <Property Name="Tipo" Type="varchar" MaxLength="1" />
+          <Property Name="CodigoBarra" Type="varchar" MaxLength="20" />
+          <Property Name="Categoria" Type="varchar" MaxLength="20" />
+          <Property Name="SubCategoria" Type="varchar" MaxLength="20" />
+          <Property Name="UnidadCompra" Type="varchar" MaxLength="20" />
+          <Property Name="UnidadVenta" Type="varchar" MaxLength="20" />
+          <Property Name="UnidadReporte" Type="varchar" MaxLength="20" />
+          <Property Name="Costo" Type="money" Nullable="false" />
+          <Property Name="CostoPromedio" Type="money" Nullable="false" />
+          <Property Name="Activo" Type="bit" Nullable="false" />
+          <Property Name="ClasificacionABC" Type="varchar" MaxLength="1" />
+          <Property Name="ConfiabilidadServicio" Type="decimal" Nullable="false" Precision="28" Scale="6" />
+          <Property Name="Observaciones" Type="text" />
+          <Property Name="Impuesto" Type="bit" Nullable="false" />
+          <Property Name="SuplidorPreferido" Type="varchar" MaxLength="20" />
+          <Property Name="FrecuenciaInventario" Type="varchar" MaxLength="20" />
+          <Property Name="RequiereLote" Type="bit" Nullable="false" />
+          <Property Name="MultiploCompra" Type="int" />
+          <Property Name="MultiploVenta" Type="int" />
+          <Property Name="MetodoCosteo" Type="smallint" Nullable="false" />
+          <Property Name="Peso" Type="decimal" Nullable="false" Precision="28" Scale="6" />
+          <Property Name="UnidadPeso" Type="varchar" MaxLength="10" />
+          <Property Name="Familia" Type="varchar" MaxLength="20" />
+          <Property Name="Fabricante" Type="varchar" MaxLength="20" />
+          <Property Name="PrecioCompra" Type="money" Nullable="false" />
+          <Property Name="PermitirNegativos" Type="bit" Nullable="false" />
+          <Property Name="DescripcionCompras" Type="varchar" MaxLength="255" />
+          <Property Name="Serializable" Type="bit" Nullable="false" />
+          <Property Name="Assambly" Type="bit" Nullable="false" />
+          <Property Name="Photo" Type="varchar" MaxLength="255" />
+          <Property Name="QuantityDecimals" Type="smallint" Nullable="false" />
+          <Property Name="AmountDecimals" Type="smallint" Nullable="false" />
+          <Property Name="ComissionPercent" Type="decimal" Nullable="false" Precision="28" Scale="6" />
+          <Property Name="TaxSchedule" Type="varchar" MaxLength="20" />
+          <Property Name="Reference" Type="varchar" MaxLength="50" />
+          <Property Name="NonInventory" Type="bit" Nullable="false" />
+          <Property Name="Attribute1" Type="varchar" MaxLength="20" />
+          <Property Name="Attribute2" Type="varchar" MaxLength="20" />
+          <Property Name="Income_Account" Type="varchar" MaxLength="20" />
+          <Property Name="Inventory_Account" Type="varchar" MaxLength="20" />
+          <Property Name="Cost_Sales_Account" Type="varchar" MaxLength="20" />
+          <Property Name="Sales_Discount_Account" Type="varchar" MaxLength="20" />
+          <Property Name="Sales_Returns_Account" Type="varchar" MaxLength="20" />
+          <Property Name="Adjustments_Account" Type="varchar" MaxLength="20" />
+          <Property Name="Commisionable" Type="bit" Nullable="false" />
+          <Property Name="OriginID" Type="varchar" MaxLength="20" />
+          <Property Name="ColorID" Type="varchar" MaxLength="20" />
+          <Property Name="SubFamilyID" Type="varchar" MaxLength="20" />
+          <Property Name="Presentation" Type="varchar" MaxLength="50" />
+          <Property Name="MaxQuantity" Type="decimal" Nullable="false" Precision="28" Scale="6" />
+          <Property Name="MinQuantity" Type="decimal" Nullable="false" Precision="28" Scale="6" />
+          <Property Name="ProductionItem" Type="bit" Nullable="false" />
+          <Property Name="SalesItem" Type="bit" Nullable="false" />
+          <Property Name="Common" Type="bit" Nullable="false" />
+          <Property Name="ComissionLevelID" Type="varchar" MaxLength="20" />
+          <Property Name="WarrantyDays" Type="int" Nullable="false" />
+          <Property Name="WarrantyCriteria" Type="varchar" MaxLength="20" />
+          <Property Name="WarrantyQuantity" Type="int" Nullable="false" />
+          <Property Name="OfferID" Type="varchar" MaxLength="20" />
+          <Property Name="Billable" Type="bit" Nullable="false" />
+          <Property Name="SubCostCenterID" Type="varchar" MaxLength="20" />
+          <Property Name="BrandID" Type="varchar" MaxLength="20" />
+          <Property Name="Height" Type="real" Nullable="false" />
+          <Property Name="Width" Type="real" Nullable="false" />
+          <Property Name="ProductionCostAccount" Type="varchar" MaxLength="20" />
+          <Property Name="BarUOID" Type="varchar" MaxLength="20" />
+          <Property Name="CreateEquipmentRecord" Type="bit" Nullable="false" />
+          <Property Name="ExigirDiasEntrega" Type="bit" Nullable="false" />
+          <Property Name="ExigirDiasInstalacion" Type="bit" Nullable="false" />
+          <Property Name="ExigirDiasGarantia" Type="bit" Nullable="false" />
+          <Property Name="PreviousID" Type="varchar" MaxLength="20" />
+          <Property Name="ProductionFactor" Type="decimal" Nullable="false" Precision="28" Scale="6" />
+          <Property Name="ReportUOMID3" Type="varchar" MaxLength="20" />
+          <Property Name="ManufacturerReference" Type="varchar" MaxLength="20" />
+          <Property Name="UOMPlanID" Type="varchar" MaxLength="20" />
+          <Property Name="FreightAmount" Type="money" Nullable="false" />
+          <Property Name="PurchasesName" Type="varchar" MaxLength="255" />
+          <Property Name="AlternateName" Type="varchar" MaxLength="255" />
+          <Property Name="PlannerID" Type="varchar" MaxLength="20" />
+          <Property Name="Margin" Type="decimal" Nullable="false" Precision="28" Scale="6" />
+          <Property Name="DeductVendorComission" Type="bit" Nullable="false" />
+          <Property Name="BonusAccount" Type="varchar" MaxLength="20" />
+          <Property Name="WarnIfNegativeOnQuote" Type="bit" Nullable="false" />
+          <Property Name="LandedCostFactor" Type="decimal" Nullable="false" Precision="28" Scale="6" />
+          <Property Name="PurchaseItem" Type="bit" Nullable="false" />
+          <Property Name="AttributeList1ID" Type="varchar" MaxLength="20" />
+          <Property Name="AttributeList2ID" Type="varchar" MaxLength="20" />
+          <Property Name="RequiresItemLocations" Type="bit" Nullable="false" />
+          <Property Name="PurchaseAccountID" Type="varchar" MaxLength="20" />
+          <Property Name="ItemTaxAmount" Type="money" Nullable="false" />
+          <Property Name="ItemTaxAccount" Type="varchar" MaxLength="20" />
+          <Property Name="ItemTaxPercent" Type="decimal" Nullable="false" Precision="28" Scale="6" />
+          <Property Name="Custom1" Type="varchar" MaxLength="50" />
+          <Property Name="Custom2" Type="varchar" MaxLength="50" />
+          <Property Name="Custom3" Type="varchar" MaxLength="50" />
+          <Property Name="Custom4" Type="varchar" MaxLength="50" />
+          <Property Name="Custom5" Type="varchar" MaxLength="50" />
+          <Property Name="Custom6" Type="varchar" MaxLength="50" />
+          <Property Name="CreditSaleExpirationWarning" Type="int" Nullable="false" />
+          <Property Name="CashSaleExpirationWarning" Type="int" Nullable="false" />
+          <Property Name="Sales_Dispatchs_AccountID" Type="varchar" MaxLength="20" />
+          <Property Name="DocClassID" Type="varchar" MaxLength="50" />
+          <Property Name="CalculatePrices" Type="int" />
+          <Property Name="PurchasePriceCurrencyID" Type="varchar" MaxLength="20" />
+          <Property Name="WarehouseID" Type="varchar" MaxLength="20" />
+          <Property Name="EquivalentItemID" Type="varchar" MaxLength="20" />
+          <Property Name="EquivalentGroup" Type="varchar" MaxLength="50" />
+          <Property Name="QuarantineDays" Type="int" Nullable="false" />
+          <Property Name="ItemCubicaciones" Type="bit" Nullable="false" />
+          <Property Name="ItemAvances" Type="bit" Nullable="false" />
+          <Property Name="ItemRetenciones" Type="bit" Nullable="false" />
+          <Property Name="AllowUseOnHold" Type="bit" Nullable="false" />
+          <Property Name="TechnicalComission" Type="decimal" Nullable="false" Precision="28" Scale="6" />
+          <Property Name="CreatedBy" Type="varchar" MaxLength="20" />
+          <Property Name="AllowChangeItemDescription" Type="bit" Nullable="false" />
+          <Property Name="OfferItemID" Type="varchar" MaxLength="20" />
+          <Property Name="DontAllowReceptionsWithNoCost" Type="bit" Nullable="false" />
+          <Property Name="ManufacturingTolerance" Type="decimal" Nullable="false" Precision="28" Scale="6" />
+          <Property Name="MaterialTolerance" Type="decimal" Nullable="false" Precision="28" Scale="6" />
+          <Property Name="ManagerComissionPercent" Type="decimal" Nullable="false" Precision="28" Scale="6" />
+          <Property Name="PlacementDate" Type="datetime" />
+          <Property Name="UnitB_ID" Type="varchar" MaxLength="20" />
+          <Property Name="IsSparePart" Type="bit" Nullable="false" />
+          <Property Name="MaterialType" Type="int" />
+          <Property Name="TransitInventoryAccount" Type="varchar" MaxLength="20" />
+          <Property Name="LotItemDuplicate" Type="bit" Nullable="false" />
+          <Property Name="CargoDevolucion" Type="decimal" Precision="28" Scale="6" />
+          <Property Name="CtaCostoContrato" Type="varchar" MaxLength="20" />
+          <Property Name="CtaCostoCompMenuda" Type="varchar" MaxLength="20" />
+          <Property Name="CtaCostoComision" Type="varchar" MaxLength="20" />
+          <Property Name="DevContrato" Type="varchar" MaxLength="20" />
+          <Property Name="DevCompMenuda" Type="varchar" MaxLength="20" />
+          <Property Name="DevComision" Type="varchar" MaxLength="20" />
+          <Property Name="PublishAdmWebOrders" Type="bit" Nullable="false" />
+          <Property Name="Contrato" Type="bit" Nullable="false" />
+        </EntityType>
+        <EntityType Name="ArticulosSuplidores">
+          <Key>
+            <PropertyRef Name="Contador" />
+          </Key>
+          <Property Name="Contador" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="Suplidor" Type="varchar" Nullable="false" MaxLength="20" />
+          <Property Name="Articulo" Type="varchar" Nullable="false" MaxLength="20" />
+          <Property Name="Referencia" Type="varchar" MaxLength="20" />
+          <Property Name="Precio1" Type="money" Nullable="false" />
+          <Property Name="DeliveryTime" Type="int" Nullable="false" />
+          <Property Name="OfferQuantity" Type="decimal" Nullable="false" Precision="28" Scale="6" />
+          <Property Name="Offer" Type="decimal" Nullable="false" Precision="28" Scale="6" />
+        </EntityType>
+        <EntityType Name="Clientes">
+          <Key>
+            <PropertyRef Name="Codigo" />
+          </Key>
+          <Property Name="Codigo" Type="varchar" Nullable="false" MaxLength="20" />
+          <Property Name="RazonSocial" Type="varchar" MaxLength="50" />
+          <Property Name="Contacto" Type="varchar" MaxLength="50" />
+          <Property Name="Cedula" Type="varchar" MaxLength="20" />
+          <Property Name="Contrato" Type="bit" Nullable="false" />
+          <Property Name="Telefono" Type="varchar" MaxLength="50" />
+          <Property Name="Telefono2" Type="varchar" MaxLength="50" />
+          <Property Name="Facsimil" Type="varchar" MaxLength="50" />
+          <Property Name="CorreoElectronico" Type="varchar" MaxLength="255" />
+          <Property Name="Territorio" Type="varchar" MaxLength="20" />
+          <Property Name="Tipo" Type="varchar" MaxLength="100" />
+          <Property Name="LimiteCredito" Type="money" Nullable="false" />
+          <Property Name="Condiciones" Type="varchar" MaxLength="10" />
+          <Property Name="Observaciones" Type="text" />
+          <Property Name="MontoUltimaCompra" Type="money" Nullable="false" />
+          <Property Name="NumeroRegistro" Type="varchar" MaxLength="20" />
+          <Property Name="Categoria" Type="varchar" MaxLength="20" />
+          <Property Name="Descuento" Type="decimal" Nullable="false" Precision="28" Scale="6" />
+          <Property Name="Vendedor" Type="varchar" MaxLength="20" />
+          <Property Name="PaginaWeb" Type="varchar" MaxLength="255" />
+          <Property Name="Anticipos" Type="money" Nullable="false" />
+          <Property Name="ChequesDevueltos" Type="money" Nullable="false" />
+          <Property Name="Terminos" Type="varchar" MaxLength="20" />
+          <Property Name="FechaCreacion" Type="datetime" />
+          <Property Name="EmployeeQuantity" Type="int" Nullable="false" />
+          <Property Name="CurrentVolume" Type="money" Nullable="false" />
+          <Property Name="PotentialVolume" Type="money" Nullable="false" />
+          <Property Name="Profile" Type="text" />
+          <Property Name="Inactive" Type="bit" Nullable="false" />
+          <Property Name="CurrencyID" Type="varchar" MaxLength="20" />
+          <Property Name="PriceLevelID" Type="varchar" MaxLength="20" />
+          <Property Name="BillingContact" Type="varchar" MaxLength="50" />
+          <Property Name="Apellidos" Type="varchar" MaxLength="50" />
+          <Property Name="Nombres" Type="varchar" MaxLength="50" />
+          <Property Name="Asistant" Type="varchar" MaxLength="50" />
+          <Property Name="Mobile" Type="varchar" MaxLength="50" />
+          <Property Name="Asistant_Phone" Type="varchar" MaxLength="50" />
+          <Property Name="GroupID" Type="varchar" MaxLength="20" />
+          <Property Name="Prospect" Type="bit" Nullable="false" />
+          <Property Name="StatusID" Type="varchar" MaxLength="50" />
+          <Property Name="TypeID" Type="varchar" MaxLength="50" />
+          <Property Name="RecurringInvoiceID" Type="varchar" MaxLength="20" />
+          <Property Name="Birthday" Type="datetime" />
+          <Property Name="CancelationDate" Type="datetime" />
+          <Property Name="CancelationReasonID" Type="varchar" MaxLength="20" />
+          <Property Name="ReferenceID" Type="varchar" MaxLength="50" />
+          <Property Name="ARResponsible" Type="varchar" MaxLength="20" />
+          <Property Name="Owner" Type="varchar" MaxLength="50" />
+          <Property Name="Owner_SSN" Type="varchar" MaxLength="50" />
+          <Property Name="MaxSale" Type="money" Nullable="false" />
+          <Property Name="InactiveDays" Type="int" Nullable="false" />
+          <Property Name="LocationID" Type="varchar" MaxLength="20" />
+          <Property Name="InstallationCode" Type="varchar" MaxLength="20" />
+          <Property Name="StateID" Type="varchar" MaxLength="20" />
+          <Property Name="SectorID" Type="varchar" MaxLength="50" />
+          <Property Name="SubClassID" Type="varchar" MaxLength="20" />
+          <Property Name="ShipToAddressID" Type="varchar" MaxLength="20" />
+          <Property Name="BillToAddressID" Type="varchar" MaxLength="20" />
+          <Property Name="TaxScheduleID" Type="varchar" MaxLength="20" />
+          <Property Name="ComissionLevelID" Type="varchar" MaxLength="20" />
+          <Property Name="ManagementComissionLevelID" Type="varchar" MaxLength="20" />
+          <Property Name="VendorID" Type="varchar" MaxLength="20" />
+          <Property Name="Gender" Type="int" Nullable="false" />
+          <Property Name="RegionID" Type="varchar" MaxLength="20" />
+          <Property Name="ComercialName" Type="varchar" MaxLength="50" />
+          <Property Name="GenerateNCF" Type="bit" Nullable="false" />
+          <Property Name="NCF_Sequence" Type="int" Nullable="false" />
+          <Property Name="Custom1" Type="varchar" MaxLength="50" />
+          <Property Name="Custom2" Type="varchar" MaxLength="50" />
+          <Property Name="Custom3" Type="varchar" MaxLength="50" />
+          <Property Name="Custom4" Type="varchar" MaxLength="50" />
+          <Property Name="Custom5" Type="varchar" MaxLength="50" />
+          <Property Name="Custom6" Type="varchar" MaxLength="50" />
+          <Property Name="FechaInactivo" Type="datetime" />
+          <Property Name="CustomInvoiceFormat" Type="varchar" MaxLength="50" />
+          <Property Name="RequireQuoteOnService" Type="bit" Nullable="false" />
+          <Property Name="ShipToAddress" Type="varchar" MaxLength="4000" />
+          <Property Name="ShipToCityID" Type="varchar" MaxLength="50" />
+          <Property Name="ShipToStateID" Type="varchar" MaxLength="20" />
+          <Property Name="ShipToCountryID" Type="varchar" MaxLength="20" />
+          <Property Name="ShipToPhone1" Type="varchar" MaxLength="50" />
+          <Property Name="ShipToPhone2" Type="varchar" MaxLength="50" />
+          <Property Name="ShipToFax" Type="varchar" MaxLength="50" />
+          <Property Name="ShipToContact" Type="varchar" MaxLength="50" />
+          <Property Name="BillToAddress" Type="varchar" MaxLength="4000" />
+          <Property Name="BillToCityID" Type="varchar" MaxLength="50" />
+          <Property Name="BillToStateID" Type="varchar" MaxLength="20" />
+          <Property Name="BillToCountryID" Type="varchar" MaxLength="20" />
+          <Property Name="BillToPhone1" Type="varchar" MaxLength="50" />
+          <Property Name="BillToPhone2" Type="varchar" MaxLength="50" />
+          <Property Name="BillToFax" Type="varchar" MaxLength="50" />
+          <Property Name="BillToContact" Type="varchar" MaxLength="50" />
+          <Property Name="Legal" Type="bit" Nullable="false" />
+          <Property Name="Repartidor" Type="varchar" MaxLength="20" />
+          <Property Name="BusinessActivity" Type="varchar" MaxLength="200" />
+          <Property Name="VisitDay1" Type="bit" Nullable="false" />
+          <Property Name="VisitDay2" Type="bit" Nullable="false" />
+          <Property Name="VisitDay3" Type="bit" Nullable="false" />
+          <Property Name="VisitDay4" Type="bit" Nullable="false" />
+          <Property Name="VisitDay5" Type="bit" Nullable="false" />
+          <Property Name="VisitDay6" Type="bit" Nullable="false" />
+          <Property Name="VisitDay7" Type="bit" Nullable="false" />
+          <Property Name="Role" Type="varchar" MaxLength="50" />
+          <Property Name="DontAllowServiceRequests" Type="bit" Nullable="false" />
+          <Property Name="TechnicalContactEMail" Type="varchar" MaxLength="200" />
+          <Property Name="CreatedBy" Type="varchar" MaxLength="20" />
+          <Property Name="ContactInterval" Type="int" Nullable="false" />
+          <Property Name="ISCustomer" Type="bit" Nullable="false" />
+          <Property Name="ISPromoContact" Type="bit" Nullable="false" />
+          <Property Name="Visitday8" Type="bit" Nullable="false" />
+          <Property Name="Visitday9" Type="bit" Nullable="false" />
+          <Property Name="Visitweek" Type="smallint" Nullable="false" />
+          <Property Name="IsEmployee" Type="bit" Nullable="false" />
+          <Property Name="UnitB_ID" Type="varchar" MaxLength="20" />
+          <Property Name="Empleado" Type="varchar" MaxLength="20" />
+          <Property Name="Week1" Type="bit" Nullable="false" />
+          <Property Name="Week2" Type="bit" Nullable="false" />
+          <Property Name="Week3" Type="bit" Nullable="false" />
+          <Property Name="Week4" Type="bit" Nullable="false" />
+          <Property Name="Week5" Type="bit" Nullable="false" />
+          <Property Name="PersonaFisica" Type="bit" Nullable="false" />
+          <Property Name="Pais" Type="varchar" MaxLength="20" />
+          <Property Name="ZonaGeografica" Type="varchar" MaxLength="20" />
+          <Property Name="NoImportacion" Type="varchar" MaxLength="20" />
+          <Property Name="IdentificadorFiscal" Type="varchar" MaxLength="20" />
+          <Property Name="PublishAdmWebOrders" Type="bit" Nullable="false" />
+          <Property Name="AdmWebOrdersPassword" Type="varchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="Empleados">
+          <Key>
+            <PropertyRef Name="Codigo" />
+          </Key>
+          <Property Name="Codigo" Type="varchar" Nullable="false" MaxLength="20" />
+          <Property Name="Apellidos" Type="varchar" MaxLength="50" />
+          <Property Name="Nombres" Type="varchar" MaxLength="50" />
+          <Property Name="Activo" Type="bit" Nullable="false" />
+          <Property Name="Cedula" Type="varchar" MaxLength="20" />
+          <Property Name="Telefono" Type="varchar" MaxLength="50" />
+          <Property Name="Telefono2" Type="varchar" MaxLength="50" />
+          <Property Name="Telefono3" Type="varchar" MaxLength="50" />
+          <Property Name="Celular" Type="varchar" MaxLength="50" />
+          <Property Name="Beeper" Type="varchar" MaxLength="50" />
+          <Property Name="Nacionalidad" Type="varchar" MaxLength="20" />
+          <Property Name="Sexo" Type="varchar" MaxLength="9" />
+          <Property Name="Pensionado" Type="bit" Nullable="false" />
+          <Property Name="FechaNacimiento" Type="datetime" />
+          <Property Name="EstadoCivil" Type="smallint" />
+          <Property Name="NombreConyugue" Type="varchar" MaxLength="50" />
+          <Property Name="NumeroDependientes" Type="varchar" MaxLength="20" />
+          <Property Name="LugarNacimiento" Type="varchar" MaxLength="50" />
+          <Property Name="Tipo" Type="varchar" MaxLength="20" />
+          <Property Name="Direccion" Type="text" />
+          <Property Name="Sector" Type="varchar" MaxLength="50" />
+          <Property Name="Ciudad" Type="varchar" MaxLength="50" />
+          <Property Name="Provincia" Type="varchar" MaxLength="50" />
+          <Property Name="CodigoPostal" Type="varchar" MaxLength="50" />
+          <Property Name="Pais" Type="varchar" MaxLength="50" />
+          <Property Name="DireccionTemporal" Type="text" />
+          <Property Name="SectorTemporal" Type="varchar" MaxLength="50" />
+          <Property Name="CiudadTemporal" Type="varchar" MaxLength="50" />
+          <Property Name="ProvinciaTemporal" Type="varchar" MaxLength="50" />
+          <Property Name="CodigoPostalTemporal" Type="varchar" MaxLength="50" />
+          <Property Name="PaisTemporal" Type="varchar" MaxLength="50" />
+          <Property Name="Posicion" Type="varchar" MaxLength="20" />
+          <Property Name="Departamento" Type="varchar" MaxLength="20" />
+          <Property Name="Sucursal" Type="varchar" MaxLength="20" />
+          <Property Name="Categoria" Type="varchar" MaxLength="20" />
+          <Property Name="FechaInicio" Type="datetime" />
+          <Property Name="FechaTermino" Type="datetime" />
+          <Property Name="Vendedor" Type="bit" Nullable="false" />
+          <Property Name="DescontarSeguro" Type="bit" Nullable="false" />
+          <Property Name="Salario" Type="money" Nullable="false" />
+          <Property Name="FechaCambio" Type="datetime" />
+          <Property Name="NoAfiliacion" Type="varchar" MaxLength="20" />
+          <Property Name="CuentaBancaria" Type="varchar" MaxLength="20" />
+          <Property Name="MetodoPago" Type="smallint" />
+          <Property Name="FrecuenciaPago" Type="smallint" />
+          <Property Name="NivelComision" Type="varchar" MaxLength="20" />
+          <Property Name="VacacionesFecha" Type="datetime" />
+          <Property Name="VacacionesDias" Type="smallint" Nullable="false" />
+          <Property Name="VacacionesTomados" Type="smallint" Nullable="false" />
+          <Property Name="VacacionesPendientes" Type="smallint" Nullable="false" />
+          <Property Name="Observaciones" Type="text" />
+          <Property Name="Foto" Type="varchar" MaxLength="255" />
+          <Property Name="Personalizado1" Type="varchar" MaxLength="50" />
+          <Property Name="Personalizado2" Type="varchar" MaxLength="50" />
+          <Property Name="Personalizado3" Type="varchar" MaxLength="50" />
+          <Property Name="Personalizado4" Type="varchar" MaxLength="50" />
+          <Property Name="Personalizado5" Type="varchar" MaxLength="50" />
+          <Property Name="Acumulated_Periods" Type="int" Nullable="false" />
+          <Property Name="Acumulated_Salary" Type="money" Nullable="false" />
+          <Property Name="Acumulated_Tax" Type="money" Nullable="false" />
+          <Property Name="ARS" Type="bit" Nullable="false" />
+          <Property Name="AFP" Type="bit" Nullable="false" />
+          <Property Name="Laboral_Risk" Type="bit" Nullable="false" />
+          <Property Name="Acumulated_Income" Type="money" Nullable="false" />
+          <Property Name="ComisionPayablesAccount" Type="varchar" MaxLength="20" />
+          <Property Name="ComisionExpenseAccount" Type="varchar" MaxLength="20" />
+          <Property Name="ComissionPercent" Type="decimal" Nullable="false" Precision="28" Scale="6" />
+          <Property Name="Initials" Type="varchar" MaxLength="20" />
+          <Property Name="HourFee" Type="money" Nullable="false" />
+          <Property Name="Segment1" Type="varchar" MaxLength="20" />
+          <Property Name="Segment2" Type="varchar" MaxLength="20" />
+          <Property Name="PayablesAccount" Type="varchar" MaxLength="20" />
+          <Property Name="Segment0" Type="varchar" MaxLength="20" />
+          <Property Name="ReceivablesAccount" Type="varchar" MaxLength="20" />
+          <Property Name="SegmentCompany" Type="varchar" MaxLength="20" />
+          <Property Name="Segment1_Liability" Type="varchar" MaxLength="20" />
+          <Property Name="Segment1_Expense" Type="varchar" MaxLength="20" />
+          <Property Name="Segment2_Liability" Type="varchar" MaxLength="20" />
+          <Property Name="Segment2_Expense" Type="varchar" MaxLength="20" />
+          <Property Name="Bank" Type="varchar" MaxLength="50" />
+          <Property Name="PaymentMethod" Type="int" Nullable="false" />
+          <Property Name="StateID" Type="varchar" MaxLength="20" />
+          <Property Name="TerritoryID" Type="varchar" MaxLength="20" />
+          <Property Name="Account" Type="varchar" MaxLength="20" />
+          <Property Name="BankAccountID" Type="varchar" MaxLength="20" />
+          <Property Name="ProductionComissionCalculation" Type="int" Nullable="false" />
+          <Property Name="ProductionFactor" Type="decimal" Nullable="false" Precision="28" Scale="6" />
+          <Property Name="HourCost" Type="money" Nullable="false" />
+          <Property Name="Custom1" Type="varchar" MaxLength="50" />
+          <Property Name="Custom2" Type="varchar" MaxLength="50" />
+          <Property Name="Custom3" Type="varchar" MaxLength="50" />
+          <Property Name="Custom4" Type="varchar" MaxLength="50" />
+          <Property Name="Custom5" Type="varchar" MaxLength="50" />
+          <Property Name="Custom6" Type="varchar" MaxLength="50" />
+          <Property Name="Tecnitian" Type="bit" Nullable="false" />
+          <Property Name="Email" Type="varchar" MaxLength="200" />
+          <Property Name="CreatedBy" Type="varchar" MaxLength="20" />
+          <Property Name="SupervisorID" Type="varchar" MaxLength="20" />
+          <Property Name="CreationDate" Type="datetime" />
+          <Property Name="CreatedHour" Type="datetime" />
+          <Property Name="EditDate" Type="datetime" />
+          <Property Name="EditHour" Type="datetime" />
+          <Property Name="Acumulate_Tax" Type="decimal" Nullable="false" Precision="28" Scale="6" />
+          <Property Name="ISR" Type="bit" Nullable="false" />
+          <Property Name="EndDate" Type="datetime" />
+          <Property Name="LastPayrollMonth" Type="int" Nullable="false" />
+          <Property Name="LastPayrollYear" Type="int" Nullable="false" />
+          <Property Name="Acumulated_OtherIncome" Type="decimal" Nullable="false" Precision="28" Scale="6" />
+          <Property Name="ARS_Periodo" Type="int" />
+          <Property Name="AFP_Periodo" Type="int" />
+          <Property Name="ISR_Periodo" Type="int" />
+          <Property Name="ShiftID" Type="varchar" MaxLength="20" />
+          <Property Name="TipoNomina" Type="varchar" MaxLength="20" />
+          <Property Name="VacacionesInicio" Type="datetime" />
+          <Property Name="VacacionesFinal" Type="datetime" />
+          <Property Name="CorreoElectronico" Type="varchar" MaxLength="100" />
+          <Property Name="Delivery" Type="bit" Nullable="false" />
+          <Property Name="CentroCosto" Type="varchar" MaxLength="10" />
+          <Property Name="Estado_ID" Type="varchar" MaxLength="10" />
+          <Property Name="EmergenciaApellidos" Type="varchar" MaxLength="20" />
+          <Property Name="EmergenciaNombres" Type="varchar" MaxLength="20" />
+          <Property Name="EmergenciaParentesco" Type="varchar" MaxLength="20" />
+          <Property Name="EmergenciaTelefono" Type="varchar" MaxLength="20" />
+          <Property Name="TipoSangre" Type="varchar" MaxLength="20" />
+          <Property Name="Alergias" Type="varchar" MaxLength="20" />
+          <Property Name="HorasCorrientes" Type="money" />
+          <Property Name="HorasExtras" Type="money" />
+          <Property Name="HorasEspeciales" Type="money" />
+          <Property Name="HorasNocturnas" Type="money" />
+          <Property Name="Manteinance" Type="bit" />
+          <Property Name="Manufactura" Type="bit" />
+          <Property Name="DivisionID" Type="varchar" MaxLength="20" />
+        </EntityType>
+        <EntityType Name="GruposImpuestos_Impuestos">
+          <Key>
+            <PropertyRef Name="Contador" />
+          </Key>
+          <Property Name="Contador" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="GrupoImpuesto" Type="varchar" Nullable="false" MaxLength="20" />
+          <Property Name="Impuesto" Type="varchar" MaxLength="20" />
+        </EntityType>
+        <EntityType Name="Monedas">
+          <Key>
+            <PropertyRef Name="Codigo" />
+          </Key>
+          <Property Name="Codigo" Type="varchar" Nullable="false" MaxLength="20" />
+          <Property Name="Descripcion" Type="varchar" MaxLength="50" />
+          <Property Name="TasaCambio" Type="decimal" Nullable="false" Precision="28" Scale="6" />
+          <Property Name="CuentaAjustes" Type="varchar" MaxLength="20" />
+          <Property Name="Observaciones" Type="text" />
+          <Property Name="Sign" Type="varchar" MaxLength="1" />
+          <Property Name="RoundingsAccount" Type="varchar" MaxLength="20" />
+          <Property Name="AdjustmentsDivisionID" Type="varchar" MaxLength="20" />
+          <Property Name="RoundingsDivisionID" Type="varchar" MaxLength="20" />
+        </EntityType>
+        <EntityType Name="Pedidos">
+          <Key>
+            <PropertyRef Name="Numero" />
+          </Key>
+          <Property Name="Numero" Type="int" Nullable="false" />
+          <Property Name="NumeroTrans" Type="varchar" Nullable="false" MaxLength="50" />
+          <Property Name="Fecha" Type="datetime" Nullable="false" />
+          <Property Name="Tipo" Type="varchar" MaxLength="10" />
+          <Property Name="Cliente" Type="varchar" MaxLength="20" />
+          <Property Name="Vendedor" Type="varchar" MaxLength="20" />
+          <Property Name="Terminos" Type="varchar" MaxLength="20" />
+          <Property Name="Descuento" Type="decimal" Nullable="false" Precision="28" Scale="6" />
+          <Property Name="Impuesto" Type="bit" Nullable="false" />
+          <Property Name="GrupoImpuesto" Type="varchar" MaxLength="20" />
+          <Property Name="Observaciones" Type="text" />
+          <Property Name="Nulo" Type="bit" Nullable="false" />
+          <Property Name="Total" Type="money" Nullable="false" />
+          <Property Name="MontoImpuesto" Type="money" Nullable="false" />
+          <Property Name="SubTotal" Type="money" Nullable="false" />
+          <Property Name="Pedido" Type="int" />
+          <Property Name="Cerrado" Type="bit" Nullable="false" />
+          <Property Name="Almacen" Type="varchar" MaxLength="20" />
+          <Property Name="FreightAmount" Type="money" Nullable="false" />
+          <Property Name="CurrencyID" Type="varchar" MaxLength="20" />
+          <Property Name="SendTo" Type="varchar" MaxLength="20" />
+          <Property Name="BillTo" Type="varchar" MaxLength="20" />
+          <Property Name="Quote" Type="varchar" MaxLength="20" />
+          <Property Name="SubCompany" Type="varchar" MaxLength="1" />
+          <Property Name="NoteID" Type="varchar" MaxLength="20" />
+          <Property Name="PriceExchangeRate" Type="decimal" Nullable="false" Precision="28" Scale="6" />
+          <Property Name="DeliveryDate" Type="datetime" />
+          <Property Name="RTFNotes" Type="varchar" MaxLength="4000" />
+          <Property Name="JobID" Type="varchar" MaxLength="20" />
+          <Property Name="SubstractForecast" Type="bit" Nullable="false" />
+          <Property Name="FreightFactor" Type="decimal" Nullable="false" Precision="28" Scale="6" />
+          <Property Name="CustomerPO" Type="varchar" MaxLength="50" />
+          <Property Name="Custom1" Type="varchar" MaxLength="50" />
+          <Property Name="Custom2" Type="varchar" MaxLength="50" />
+          <Property Name="Custom3" Type="varchar" MaxLength="50" />
+          <Property Name="Custom4" Type="varchar" MaxLength="50" />
+          <Property Name="Custom5" Type="varchar" MaxLength="50" />
+          <Property Name="Custom6" Type="varchar" MaxLength="50" />
+          <Property Name="RequiresService" Type="bit" Nullable="false" />
+          <Property Name="CreatedBy" Type="varchar" MaxLength="20" />
+          <Property Name="OnHoldStatus" Type="int" Nullable="false" />
+          <Property Name="ReferencedBy" Type="varchar" MaxLength="50" />
+          <Property Name="ComissionLevelID" Type="varchar" MaxLength="20" />
+          <Property Name="Printed" Type="bit" Nullable="false" />
+          <Property Name="YourReference" Type="varchar" MaxLength="50" />
+          <Property Name="ShipToCustomerID" Type="varchar" MaxLength="20" />
+          <Property Name="DocHour" Type="datetime" />
+          <Property Name="Cash" Type="bit" Nullable="false" />
+          <Property Name="AlmacenEntrada" Type="varchar" MaxLength="20" />
+          <Property Name="OpportunityID" Type="varchar" MaxLength="50" />
+          <Property Name="ReserveStock" Type="bit" Nullable="false" />
+          <Property Name="BillToAddress" Type="varchar" MaxLength="4000" />
+          <Property Name="ShipToAddress" Type="varchar" MaxLength="4000" />
+          <Property Name="TripQuantity" Type="int" Nullable="false" />
+          <Property Name="ShipToAddressID" Type="varchar" MaxLength="20" />
+          <Property Name="BillToAddressID" Type="varchar" MaxLength="20" />
+          <Property Name="BillToCityID" Type="varchar" MaxLength="50" />
+          <Property Name="BillToStateID" Type="varchar" MaxLength="20" />
+          <Property Name="BillToCountryID" Type="varchar" MaxLength="20" />
+          <Property Name="BillToContact" Type="varchar" MaxLength="50" />
+          <Property Name="BillToPhone" Type="varchar" MaxLength="50" />
+          <Property Name="ShipToContact" Type="varchar" MaxLength="50" />
+          <Property Name="ShipToCityID" Type="varchar" MaxLength="50" />
+          <Property Name="ShipToStateID" Type="varchar" MaxLength="20" />
+          <Property Name="ShipToCountryID" Type="varchar" MaxLength="20" />
+          <Property Name="ShipToPhone" Type="varchar" MaxLength="50" />
+          <Property Name="AuthorizationNumber" Type="int" Nullable="false" />
+          <Property Name="LocationID" Type="varchar" MaxLength="20" />
+          <Property Name="Secuence" Type="varchar" MaxLength="20" />
+          <Property Name="ReasonsID" Type="varchar" MaxLength="20" />
+          <Property Name="SalesStatus" Type="int" />
+          <Property Name="FreightTax" Type="bit" />
+          <Property Name="DateCreaty" Type="datetime" Nullable="false" />
+          <Property Name="DateAutorization" Type="datetime" />
+          <Property Name="Beneficiario" Type="varchar" MaxLength="50" />
+          <Property Name="ClienteCedula" Type="varchar" MaxLength="20" />
+        </EntityType>
+        <EntityType Name="Pedidos_Detalles">
+          <Key>
+            <PropertyRef Name="Contador" />
+          </Key>
+          <Property Name="Contador" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="Numero" Type="int" Nullable="false" />
+          <Property Name="Renglon" Type="smallint" Nullable="false" />
+          <Property Name="Articulo" Type="varchar" MaxLength="20" />
+          <Property Name="Descripcion" Type="varchar" MaxLength="500" />
+          <Property Name="Precio" Type="money" Nullable="false" />
+          <Property Name="Descuento" Type="decimal" Nullable="false" Precision="28" Scale="6" />
+          <Property Name="Cantidad" Type="decimal" Nullable="false" Precision="28" Scale="6" />
+          <Property Name="CantidadVendida" Type="decimal" Nullable="false" Precision="28" Scale="6" />
+          <Property Name="Unidad" Type="varchar" MaxLength="20" />
+          <Property Name="RenglonCombo" Type="smallint" Nullable="false" />
+          <Property Name="MontoImpuesto" Type="decimal" Nullable="false" Precision="28" Scale="6" />
+          <Property Name="Proyecto" Type="varchar" MaxLength="20" />
+          <Property Name="CostCenter" Type="varchar" MaxLength="20" />
+          <Property Name="Lot" Type="varchar" MaxLength="20" />
+          <Property Name="Parameter1" Type="varchar" MaxLength="20" />
+          <Property Name="Parameter2" Type="varchar" MaxLength="20" />
+          <Property Name="ParameterUOM" Type="varchar" MaxLength="20" />
+          <Property Name="IsPromo" Type="bit" Nullable="false" />
+          <Property Name="FechaPromesa" Type="datetime" />
+          <Property Name="Parameter1Quantity" Type="real" Nullable="false" />
+          <Property Name="Parameter2Quantity" Type="real" Nullable="false" />
+          <Property Name="Closed" Type="bit" Nullable="false" />
+          <Property Name="Attribute1" Type="varchar" MaxLength="20" />
+          <Property Name="Attribute2" Type="varchar" MaxLength="20" />
+          <Property Name="ItemTaxAmount" Type="money" Nullable="false" />
+          <Property Name="Status" Type="bit" Nullable="false" />
+          <Property Name="Tax" Type="bit" Nullable="false" />
+          <Property Name="DiscountAmount" Type="money" Nullable="false" />
+          <Property Name="TaxSchedule" Type="varchar" MaxLength="20" />
+          <Property Name="DateReject" Type="datetime" />
+        </EntityType>
+        <EntityType Name="Terminos">
+          <Key>
+            <PropertyRef Name="Codigo" />
+          </Key>
+          <Property Name="Codigo" Type="varchar" Nullable="false" MaxLength="20" />
+          <Property Name="Descripcion" Type="varchar" MaxLength="50" />
+          <Property Name="Dias" Type="smallint" Nullable="false" />
+          <Property Name="DiasBloqueo" Type="smallint" Nullable="false" />
+          <Property Name="DiasDescuento" Type="smallint" Nullable="false" />
+          <Property Name="PorcientoDescuento" Type="decimal" Nullable="false" Precision="28" Scale="6" />
+          <Property Name="Observaciones" Type="text" />
+          <Property Name="DiscountDays2" Type="int" Nullable="false" />
+          <Property Name="DiscountPercent2" Type="decimal" Nullable="false" Precision="28" Scale="6" />
+        </EntityType>
+        <Association Name="FK__Articulos__Artic__2A164134">
+          <End Role="Articulos" Type="MOISESModel.Store.Articulos" Multiplicity="1" />
+          <End Role="ArticulosSuplidores" Type="MOISESModel.Store.ArticulosSuplidores" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Articulos">
+              <PropertyRef Name="Codigo" />
+            </Principal>
+            <Dependent Role="ArticulosSuplidores">
+              <PropertyRef Name="Articulo" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Articulos__Artic__7D439ABD">
+          <End Role="Articulos" Type="MOISESModel.Store.Articulos" Multiplicity="1" />
+          <End Role="ArticulosSuplidores" Type="MOISESModel.Store.ArticulosSuplidores" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Articulos">
+              <PropertyRef Name="Codigo" />
+            </Principal>
+            <Dependent Role="ArticulosSuplidores">
+              <PropertyRef Name="Articulo" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Clientes__ARResp__382F5661">
+          <End Role="Empleados" Type="MOISESModel.Store.Empleados" Multiplicity="0..1" />
+          <End Role="Clientes" Type="MOISESModel.Store.Clientes" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Empleados">
+              <PropertyRef Name="Codigo" />
+            </Principal>
+            <Dependent Role="Clientes">
+              <PropertyRef Name="ARResponsible" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Clientes__Curren__3BFFE745">
+          <End Role="Monedas" Type="MOISESModel.Store.Monedas" Multiplicity="0..1" />
+          <End Role="Clientes" Type="MOISESModel.Store.Clientes" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Monedas">
+              <PropertyRef Name="Codigo" />
+            </Principal>
+            <Dependent Role="Clientes">
+              <PropertyRef Name="CurrencyID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Clientes__Termin__467D75B8">
+          <End Role="Terminos" Type="MOISESModel.Store.Terminos" Multiplicity="0..1" />
+          <End Role="Clientes" Type="MOISESModel.Store.Clientes" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Terminos">
+              <PropertyRef Name="Codigo" />
+            </Principal>
+            <Dependent Role="Clientes">
+              <PropertyRef Name="Terminos" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Clientes__Vended__4A4E069C">
+          <End Role="Empleados" Type="MOISESModel.Store.Empleados" Multiplicity="0..1" />
+          <End Role="Clientes" Type="MOISESModel.Store.Clientes" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Empleados">
+              <PropertyRef Name="Codigo" />
+            </Principal>
+            <Dependent Role="Clientes">
+              <PropertyRef Name="Vendedor" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Pedidos__Almacen__6E8B6712">
+          <End Role="Almacenes" Type="MOISESModel.Store.Almacenes" Multiplicity="0..1" />
+          <End Role="Pedidos" Type="MOISESModel.Store.Pedidos" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Almacenes">
+              <PropertyRef Name="Codigo" />
+            </Principal>
+            <Dependent Role="Pedidos">
+              <PropertyRef Name="Almacen" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Pedidos__Cliente__6F7F8B4B">
+          <End Role="Clientes" Type="MOISESModel.Store.Clientes" Multiplicity="0..1" />
+          <End Role="Pedidos" Type="MOISESModel.Store.Pedidos" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Clientes">
+              <PropertyRef Name="Codigo" />
+            </Principal>
+            <Dependent Role="Pedidos">
+              <PropertyRef Name="Cliente" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Pedidos__Termino__7814D14C">
+          <End Role="Terminos" Type="MOISESModel.Store.Terminos" Multiplicity="0..1" />
+          <End Role="Pedidos" Type="MOISESModel.Store.Pedidos" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Terminos">
+              <PropertyRef Name="Codigo" />
+            </Principal>
+            <Dependent Role="Pedidos">
+              <PropertyRef Name="Terminos" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Pedidos__Vendedo__7908F585">
+          <End Role="Empleados" Type="MOISESModel.Store.Empleados" Multiplicity="0..1" />
+          <End Role="Pedidos" Type="MOISESModel.Store.Pedidos" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Empleados">
+              <PropertyRef Name="Codigo" />
+            </Principal>
+            <Dependent Role="Pedidos">
+              <PropertyRef Name="Vendedor" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Pedidos_D__Artic__7DCDAAA2">
+          <End Role="Articulos" Type="MOISESModel.Store.Articulos" Multiplicity="0..1" />
+          <End Role="Pedidos_Detalles" Type="MOISESModel.Store.Pedidos_Detalles" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Articulos">
+              <PropertyRef Name="Codigo" />
+            </Principal>
+            <Dependent Role="Pedidos_Detalles">
+              <PropertyRef Name="Articulo" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Pedidos_D__Numer__7EC1CEDB">
+          <End Role="Pedidos" Type="MOISESModel.Store.Pedidos" Multiplicity="1" />
+          <End Role="Pedidos_Detalles" Type="MOISESModel.Store.Pedidos_Detalles" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Pedidos">
+              <PropertyRef Name="Numero" />
+            </Principal>
+            <Dependent Role="Pedidos_Detalles">
+              <PropertyRef Name="Numero" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Articulos_EquivalentItemID">
+          <End Role="Articulos" Type="MOISESModel.Store.Articulos" Multiplicity="0..1" />
+          <End Role="Articulos1" Type="MOISESModel.Store.Articulos" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Articulos">
+              <PropertyRef Name="Codigo" />
+            </Principal>
+            <Dependent Role="Articulos1">
+              <PropertyRef Name="EquivalentItemID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Articulos_OfferItemID">
+          <End Role="Articulos" Type="MOISESModel.Store.Articulos" Multiplicity="0..1" />
+          <End Role="Articulos1" Type="MOISESModel.Store.Articulos" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Articulos">
+              <PropertyRef Name="Codigo" />
+            </Principal>
+            <Dependent Role="Articulos1">
+              <PropertyRef Name="OfferItemID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Clientes_Repartidor">
+          <End Role="Empleados" Type="MOISESModel.Store.Empleados" Multiplicity="0..1" />
+          <End Role="Clientes" Type="MOISESModel.Store.Clientes" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Empleados">
+              <PropertyRef Name="Codigo" />
+            </Principal>
+            <Dependent Role="Clientes">
+              <PropertyRef Name="Repartidor" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Empleados_SupervisorID">
+          <End Role="Empleados" Type="MOISESModel.Store.Empleados" Multiplicity="0..1" />
+          <End Role="Empleados1" Type="MOISESModel.Store.Empleados" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Empleados">
+              <PropertyRef Name="Codigo" />
+            </Principal>
+            <Dependent Role="Empleados1">
+              <PropertyRef Name="SupervisorID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Pedidos_AlmacenEntrada">
+          <End Role="Almacenes" Type="MOISESModel.Store.Almacenes" Multiplicity="0..1" />
+          <End Role="Pedidos" Type="MOISESModel.Store.Pedidos" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Almacenes">
+              <PropertyRef Name="Codigo" />
+            </Principal>
+            <Dependent Role="Pedidos">
+              <PropertyRef Name="AlmacenEntrada" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Pedidos_ShipToCustomerID">
+          <End Role="Clientes" Type="MOISESModel.Store.Clientes" Multiplicity="0..1" />
+          <End Role="Pedidos" Type="MOISESModel.Store.Pedidos" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Clientes">
+              <PropertyRef Name="Codigo" />
+            </Principal>
+            <Dependent Role="Pedidos">
+              <PropertyRef Name="ShipToCustomerID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="MOISESModel" Alias="Self" p1:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:p1="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityContainer Name="MOISESEntities" p1:LazyLoadingEnabled="true">
+          <EntitySet Name="Almacenes" EntityType="MOISESModel.Almacenes" />
+          <EntitySet Name="Articulos" EntityType="MOISESModel.Articulos" />
+          <EntitySet Name="ArticulosSuplidores" EntityType="MOISESModel.ArticulosSuplidores" />
+          <EntitySet Name="Clientes" EntityType="MOISESModel.Clientes" />
+          <EntitySet Name="Empleados" EntityType="MOISESModel.Empleados" />
+          <EntitySet Name="GruposImpuestos_Impuestos" EntityType="MOISESModel.GruposImpuestos_Impuestos" />
+          <EntitySet Name="Monedas" EntityType="MOISESModel.Monedas" />
+          <EntitySet Name="Pedidos" EntityType="MOISESModel.Pedidos" />
+          <EntitySet Name="Pedidos_Detalles" EntityType="MOISESModel.Pedidos_Detalles" />
+          <EntitySet Name="Terminos" EntityType="MOISESModel.Terminos" />
+          <AssociationSet Name="FK__Pedidos__Almacen__6E8B6712" Association="MOISESModel.FK__Pedidos__Almacen__6E8B6712">
+            <End Role="Almacenes" EntitySet="Almacenes" />
+            <End Role="Pedidos" EntitySet="Pedidos" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Pedidos_AlmacenEntrada" Association="MOISESModel.FK_Pedidos_AlmacenEntrada">
+            <End Role="Almacenes" EntitySet="Almacenes" />
+            <End Role="Pedidos" EntitySet="Pedidos" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Articulos__Artic__2A164134" Association="MOISESModel.FK__Articulos__Artic__2A164134">
+            <End Role="Articulos" EntitySet="Articulos" />
+            <End Role="ArticulosSuplidores" EntitySet="ArticulosSuplidores" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Articulos__Artic__7D439ABD" Association="MOISESModel.FK__Articulos__Artic__7D439ABD">
+            <End Role="Articulos" EntitySet="Articulos" />
+            <End Role="ArticulosSuplidores" EntitySet="ArticulosSuplidores" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Pedidos_D__Artic__7DCDAAA2" Association="MOISESModel.FK__Pedidos_D__Artic__7DCDAAA2">
+            <End Role="Articulos" EntitySet="Articulos" />
+            <End Role="Pedidos_Detalles" EntitySet="Pedidos_Detalles" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Articulos_EquivalentItemID" Association="MOISESModel.FK_Articulos_EquivalentItemID">
+            <End Role="Articulos" EntitySet="Articulos" />
+            <End Role="Articulos1" EntitySet="Articulos" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Articulos_OfferItemID" Association="MOISESModel.FK_Articulos_OfferItemID">
+            <End Role="Articulos" EntitySet="Articulos" />
+            <End Role="Articulos1" EntitySet="Articulos" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Clientes__ARResp__382F5661" Association="MOISESModel.FK__Clientes__ARResp__382F5661">
+            <End Role="Empleados" EntitySet="Empleados" />
+            <End Role="Clientes" EntitySet="Clientes" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Clientes__Curren__3BFFE745" Association="MOISESModel.FK__Clientes__Curren__3BFFE745">
+            <End Role="Monedas" EntitySet="Monedas" />
+            <End Role="Clientes" EntitySet="Clientes" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Clientes__Termin__467D75B8" Association="MOISESModel.FK__Clientes__Termin__467D75B8">
+            <End Role="Terminos" EntitySet="Terminos" />
+            <End Role="Clientes" EntitySet="Clientes" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Clientes__Vended__4A4E069C" Association="MOISESModel.FK__Clientes__Vended__4A4E069C">
+            <End Role="Empleados" EntitySet="Empleados" />
+            <End Role="Clientes" EntitySet="Clientes" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Pedidos__Cliente__6F7F8B4B" Association="MOISESModel.FK__Pedidos__Cliente__6F7F8B4B">
+            <End Role="Clientes" EntitySet="Clientes" />
+            <End Role="Pedidos" EntitySet="Pedidos" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Clientes_Repartidor" Association="MOISESModel.FK_Clientes_Repartidor">
+            <End Role="Empleados" EntitySet="Empleados" />
+            <End Role="Clientes" EntitySet="Clientes" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Pedidos_ShipToCustomerID" Association="MOISESModel.FK_Pedidos_ShipToCustomerID">
+            <End Role="Clientes" EntitySet="Clientes" />
+            <End Role="Pedidos" EntitySet="Pedidos" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Pedidos__Vendedo__7908F585" Association="MOISESModel.FK__Pedidos__Vendedo__7908F585">
+            <End Role="Empleados" EntitySet="Empleados" />
+            <End Role="Pedidos" EntitySet="Pedidos" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Empleados_SupervisorID" Association="MOISESModel.FK_Empleados_SupervisorID">
+            <End Role="Empleados" EntitySet="Empleados" />
+            <End Role="Empleados1" EntitySet="Empleados" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Pedidos__Termino__7814D14C" Association="MOISESModel.FK__Pedidos__Termino__7814D14C">
+            <End Role="Terminos" EntitySet="Terminos" />
+            <End Role="Pedidos" EntitySet="Pedidos" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Pedidos_D__Numer__7EC1CEDB" Association="MOISESModel.FK__Pedidos_D__Numer__7EC1CEDB">
+            <End Role="Pedidos" EntitySet="Pedidos" />
+            <End Role="Pedidos_Detalles" EntitySet="Pedidos_Detalles" />
+          </AssociationSet>
+        </EntityContainer>
+        <EntityType Name="Almacenes">
+          <Key>
+            <PropertyRef Name="Codigo" />
+          </Key>
+          <Property Name="Codigo" Type="String" Nullable="false" MaxLength="20" Unicode="false" FixedLength="false" />
+          <Property Name="Descripcion" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="CuentaContable" Type="String" MaxLength="20" Unicode="false" FixedLength="false" />
+          <Property Name="Encargado" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="Direccion" Type="String" MaxLength="Max" Unicode="false" FixedLength="false" />
+          <Property Name="Ciudad" Type="String" MaxLength="20" Unicode="false" FixedLength="false" />
+          <Property Name="Pais" Type="String" MaxLength="20" Unicode="false" FixedLength="false" />
+          <Property Name="Telefono" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="Facsimil" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="Observaciones" Type="String" MaxLength="Max" Unicode="false" FixedLength="false" />
+          <Property Name="DivisionID" Type="String" MaxLength="20" Unicode="false" FixedLength="false" />
+          <Property Name="ARDivisionID" Type="String" MaxLength="20" Unicode="false" FixedLength="false" />
+          <Property Name="PermitirLotesCuarentenaPendiente" Type="Boolean" Nullable="false" />
+          <Property Name="PermitirLotesCuarentenaAceptado" Type="Boolean" Nullable="false" />
+          <Property Name="PermitirLotesCuarentenaRechazado" Type="Boolean" Nullable="false" />
+          <Property Name="DefaultUOMSalesDocs" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="Pedidos" Relationship="MOISESModel.FK__Pedidos__Almacen__6E8B6712" FromRole="Almacenes" ToRole="Pedidos" />
+          <NavigationProperty Name="Pedidos1" Relationship="MOISESModel.FK_Pedidos_AlmacenEntrada" FromRole="Almacenes" ToRole="Pedidos" />
+        </EntityType>
+        <EntityType Name="Articulos">
+          <Key>
+            <PropertyRef Name="Codigo" />
+          </Key>
+          <Property Name="Codigo" Type="String" Nullable="false" MaxLength="20" Unicode="false" FixedLength="false" />
+          <Property Name="Descripcion" Type="String" MaxLength="200" Unicode="false" FixedLength="false" />
+          <Property Name="DescripcionLarga" Type="String" MaxLength="500" Unicode="false" FixedLength="false" />
+          <Property Name="Tipo" Type="String" MaxLength="1" Unicode="false" FixedLength="false" />
+          <Property Name="CodigoBarra" Type="String" MaxLength="20" Unicode="false" FixedLength="false" />
+          <Property Name="Categoria" Type="String" MaxLength="20" Unicode="false" FixedLength="false" />
+          <Property Name="SubCategoria" Type="String" MaxLength="20" Unicode="false" FixedLength="false" />
+          <Property Name="UnidadCompra" Type="String" MaxLength="20" Unicode="false" FixedLength="false" />
+          <Property Name="UnidadVenta" Type="String" MaxLength="20" Unicode="false" FixedLength="false" />
+          <Property Name="UnidadReporte" Type="String" MaxLength="20" Unicode="false" FixedLength="false" />
+          <Property Name="Costo" Type="Decimal" Nullable="false" Precision="19" Scale="4" />
+          <Property Name="CostoPromedio" Type="Decimal" Nullable="false" Precision="19" Scale="4" />
+          <Property Name="Activo" Type="Boolean" Nullable="false" />
+          <Property Name="ClasificacionABC" Type="String" MaxLength="1" Unicode="false" FixedLength="false" />
+          <Property Name="ConfiabilidadServicio" Type="Decimal" Nullable="false" Precision="28" Scale="6" />
+          <Property Name="Observaciones" Type="String" MaxLength="Max" Unicode="false" FixedLength="false" />
+          <Property Name="Impuesto" Type="Boolean" Nullable="false" />
+          <Property Name="SuplidorPreferido" Type="String" MaxLength="20" Unicode="false" FixedLength="false" />
+          <Property Name="FrecuenciaInventario" Type="String" MaxLength="20" Unicode="false" FixedLength="false" />
+          <Property Name="RequiereLote" Type="Boolean" Nullable="false" />
+          <Property Name="MultiploCompra" Type="Int32" />
+          <Property Name="MultiploVenta" Type="Int32" />
+          <Property Name="MetodoCosteo" Type="Int16" Nullable="false" />
+          <Property Name="Peso" Type="Decimal" Nullable="false" Precision="28" Scale="6" />
+          <Property Name="UnidadPeso" Type="String" MaxLength="10" Unicode="false" FixedLength="false" />
+          <Property Name="Familia" Type="String" MaxLength="20" Unicode="false" FixedLength="false" />
+          <Property Name="Fabricante" Type="String" MaxLength="20" Unicode="false" FixedLength="false" />
+          <Property Name="PrecioCompra" Type="Decimal" Nullable="false" Precision="19" Scale="4" />
+          <Property Name="PermitirNegativos" Type="Boolean" Nullable="false" />
+          <Property Name="DescripcionCompras" Type="String" MaxLength="255" Unicode="false" FixedLength="false" />
+          <Property Name="Serializable" Type="Boolean" Nullable="false" />
+          <Property Name="Assambly" Type="Boolean" Nullable="false" />
+          <Property Name="Photo" Type="String" MaxLength="255" Unicode="false" FixedLength="false" />
+          <Property Name="QuantityDecimals" Type="Int16" Nullable="false" />
+          <Property Name="AmountDecimals" Type="Int16" Nullable="false" />
+          <Property Name="ComissionPercent" Type="Decimal" Nullable="false" Precision="28" Scale="6" />
+          <Property Name="TaxSchedule" Type="String" MaxLength="20" Unicode="false" FixedLength="false" />
+          <Property Name="Reference" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="NonInventory" Type="Boolean" Nullable="false" />
+          <Property Name="Attribute1" Type="String" MaxLength="20" Unicode="false" FixedLength="false" />
+          <Property Name="Attribute2" Type="String" MaxLength="20" Unicode="false" FixedLength="false" />
+          <Property Name="Income_Account" Type="String" MaxLength="20" Unicode="false" FixedLength="false" />
+          <Property Name="Inventory_Account" Type="String" MaxLength="20" Unicode="false" FixedLength="false" />
+          <Property Name="Cost_Sales_Account" Type="String" MaxLength="20" Unicode="false" FixedLength="false" />
+          <Property Name="Sales_Discount_Account" Type="String" MaxLength="20" Unicode="false" FixedLength="false" />
+          <Property Name="Sales_Returns_Account" Type="String" MaxLength="20" Unicode="false" FixedLength="false" />
+          <Property Name="Adjustments_Account" Type="String" MaxLength="20" Unicode="false" FixedLength="false" />
+          <Property Name="Commisionable" Type="Boolean" Nullable="false" />
+          <Property Name="OriginID" Type="String" MaxLength="20" Unicode="false" FixedLength="false" />
+          <Property Name="ColorID" Type="String" MaxLength="20" Unicode="false" FixedLength="false" />
+          <Property Name="SubFamilyID" Type="String" MaxLength="20" Unicode="false" FixedLength="false" />
+          <Property Name="Presentation" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="MaxQuantity" Type="Decimal" Nullable="false" Precision="28" Scale="6" />
+          <Property Name="MinQuantity" Type="Decimal" Nullable="false" Precision="28" Scale="6" />
+          <Property Name="ProductionItem" Type="Boolean" Nullable="false" />
+          <Property Name="SalesItem" Type="Boolean" Nullable="false" />
+          <Property Name="Common" Type="Boolean" Nullable="false" />
+          <Property Name="ComissionLevelID" Type="String" MaxLength="20" Unicode="false" FixedLength="false" />
+          <Property Name="WarrantyDays" Type="Int32" Nullable="false" />
+          <Property Name="WarrantyCriteria" Type="String" MaxLength="20" Unicode="false" FixedLength="false" />
+          <Property Name="WarrantyQuantity" Type="Int32" Nullable="false" />
+          <Property Name="OfferID" Type="String" MaxLength="20" Unicode="false" FixedLength="false" />
+          <Property Name="Billable" Type="Boolean" Nullable="false" />
+          <Property Name="SubCostCenterID" Type="String" MaxLength="20" Unicode="false" FixedLength="false" />
+          <Property Name="BrandID" Type="String" MaxLength="20" Unicode="false" FixedLength="false" />
+          <Property Name="Height" Type="Single" Nullable="false" />
+          <Property Name="Width" Type="Single" Nullable="false" />
+          <Property Name="ProductionCostAccount" Type="String" MaxLength="20" Unicode="false" FixedLength="false" />
+          <Property Name="BarUOID" Type="String" MaxLength="20" Unicode="false" FixedLength="false" />
+          <Property Name="CreateEquipmentRecord" Type="Boolean" Nullable="false" />
+          <Property Name="ExigirDiasEntrega" Type="Boolean" Nullable="false" />
+          <Property Name="ExigirDiasInstalacion" Type="Boolean" Nullable="false" />
+          <Property Name="ExigirDiasGarantia" Type="Boolean" Nullable="false" />
+          <Property Name="PreviousID" Type="String" MaxLength="20" Unicode="false" FixedLength="false" />
+          <Property Name="ProductionFactor" Type="Decimal" Nullable="false" Precision="28" Scale="6" />
+          <Property Name="ReportUOMID3" Type="String" MaxLength="20" Unicode="false" FixedLength="false" />
+          <Property Name="ManufacturerReference" Type="String" MaxLength="20" Unicode="false" FixedLength="false" />
+          <Property Name="UOMPlanID" Type="String" MaxLength="20" Unicode="false" FixedLength="false" />
+          <Property Name="FreightAmount" Type="Decimal" Nullable="false" Precision="19" Scale="4" />
+          <Property Name="PurchasesName" Type="String" MaxLength="255" Unicode="false" FixedLength="false" />
+          <Property Name="AlternateName" Type="String" MaxLength="255" Unicode="false" FixedLength="false" />
+          <Property Name="PlannerID" Type="String" MaxLength="20" Unicode="false" FixedLength="false" />
+          <Property Name="Margin" Type="Decimal" Nullable="false" Precision="28" Scale="6" />
+          <Property Name="DeductVendorComission" Type="Boolean" Nullable="false" />
+          <Property Name="BonusAccount" Type="String" MaxLength="20" Unicode="false" FixedLength="false" />
+          <Property Name="WarnIfNegativeOnQuote" Type="Boolean" Nullable="false" />
+          <Property Name="LandedCostFactor" Type="Decimal" Nullable="false" Precision="28" Scale="6" />
+          <Property Name="PurchaseItem" Type="Boolean" Nullable="false" />
+          <Property Name="AttributeList1ID" Type="String" MaxLength="20" Unicode="false" FixedLength="false" />
+          <Property Name="AttributeList2ID" Type="String" MaxLength="20" Unicode="false" FixedLength="false" />
+          <Property Name="RequiresItemLocations" Type="Boolean" Nullable="false" />
+          <Property Name="PurchaseAccountID" Type="String" MaxLength="20" Unicode="false" FixedLength="false" />
+          <Property Name="ItemTaxAmount" Type="Decimal" Nullable="false" Precision="19" Scale="4" />
+          <Property Name="ItemTaxAccount" Type="String" MaxLength="20" Unicode="false" FixedLength="false" />
+          <Property Name="ItemTaxPercent" Type="Decimal" Nullable="false" Precision="28" Scale="6" />
+          <Property Name="Custom1" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="Custom2" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="Custom3" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="Custom4" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="Custom5" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="Custom6" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="CreditSaleExpirationWarning" Type="Int32" Nullable="false" />
+          <Property Name="CashSaleExpirationWarning" Type="Int32" Nullable="false" />
+          <Property Name="Sales_Dispatchs_AccountID" Type="String" MaxLength="20" Unicode="false" FixedLength="false" />
+          <Property Name="DocClassID" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="CalculatePrices" Type="Int32" />
+          <Property Name="PurchasePriceCurrencyID" Type="String" MaxLength="20" Unicode="false" FixedLength="false" />
+          <Property Name="WarehouseID" Type="String" MaxLength="20" Unicode="false" FixedLength="false" />
+          <Property Name="EquivalentItemID" Type="String" MaxLength="20" Unicode="false" FixedLength="false" />
+          <Property Name="EquivalentGroup" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="QuarantineDays" Type="Int32" Nullable="false" />
+          <Property Name="ItemCubicaciones" Type="Boolean" Nullable="false" />
+          <Property Name="ItemAvances" Type="Boolean" Nullable="false" />
+          <Property Name="ItemRetenciones" Type="Boolean" Nullable="false" />
+          <Property Name="AllowUseOnHold" Type="Boolean" Nullable="false" />
+          <Property Name="TechnicalComission" Type="Decimal" Nullable="false" Precision="28" Scale="6" />
+          <Property Name="CreatedBy" Type="String" MaxLength="20" Unicode="false" FixedLength="false" />
+          <Property Name="AllowChangeItemDescription" Type="Boolean" Nullable="false" />
+          <Property Name="OfferItemID" Type="String" MaxLength="20" Unicode="false" FixedLength="false" />
+          <Property Name="DontAllowReceptionsWithNoCost" Type="Boolean" Nullable="false" />
+          <Property Name="ManufacturingTolerance" Type="Decimal" Nullable="false" Precision="28" Scale="6" />
+          <Property Name="MaterialTolerance" Type="Decimal" Nullable="false" Precision="28" Scale="6" />
+          <Property Name="ManagerComissionPercent" Type="Decimal" Nullable="false" Precision="28" Scale="6" />
+          <Property Name="PlacementDate" Type="DateTime" Precision="3" />
+          <Property Name="UnitB_ID" Type="String" MaxLength="20" Unicode="false" FixedLength="false" />
+          <Property Name="IsSparePart" Type="Boolean" Nullable="false" />
+          <Property Name="MaterialType" Type="Int32" />
+          <Property Name="TransitInventoryAccount" Type="String" MaxLength="20" Unicode="false" FixedLength="false" />
+          <Property Name="LotItemDuplicate" Type="Boolean" Nullable="false" />
+          <Property Name="CargoDevolucion" Type="Decimal" Precision="28" Scale="6" />
+          <Property Name="CtaCostoContrato" Type="String" MaxLength="20" Unicode="false" FixedLength="false" />
+          <Property Name="CtaCostoCompMenuda" Type="String" MaxLength="20" Unicode="false" FixedLength="false" />
+          <Property Name="CtaCostoComision" Type="String" MaxLength="20" Unicode="false" FixedLength="false" />
+          <Property Name="DevContrato" Type="String" MaxLength="20" Unicode="false" FixedLength="false" />
+          <Property Name="DevCompMenuda" Type="String" MaxLength="20" Unicode="false" FixedLength="false" />
+          <Property Name="DevComision" Type="String" MaxLength="20" Unicode="false" FixedLength="false" />
+          <Property Name="PublishAdmWebOrders" Type="Boolean" Nullable="false" />
+          <Property Name="Contrato" Type="Boolean" Nullable="false" />
+          <NavigationProperty Name="ArticulosSuplidores" Relationship="MOISESModel.FK__Articulos__Artic__2A164134" FromRole="Articulos" ToRole="ArticulosSuplidores" />
+          <NavigationProperty Name="ArticulosSuplidores1" Relationship="MOISESModel.FK__Articulos__Artic__7D439ABD" FromRole="Articulos" ToRole="ArticulosSuplidores" />
+          <NavigationProperty Name="Pedidos_Detalles" Relationship="MOISESModel.FK__Pedidos_D__Artic__7DCDAAA2" FromRole="Articulos" ToRole="Pedidos_Detalles" />
+          <NavigationProperty Name="Articulos1" Relationship="MOISESModel.FK_Articulos_EquivalentItemID" FromRole="Articulos" ToRole="Articulos1" />
+          <NavigationProperty Name="Articulos2" Relationship="MOISESModel.FK_Articulos_EquivalentItemID" FromRole="Articulos1" ToRole="Articulos" />
+          <NavigationProperty Name="Articulos11" Relationship="MOISESModel.FK_Articulos_OfferItemID" FromRole="Articulos" ToRole="Articulos1" />
+          <NavigationProperty Name="Articulos3" Relationship="MOISESModel.FK_Articulos_OfferItemID" FromRole="Articulos1" ToRole="Articulos" />
+        </EntityType>
+        <EntityType Name="ArticulosSuplidores">
+          <Key>
+            <PropertyRef Name="Contador" />
+          </Key>
+          <Property Name="Contador" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+          <Property Name="Suplidor" Type="String" Nullable="false" MaxLength="20" Unicode="false" FixedLength="false" />
+          <Property Name="Articulo" Type="String" Nullable="false" MaxLength="20" Unicode="false" FixedLength="false" />
+          <Property Name="Referencia" Type="String" MaxLength="20" Unicode="false" FixedLength="false" />
+          <Property Name="Precio1" Type="Decimal" Nullable="false" Precision="19" Scale="4" />
+          <Property Name="DeliveryTime" Type="Int32" Nullable="false" />
+          <Property Name="OfferQuantity" Type="Decimal" Nullable="false" Precision="28" Scale="6" />
+          <Property Name="Offer" Type="Decimal" Nullable="false" Precision="28" Scale="6" />
+          <NavigationProperty Name="Articulos" Relationship="MOISESModel.FK__Articulos__Artic__2A164134" FromRole="ArticulosSuplidores" ToRole="Articulos" />
+          <NavigationProperty Name="Articulos1" Relationship="MOISESModel.FK__Articulos__Artic__7D439ABD" FromRole="ArticulosSuplidores" ToRole="Articulos" />
+        </EntityType>
+        <EntityType Name="Clientes">
+          <Key>
+            <PropertyRef Name="Codigo" />
+          </Key>
+          <Property Name="Codigo" Type="String" Nullable="false" MaxLength="20" Unicode="false" FixedLength="false" />
+          <Property Name="RazonSocial" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="Contacto" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="Cedula" Type="String" MaxLength="20" Unicode="false" FixedLength="false" />
+          <Property Name="Contrato" Type="Boolean" Nullable="false" />
+          <Property Name="Telefono" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="Telefono2" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="Facsimil" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="CorreoElectronico" Type="String" MaxLength="255" Unicode="false" FixedLength="false" />
+          <Property Name="Territorio" Type="String" MaxLength="20" Unicode="false" FixedLength="false" />
+          <Property Name="Tipo" Type="String" MaxLength="100" Unicode="false" FixedLength="false" />
+          <Property Name="LimiteCredito" Type="Decimal" Nullable="false" Precision="19" Scale="4" />
+          <Property Name="Condiciones" Type="String" MaxLength="10" Unicode="false" FixedLength="false" />
+          <Property Name="Observaciones" Type="String" MaxLength="Max" Unicode="false" FixedLength="false" />
+          <Property Name="MontoUltimaCompra" Type="Decimal" Nullable="false" Precision="19" Scale="4" />
+          <Property Name="NumeroRegistro" Type="String" MaxLength="20" Unicode="false" FixedLength="false" />
+          <Property Name="Categoria" Type="String" MaxLength="20" Unicode="false" FixedLength="false" />
+          <Property Name="Descuento" Type="Decimal" Nullable="false" Precision="28" Scale="6" />
+          <Property Name="Vendedor" Type="String" MaxLength="20" Unicode="false" FixedLength="false" />
+          <Property Name="PaginaWeb" Type="String" MaxLength="255" Unicode="false" FixedLength="false" />
+          <Property Name="Anticipos" Type="Decimal" Nullable="false" Precision="19" Scale="4" />
+          <Property Name="ChequesDevueltos" Type="Decimal" Nullable="false" Precision="19" Scale="4" />
+          <Property Name="Terminos" Type="String" MaxLength="20" Unicode="false" FixedLength="false" />
+          <Property Name="FechaCreacion" Type="DateTime" Precision="3" />
+          <Property Name="EmployeeQuantity" Type="Int32" Nullable="false" />
+          <Property Name="CurrentVolume" Type="Decimal" Nullable="false" Precision="19" Scale="4" />
+          <Property Name="PotentialVolume" Type="Decimal" Nullable="false" Precision="19" Scale="4" />
+          <Property Name="Profile" Type="String" MaxLength="Max" Unicode="false" FixedLength="false" />
+          <Property Name="Inactive" Type="Boolean" Nullable="false" />
+          <Property Name="CurrencyID" Type="String" MaxLength="20" Unicode="false" FixedLength="false" />
+          <Property Name="PriceLevelID" Type="String" MaxLength="20" Unicode="false" FixedLength="false" />
+          <Property Name="BillingContact" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="Apellidos" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="Nombres" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="Asistant" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="Mobile" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="Asistant_Phone" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="GroupID" Type="String" MaxLength="20" Unicode="false" FixedLength="false" />
+          <Property Name="Prospect" Type="Boolean" Nullable="false" />
+          <Property Name="StatusID" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="TypeID" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="RecurringInvoiceID" Type="String" MaxLength="20" Unicode="false" FixedLength="false" />
+          <Property Name="Birthday" Type="DateTime" Precision="3" />
+          <Property Name="CancelationDate" Type="DateTime" Precision="3" />
+          <Property Name="CancelationReasonID" Type="String" MaxLength="20" Unicode="false" FixedLength="false" />
+          <Property Name="ReferenceID" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="ARResponsible" Type="String" MaxLength="20" Unicode="false" FixedLength="false" />
+          <Property Name="Owner" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="Owner_SSN" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="MaxSale" Type="Decimal" Nullable="false" Precision="19" Scale="4" />
+          <Property Name="InactiveDays" Type="Int32" Nullable="false" />
+          <Property Name="LocationID" Type="String" MaxLength="20" Unicode="false" FixedLength="false" />
+          <Property Name="InstallationCode" Type="String" MaxLength="20" Unicode="false" FixedLength="false" />
+          <Property Name="StateID" Type="String" MaxLength="20" Unicode="false" FixedLength="false" />
+          <Property Name="SectorID" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="SubClassID" Type="String" MaxLength="20" Unicode="false" FixedLength="false" />
+          <Property Name="ShipToAddressID" Type="String" MaxLength="20" Unicode="false" FixedLength="false" />
+          <Property Name="BillToAddressID" Type="String" MaxLength="20" Unicode="false" FixedLength="false" />
+          <Property Name="TaxScheduleID" Type="String" MaxLength="20" Unicode="false" FixedLength="false" />
+          <Property Name="ComissionLevelID" Type="String" MaxLength="20" Unicode="false" FixedLength="false" />
+          <Property Name="ManagementComissionLevelID" Type="String" MaxLength="20" Unicode="false" FixedLength="false" />
+          <Property Name="VendorID" Type="String" MaxLength="20" Unicode="false" FixedLength="false" />
+          <Property Name="Gender" Type="Int32" Nullable="false" />
+          <Property Name="RegionID" Type="String" MaxLength="20" Unicode="false" FixedLength="false" />
+          <Property Name="ComercialName" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="GenerateNCF" Type="Boolean" Nullable="false" />
+          <Property Name="NCF_Sequence" Type="Int32" Nullable="false" />
+          <Property Name="Custom1" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="Custom2" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="Custom3" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="Custom4" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="Custom5" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="Custom6" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="FechaInactivo" Type="DateTime" Precision="3" />
+          <Property Name="CustomInvoiceFormat" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="RequireQuoteOnService" Type="Boolean" Nullable="false" />
+          <Property Name="ShipToAddress" Type="String" MaxLength="4000" Unicode="false" FixedLength="false" />
+          <Property Name="ShipToCityID" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="ShipToStateID" Type="String" MaxLength="20" Unicode="false" FixedLength="false" />
+          <Property Name="ShipToCountryID" Type="String" MaxLength="20" Unicode="false" FixedLength="false" />
+          <Property Name="ShipToPhone1" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="ShipToPhone2" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="ShipToFax" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="ShipToContact" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="BillToAddress" Type="String" MaxLength="4000" Unicode="false" FixedLength="false" />
+          <Property Name="BillToCityID" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="BillToStateID" Type="String" MaxLength="20" Unicode="false" FixedLength="false" />
+          <Property Name="BillToCountryID" Type="String" MaxLength="20" Unicode="false" FixedLength="false" />
+          <Property Name="BillToPhone1" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="BillToPhone2" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="BillToFax" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="BillToContact" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="Legal" Type="Boolean" Nullable="false" />
+          <Property Name="Repartidor" Type="String" MaxLength="20" Unicode="false" FixedLength="false" />
+          <Property Name="BusinessActivity" Type="String" MaxLength="200" Unicode="false" FixedLength="false" />
+          <Property Name="VisitDay1" Type="Boolean" Nullable="false" />
+          <Property Name="VisitDay2" Type="Boolean" Nullable="false" />
+          <Property Name="VisitDay3" Type="Boolean" Nullable="false" />
+          <Property Name="VisitDay4" Type="Boolean" Nullable="false" />
+          <Property Name="VisitDay5" Type="Boolean" Nullable="false" />
+          <Property Name="VisitDay6" Type="Boolean" Nullable="false" />
+          <Property Name="VisitDay7" Type="Boolean" Nullable="false" />
+          <Property Name="Role" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="DontAllowServiceRequests" Type="Boolean" Nullable="false" />
+          <Property Name="TechnicalContactEMail" Type="String" MaxLength="200" Unicode="false" FixedLength="false" />
+          <Property Name="CreatedBy" Type="String" MaxLength="20" Unicode="false" FixedLength="false" />
+          <Property Name="ContactInterval" Type="Int32" Nullable="false" />
+          <Property Name="ISCustomer" Type="Boolean" Nullable="false" />
+          <Property Name="ISPromoContact" Type="Boolean" Nullable="false" />
+          <Property Name="Visitday8" Type="Boolean" Nullable="false" />
+          <Property Name="Visitday9" Type="Boolean" Nullable="false" />
+          <Property Name="Visitweek" Type="Int16" Nullable="false" />
+          <Property Name="IsEmployee" Type="Boolean" Nullable="false" />
+          <Property Name="UnitB_ID" Type="String" MaxLength="20" Unicode="false" FixedLength="false" />
+          <Property Name="Empleado" Type="String" MaxLength="20" Unicode="false" FixedLength="false" />
+          <Property Name="Week1" Type="Boolean" Nullable="false" />
+          <Property Name="Week2" Type="Boolean" Nullable="false" />
+          <Property Name="Week3" Type="Boolean" Nullable="false" />
+          <Property Name="Week4" Type="Boolean" Nullable="false" />
+          <Property Name="Week5" Type="Boolean" Nullable="false" />
+          <Property Name="PersonaFisica" Type="Boolean" Nullable="false" />
+          <Property Name="Pais" Type="String" MaxLength="20" Unicode="false" FixedLength="false" />
+          <Property Name="ZonaGeografica" Type="String" MaxLength="20" Unicode="false" FixedLength="false" />
+          <Property Name="NoImportacion" Type="String" MaxLength="20" Unicode="false" FixedLength="false" />
+          <Property Name="IdentificadorFiscal" Type="String" MaxLength="20" Unicode="false" FixedLength="false" />
+          <Property Name="PublishAdmWebOrders" Type="Boolean" Nullable="false" />
+          <Property Name="AdmWebOrdersPassword" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <NavigationProperty Name="Empleados" Relationship="MOISESModel.FK__Clientes__ARResp__382F5661" FromRole="Clientes" ToRole="Empleados" />
+          <NavigationProperty Name="Monedas" Relationship="MOISESModel.FK__Clientes__Curren__3BFFE745" FromRole="Clientes" ToRole="Monedas" />
+          <NavigationProperty Name="Terminos1" Relationship="MOISESModel.FK__Clientes__Termin__467D75B8" FromRole="Clientes" ToRole="Terminos" />
+          <NavigationProperty Name="Empleados1" Relationship="MOISESModel.FK__Clientes__Vended__4A4E069C" FromRole="Clientes" ToRole="Empleados" />
+          <NavigationProperty Name="Pedidos" Relationship="MOISESModel.FK__Pedidos__Cliente__6F7F8B4B" FromRole="Clientes" ToRole="Pedidos" />
+          <NavigationProperty Name="Empleados2" Relationship="MOISESModel.FK_Clientes_Repartidor" FromRole="Clientes" ToRole="Empleados" />
+          <NavigationProperty Name="Pedidos1" Relationship="MOISESModel.FK_Pedidos_ShipToCustomerID" FromRole="Clientes" ToRole="Pedidos" />
+        </EntityType>
+        <EntityType Name="Empleados">
+          <Key>
+            <PropertyRef Name="Codigo" />
+          </Key>
+          <Property Name="Codigo" Type="String" Nullable="false" MaxLength="20" Unicode="false" FixedLength="false" />
+          <Property Name="Apellidos" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="Nombres" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="Activo" Type="Boolean" Nullable="false" />
+          <Property Name="Cedula" Type="String" MaxLength="20" Unicode="false" FixedLength="false" />
+          <Property Name="Telefono" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="Telefono2" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="Telefono3" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="Celular" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="Beeper" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="Nacionalidad" Type="String" MaxLength="20" Unicode="false" FixedLength="false" />
+          <Property Name="Sexo" Type="String" MaxLength="9" Unicode="false" FixedLength="false" />
+          <Property Name="Pensionado" Type="Boolean" Nullable="false" />
+          <Property Name="FechaNacimiento" Type="DateTime" Precision="3" />
+          <Property Name="EstadoCivil" Type="Int16" />
+          <Property Name="NombreConyugue" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="NumeroDependientes" Type="String" MaxLength="20" Unicode="false" FixedLength="false" />
+          <Property Name="LugarNacimiento" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="Tipo" Type="String" MaxLength="20" Unicode="false" FixedLength="false" />
+          <Property Name="Direccion" Type="String" MaxLength="Max" Unicode="false" FixedLength="false" />
+          <Property Name="Sector" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="Ciudad" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="Provincia" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="CodigoPostal" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="Pais" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="DireccionTemporal" Type="String" MaxLength="Max" Unicode="false" FixedLength="false" />
+          <Property Name="SectorTemporal" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="CiudadTemporal" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="ProvinciaTemporal" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="CodigoPostalTemporal" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="PaisTemporal" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="Posicion" Type="String" MaxLength="20" Unicode="false" FixedLength="false" />
+          <Property Name="Departamento" Type="String" MaxLength="20" Unicode="false" FixedLength="false" />
+          <Property Name="Sucursal" Type="String" MaxLength="20" Unicode="false" FixedLength="false" />
+          <Property Name="Categoria" Type="String" MaxLength="20" Unicode="false" FixedLength="false" />
+          <Property Name="FechaInicio" Type="DateTime" Precision="3" />
+          <Property Name="FechaTermino" Type="DateTime" Precision="3" />
+          <Property Name="Vendedor" Type="Boolean" Nullable="false" />
+          <Property Name="DescontarSeguro" Type="Boolean" Nullable="false" />
+          <Property Name="Salario" Type="Decimal" Nullable="false" Precision="19" Scale="4" />
+          <Property Name="FechaCambio" Type="DateTime" Precision="3" />
+          <Property Name="NoAfiliacion" Type="String" MaxLength="20" Unicode="false" FixedLength="false" />
+          <Property Name="CuentaBancaria" Type="String" MaxLength="20" Unicode="false" FixedLength="false" />
+          <Property Name="MetodoPago" Type="Int16" />
+          <Property Name="FrecuenciaPago" Type="Int16" />
+          <Property Name="NivelComision" Type="String" MaxLength="20" Unicode="false" FixedLength="false" />
+          <Property Name="VacacionesFecha" Type="DateTime" Precision="3" />
+          <Property Name="VacacionesDias" Type="Int16" Nullable="false" />
+          <Property Name="VacacionesTomados" Type="Int16" Nullable="false" />
+          <Property Name="VacacionesPendientes" Type="Int16" Nullable="false" />
+          <Property Name="Observaciones" Type="String" MaxLength="Max" Unicode="false" FixedLength="false" />
+          <Property Name="Foto" Type="String" MaxLength="255" Unicode="false" FixedLength="false" />
+          <Property Name="Personalizado1" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="Personalizado2" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="Personalizado3" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="Personalizado4" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="Personalizado5" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="Acumulated_Periods" Type="Int32" Nullable="false" />
+          <Property Name="Acumulated_Salary" Type="Decimal" Nullable="false" Precision="19" Scale="4" />
+          <Property Name="Acumulated_Tax" Type="Decimal" Nullable="false" Precision="19" Scale="4" />
+          <Property Name="ARS" Type="Boolean" Nullable="false" />
+          <Property Name="AFP" Type="Boolean" Nullable="false" />
+          <Property Name="Laboral_Risk" Type="Boolean" Nullable="false" />
+          <Property Name="Acumulated_Income" Type="Decimal" Nullable="false" Precision="19" Scale="4" />
+          <Property Name="ComisionPayablesAccount" Type="String" MaxLength="20" Unicode="false" FixedLength="false" />
+          <Property Name="ComisionExpenseAccount" Type="String" MaxLength="20" Unicode="false" FixedLength="false" />
+          <Property Name="ComissionPercent" Type="Decimal" Nullable="false" Precision="28" Scale="6" />
+          <Property Name="Initials" Type="String" MaxLength="20" Unicode="false" FixedLength="false" />
+          <Property Name="HourFee" Type="Decimal" Nullable="false" Precision="19" Scale="4" />
+          <Property Name="Segment1" Type="String" MaxLength="20" Unicode="false" FixedLength="false" />
+          <Property Name="Segment2" Type="String" MaxLength="20" Unicode="false" FixedLength="false" />
+          <Property Name="PayablesAccount" Type="String" MaxLength="20" Unicode="false" FixedLength="false" />
+          <Property Name="Segment0" Type="String" MaxLength="20" Unicode="false" FixedLength="false" />
+          <Property Name="ReceivablesAccount" Type="String" MaxLength="20" Unicode="false" FixedLength="false" />
+          <Property Name="SegmentCompany" Type="String" MaxLength="20" Unicode="false" FixedLength="false" />
+          <Property Name="Segment1_Liability" Type="String" MaxLength="20" Unicode="false" FixedLength="false" />
+          <Property Name="Segment1_Expense" Type="String" MaxLength="20" Unicode="false" FixedLength="false" />
+          <Property Name="Segment2_Liability" Type="String" MaxLength="20" Unicode="false" FixedLength="false" />
+          <Property Name="Segment2_Expense" Type="String" MaxLength="20" Unicode="false" FixedLength="false" />
+          <Property Name="Bank" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="PaymentMethod" Type="Int32" Nullable="false" />
+          <Property Name="StateID" Type="String" MaxLength="20" Unicode="false" FixedLength="false" />
+          <Property Name="TerritoryID" Type="String" MaxLength="20" Unicode="false" FixedLength="false" />
+          <Property Name="Account" Type="String" MaxLength="20" Unicode="false" FixedLength="false" />
+          <Property Name="BankAccountID" Type="String" MaxLength="20" Unicode="false" FixedLength="false" />
+          <Property Name="ProductionComissionCalculation" Type="Int32" Nullable="false" />
+          <Property Name="ProductionFactor" Type="Decimal" Nullable="false" Precision="28" Scale="6" />
+          <Property Name="HourCost" Type="Decimal" Nullable="false" Precision="19" Scale="4" />
+          <Property Name="Custom1" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="Custom2" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="Custom3" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="Custom4" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="Custom5" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="Custom6" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="Tecnitian" Type="Boolean" Nullable="false" />
+          <Property Name="Email" Type="String" MaxLength="200" Unicode="false" FixedLength="false" />
+          <Property Name="CreatedBy" Type="String" MaxLength="20" Unicode="false" FixedLength="false" />
+          <Property Name="SupervisorID" Type="String" MaxLength="20" Unicode="false" FixedLength="false" />
+          <Property Name="CreationDate" Type="DateTime" Precision="3" />
+          <Property Name="CreatedHour" Type="DateTime" Precision="3" />
+          <Property Name="EditDate" Type="DateTime" Precision="3" />
+          <Property Name="EditHour" Type="DateTime" Precision="3" />
+          <Property Name="Acumulate_Tax" Type="Decimal" Nullable="false" Precision="28" Scale="6" />
+          <Property Name="ISR" Type="Boolean" Nullable="false" />
+          <Property Name="EndDate" Type="DateTime" Precision="3" />
+          <Property Name="LastPayrollMonth" Type="Int32" Nullable="false" />
+          <Property Name="LastPayrollYear" Type="Int32" Nullable="false" />
+          <Property Name="Acumulated_OtherIncome" Type="Decimal" Nullable="false" Precision="28" Scale="6" />
+          <Property Name="ARS_Periodo" Type="Int32" />
+          <Property Name="AFP_Periodo" Type="Int32" />
+          <Property Name="ISR_Periodo" Type="Int32" />
+          <Property Name="ShiftID" Type="String" MaxLength="20" Unicode="false" FixedLength="false" />
+          <Property Name="TipoNomina" Type="String" MaxLength="20" Unicode="false" FixedLength="false" />
+          <Property Name="VacacionesInicio" Type="DateTime" Precision="3" />
+          <Property Name="VacacionesFinal" Type="DateTime" Precision="3" />
+          <Property Name="CorreoElectronico" Type="String" MaxLength="100" Unicode="false" FixedLength="false" />
+          <Property Name="Delivery" Type="Boolean" Nullable="false" />
+          <Property Name="CentroCosto" Type="String" MaxLength="10" Unicode="false" FixedLength="false" />
+          <Property Name="Estado_ID" Type="String" MaxLength="10" Unicode="false" FixedLength="false" />
+          <Property Name="EmergenciaApellidos" Type="String" MaxLength="20" Unicode="false" FixedLength="false" />
+          <Property Name="EmergenciaNombres" Type="String" MaxLength="20" Unicode="false" FixedLength="false" />
+          <Property Name="EmergenciaParentesco" Type="String" MaxLength="20" Unicode="false" FixedLength="false" />
+          <Property Name="EmergenciaTelefono" Type="String" MaxLength="20" Unicode="false" FixedLength="false" />
+          <Property Name="TipoSangre" Type="String" MaxLength="20" Unicode="false" FixedLength="false" />
+          <Property Name="Alergias" Type="String" MaxLength="20" Unicode="false" FixedLength="false" />
+          <Property Name="HorasCorrientes" Type="Decimal" Precision="19" Scale="4" />
+          <Property Name="HorasExtras" Type="Decimal" Precision="19" Scale="4" />
+          <Property Name="HorasEspeciales" Type="Decimal" Precision="19" Scale="4" />
+          <Property Name="HorasNocturnas" Type="Decimal" Precision="19" Scale="4" />
+          <Property Name="Manteinance" Type="Boolean" />
+          <Property Name="Manufactura" Type="Boolean" />
+          <Property Name="DivisionID" Type="String" MaxLength="20" Unicode="false" FixedLength="false" />
+          <NavigationProperty Name="Clientes" Relationship="MOISESModel.FK__Clientes__ARResp__382F5661" FromRole="Empleados" ToRole="Clientes" />
+          <NavigationProperty Name="Clientes1" Relationship="MOISESModel.FK__Clientes__Vended__4A4E069C" FromRole="Empleados" ToRole="Clientes" />
+          <NavigationProperty Name="Clientes2" Relationship="MOISESModel.FK_Clientes_Repartidor" FromRole="Empleados" ToRole="Clientes" />
+          <NavigationProperty Name="Pedidos" Relationship="MOISESModel.FK__Pedidos__Vendedo__7908F585" FromRole="Empleados" ToRole="Pedidos" />
+          <NavigationProperty Name="Empleados1" Relationship="MOISESModel.FK_Empleados_SupervisorID" FromRole="Empleados" ToRole="Empleados1" />
+          <NavigationProperty Name="Empleados2" Relationship="MOISESModel.FK_Empleados_SupervisorID" FromRole="Empleados1" ToRole="Empleados" />
+        </EntityType>
+        <EntityType Name="GruposImpuestos_Impuestos">
+          <Key>
+            <PropertyRef Name="Contador" />
+          </Key>
+          <Property Name="Contador" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+          <Property Name="GrupoImpuesto" Type="String" Nullable="false" MaxLength="20" Unicode="false" FixedLength="false" />
+          <Property Name="Impuesto" Type="String" MaxLength="20" Unicode="false" FixedLength="false" />
+        </EntityType>
+        <EntityType Name="Monedas">
+          <Key>
+            <PropertyRef Name="Codigo" />
+          </Key>
+          <Property Name="Codigo" Type="String" Nullable="false" MaxLength="20" Unicode="false" FixedLength="false" />
+          <Property Name="Descripcion" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="TasaCambio" Type="Decimal" Nullable="false" Precision="28" Scale="6" />
+          <Property Name="CuentaAjustes" Type="String" MaxLength="20" Unicode="false" FixedLength="false" />
+          <Property Name="Observaciones" Type="String" MaxLength="Max" Unicode="false" FixedLength="false" />
+          <Property Name="Sign" Type="String" MaxLength="1" Unicode="false" FixedLength="false" />
+          <Property Name="RoundingsAccount" Type="String" MaxLength="20" Unicode="false" FixedLength="false" />
+          <Property Name="AdjustmentsDivisionID" Type="String" MaxLength="20" Unicode="false" FixedLength="false" />
+          <Property Name="RoundingsDivisionID" Type="String" MaxLength="20" Unicode="false" FixedLength="false" />
+          <NavigationProperty Name="Clientes" Relationship="MOISESModel.FK__Clientes__Curren__3BFFE745" FromRole="Monedas" ToRole="Clientes" />
+        </EntityType>
+        <EntityType Name="Pedidos">
+          <Key>
+            <PropertyRef Name="Numero" />
+          </Key>
+          <Property Name="Numero" Type="Int32" Nullable="false" />
+          <Property Name="NumeroTrans" Type="String" Nullable="false" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="Fecha" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="Tipo" Type="String" MaxLength="10" Unicode="false" FixedLength="false" />
+          <Property Name="Cliente" Type="String" MaxLength="20" Unicode="false" FixedLength="false" />
+          <Property Name="Vendedor" Type="String" MaxLength="20" Unicode="false" FixedLength="false" />
+          <Property Name="Terminos" Type="String" MaxLength="20" Unicode="false" FixedLength="false" />
+          <Property Name="Descuento" Type="Decimal" Nullable="false" Precision="28" Scale="6" />
+          <Property Name="Impuesto" Type="Boolean" Nullable="false" />
+          <Property Name="GrupoImpuesto" Type="String" MaxLength="20" Unicode="false" FixedLength="false" />
+          <Property Name="Observaciones" Type="String" MaxLength="Max" Unicode="false" FixedLength="false" />
+          <Property Name="Nulo" Type="Boolean" Nullable="false" />
+          <Property Name="Total" Type="Decimal" Nullable="false" Precision="19" Scale="4" />
+          <Property Name="MontoImpuesto" Type="Decimal" Nullable="false" Precision="19" Scale="4" />
+          <Property Name="SubTotal" Type="Decimal" Nullable="false" Precision="19" Scale="4" />
+          <Property Name="Pedido" Type="Int32" />
+          <Property Name="Cerrado" Type="Boolean" Nullable="false" />
+          <Property Name="Almacen" Type="String" MaxLength="20" Unicode="false" FixedLength="false" />
+          <Property Name="FreightAmount" Type="Decimal" Nullable="false" Precision="19" Scale="4" />
+          <Property Name="CurrencyID" Type="String" MaxLength="20" Unicode="false" FixedLength="false" />
+          <Property Name="SendTo" Type="String" MaxLength="20" Unicode="false" FixedLength="false" />
+          <Property Name="BillTo" Type="String" MaxLength="20" Unicode="false" FixedLength="false" />
+          <Property Name="Quote" Type="String" MaxLength="20" Unicode="false" FixedLength="false" />
+          <Property Name="SubCompany" Type="String" MaxLength="1" Unicode="false" FixedLength="false" />
+          <Property Name="NoteID" Type="String" MaxLength="20" Unicode="false" FixedLength="false" />
+          <Property Name="PriceExchangeRate" Type="Decimal" Nullable="false" Precision="28" Scale="6" />
+          <Property Name="DeliveryDate" Type="DateTime" Precision="3" />
+          <Property Name="RTFNotes" Type="String" MaxLength="4000" Unicode="false" FixedLength="false" />
+          <Property Name="JobID" Type="String" MaxLength="20" Unicode="false" FixedLength="false" />
+          <Property Name="SubstractForecast" Type="Boolean" Nullable="false" />
+          <Property Name="FreightFactor" Type="Decimal" Nullable="false" Precision="28" Scale="6" />
+          <Property Name="CustomerPO" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="Custom1" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="Custom2" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="Custom3" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="Custom4" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="Custom5" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="Custom6" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="RequiresService" Type="Boolean" Nullable="false" />
+          <Property Name="CreatedBy" Type="String" MaxLength="20" Unicode="false" FixedLength="false" />
+          <Property Name="OnHoldStatus" Type="Int32" Nullable="false" />
+          <Property Name="ReferencedBy" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="ComissionLevelID" Type="String" MaxLength="20" Unicode="false" FixedLength="false" />
+          <Property Name="Printed" Type="Boolean" Nullable="false" />
+          <Property Name="YourReference" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="ShipToCustomerID" Type="String" MaxLength="20" Unicode="false" FixedLength="false" />
+          <Property Name="DocHour" Type="DateTime" Precision="3" />
+          <Property Name="Cash" Type="Boolean" Nullable="false" />
+          <Property Name="AlmacenEntrada" Type="String" MaxLength="20" Unicode="false" FixedLength="false" />
+          <Property Name="OpportunityID" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="ReserveStock" Type="Boolean" Nullable="false" />
+          <Property Name="BillToAddress" Type="String" MaxLength="4000" Unicode="false" FixedLength="false" />
+          <Property Name="ShipToAddress" Type="String" MaxLength="4000" Unicode="false" FixedLength="false" />
+          <Property Name="TripQuantity" Type="Int32" Nullable="false" />
+          <Property Name="ShipToAddressID" Type="String" MaxLength="20" Unicode="false" FixedLength="false" />
+          <Property Name="BillToAddressID" Type="String" MaxLength="20" Unicode="false" FixedLength="false" />
+          <Property Name="BillToCityID" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="BillToStateID" Type="String" MaxLength="20" Unicode="false" FixedLength="false" />
+          <Property Name="BillToCountryID" Type="String" MaxLength="20" Unicode="false" FixedLength="false" />
+          <Property Name="BillToContact" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="BillToPhone" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="ShipToContact" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="ShipToCityID" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="ShipToStateID" Type="String" MaxLength="20" Unicode="false" FixedLength="false" />
+          <Property Name="ShipToCountryID" Type="String" MaxLength="20" Unicode="false" FixedLength="false" />
+          <Property Name="ShipToPhone" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="AuthorizationNumber" Type="Int32" Nullable="false" />
+          <Property Name="LocationID" Type="String" MaxLength="20" Unicode="false" FixedLength="false" />
+          <Property Name="Secuence" Type="String" MaxLength="20" Unicode="false" FixedLength="false" />
+          <Property Name="ReasonsID" Type="String" MaxLength="20" Unicode="false" FixedLength="false" />
+          <Property Name="SalesStatus" Type="Int32" />
+          <Property Name="FreightTax" Type="Boolean" />
+          <Property Name="DateCreaty" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="DateAutorization" Type="DateTime" Precision="3" />
+          <Property Name="Beneficiario" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="ClienteCedula" Type="String" MaxLength="20" Unicode="false" FixedLength="false" />
+          <NavigationProperty Name="Almacenes" Relationship="MOISESModel.FK__Pedidos__Almacen__6E8B6712" FromRole="Pedidos" ToRole="Almacenes" />
+          <NavigationProperty Name="Almacenes1" Relationship="MOISESModel.FK_Pedidos_AlmacenEntrada" FromRole="Pedidos" ToRole="Almacenes" />
+          <NavigationProperty Name="Clientes" Relationship="MOISESModel.FK__Pedidos__Cliente__6F7F8B4B" FromRole="Pedidos" ToRole="Clientes" />
+          <NavigationProperty Name="Clientes1" Relationship="MOISESModel.FK_Pedidos_ShipToCustomerID" FromRole="Pedidos" ToRole="Clientes" />
+          <NavigationProperty Name="Empleados" Relationship="MOISESModel.FK__Pedidos__Vendedo__7908F585" FromRole="Pedidos" ToRole="Empleados" />
+          <NavigationProperty Name="Terminos1" Relationship="MOISESModel.FK__Pedidos__Termino__7814D14C" FromRole="Pedidos" ToRole="Terminos" />
+          <NavigationProperty Name="Pedidos_Detalles" Relationship="MOISESModel.FK__Pedidos_D__Numer__7EC1CEDB" FromRole="Pedidos" ToRole="Pedidos_Detalles" />
+        </EntityType>
+        <EntityType Name="Pedidos_Detalles">
+          <Key>
+            <PropertyRef Name="Contador" />
+          </Key>
+          <Property Name="Contador" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+          <Property Name="Numero" Type="Int32" Nullable="false" />
+          <Property Name="Renglon" Type="Int16" Nullable="false" />
+          <Property Name="Articulo" Type="String" MaxLength="20" Unicode="false" FixedLength="false" />
+          <Property Name="Descripcion" Type="String" MaxLength="500" Unicode="false" FixedLength="false" />
+          <Property Name="Precio" Type="Decimal" Nullable="false" Precision="19" Scale="4" />
+          <Property Name="Descuento" Type="Decimal" Nullable="false" Precision="28" Scale="6" />
+          <Property Name="Cantidad" Type="Decimal" Nullable="false" Precision="28" Scale="6" />
+          <Property Name="CantidadVendida" Type="Decimal" Nullable="false" Precision="28" Scale="6" />
+          <Property Name="Unidad" Type="String" MaxLength="20" Unicode="false" FixedLength="false" />
+          <Property Name="RenglonCombo" Type="Int16" Nullable="false" />
+          <Property Name="MontoImpuesto" Type="Decimal" Nullable="false" Precision="28" Scale="6" />
+          <Property Name="Proyecto" Type="String" MaxLength="20" Unicode="false" FixedLength="false" />
+          <Property Name="CostCenter" Type="String" MaxLength="20" Unicode="false" FixedLength="false" />
+          <Property Name="Lot" Type="String" MaxLength="20" Unicode="false" FixedLength="false" />
+          <Property Name="Parameter1" Type="String" MaxLength="20" Unicode="false" FixedLength="false" />
+          <Property Name="Parameter2" Type="String" MaxLength="20" Unicode="false" FixedLength="false" />
+          <Property Name="ParameterUOM" Type="String" MaxLength="20" Unicode="false" FixedLength="false" />
+          <Property Name="IsPromo" Type="Boolean" Nullable="false" />
+          <Property Name="FechaPromesa" Type="DateTime" Precision="3" />
+          <Property Name="Parameter1Quantity" Type="Single" Nullable="false" />
+          <Property Name="Parameter2Quantity" Type="Single" Nullable="false" />
+          <Property Name="Closed" Type="Boolean" Nullable="false" />
+          <Property Name="Attribute1" Type="String" MaxLength="20" Unicode="false" FixedLength="false" />
+          <Property Name="Attribute2" Type="String" MaxLength="20" Unicode="false" FixedLength="false" />
+          <Property Name="ItemTaxAmount" Type="Decimal" Nullable="false" Precision="19" Scale="4" />
+          <Property Name="Status" Type="Boolean" Nullable="false" />
+          <Property Name="Tax" Type="Boolean" Nullable="false" />
+          <Property Name="DiscountAmount" Type="Decimal" Nullable="false" Precision="19" Scale="4" />
+          <Property Name="TaxSchedule" Type="String" MaxLength="20" Unicode="false" FixedLength="false" />
+          <Property Name="DateReject" Type="DateTime" Precision="3" />
+          <NavigationProperty Name="Articulos" Relationship="MOISESModel.FK__Pedidos_D__Artic__7DCDAAA2" FromRole="Pedidos_Detalles" ToRole="Articulos" />
+          <NavigationProperty Name="Pedidos" Relationship="MOISESModel.FK__Pedidos_D__Numer__7EC1CEDB" FromRole="Pedidos_Detalles" ToRole="Pedidos" />
+        </EntityType>
+        <EntityType Name="Terminos">
+          <Key>
+            <PropertyRef Name="Codigo" />
+          </Key>
+          <Property Name="Codigo" Type="String" Nullable="false" MaxLength="20" Unicode="false" FixedLength="false" />
+          <Property Name="Descripcion" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="Dias" Type="Int16" Nullable="false" />
+          <Property Name="DiasBloqueo" Type="Int16" Nullable="false" />
+          <Property Name="DiasDescuento" Type="Int16" Nullable="false" />
+          <Property Name="PorcientoDescuento" Type="Decimal" Nullable="false" Precision="28" Scale="6" />
+          <Property Name="Observaciones" Type="String" MaxLength="Max" Unicode="false" FixedLength="false" />
+          <Property Name="DiscountDays2" Type="Int32" Nullable="false" />
+          <Property Name="DiscountPercent2" Type="Decimal" Nullable="false" Precision="28" Scale="6" />
+          <NavigationProperty Name="Clientes" Relationship="MOISESModel.FK__Clientes__Termin__467D75B8" FromRole="Terminos" ToRole="Clientes" />
+          <NavigationProperty Name="Pedidos" Relationship="MOISESModel.FK__Pedidos__Termino__7814D14C" FromRole="Terminos" ToRole="Pedidos" />
+        </EntityType>
+        <Association Name="FK__Pedidos__Almacen__6E8B6712">
+          <End Role="Almacenes" Type="MOISESModel.Almacenes" Multiplicity="0..1" />
+          <End Role="Pedidos" Type="MOISESModel.Pedidos" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Almacenes">
+              <PropertyRef Name="Codigo" />
+            </Principal>
+            <Dependent Role="Pedidos">
+              <PropertyRef Name="Almacen" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Pedidos_AlmacenEntrada">
+          <End Role="Almacenes" Type="MOISESModel.Almacenes" Multiplicity="0..1" />
+          <End Role="Pedidos" Type="MOISESModel.Pedidos" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Almacenes">
+              <PropertyRef Name="Codigo" />
+            </Principal>
+            <Dependent Role="Pedidos">
+              <PropertyRef Name="AlmacenEntrada" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Articulos__Artic__2A164134">
+          <End Role="Articulos" Type="MOISESModel.Articulos" Multiplicity="1" />
+          <End Role="ArticulosSuplidores" Type="MOISESModel.ArticulosSuplidores" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Articulos">
+              <PropertyRef Name="Codigo" />
+            </Principal>
+            <Dependent Role="ArticulosSuplidores">
+              <PropertyRef Name="Articulo" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Articulos__Artic__7D439ABD">
+          <End Role="Articulos" Type="MOISESModel.Articulos" Multiplicity="1" />
+          <End Role="ArticulosSuplidores" Type="MOISESModel.ArticulosSuplidores" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Articulos">
+              <PropertyRef Name="Codigo" />
+            </Principal>
+            <Dependent Role="ArticulosSuplidores">
+              <PropertyRef Name="Articulo" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Pedidos_D__Artic__7DCDAAA2">
+          <End Role="Articulos" Type="MOISESModel.Articulos" Multiplicity="0..1" />
+          <End Role="Pedidos_Detalles" Type="MOISESModel.Pedidos_Detalles" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Articulos">
+              <PropertyRef Name="Codigo" />
+            </Principal>
+            <Dependent Role="Pedidos_Detalles">
+              <PropertyRef Name="Articulo" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Articulos_EquivalentItemID">
+          <End Role="Articulos" Type="MOISESModel.Articulos" Multiplicity="0..1" />
+          <End Role="Articulos1" Type="MOISESModel.Articulos" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Articulos">
+              <PropertyRef Name="Codigo" />
+            </Principal>
+            <Dependent Role="Articulos1">
+              <PropertyRef Name="EquivalentItemID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Articulos_OfferItemID">
+          <End Role="Articulos" Type="MOISESModel.Articulos" Multiplicity="0..1" />
+          <End Role="Articulos1" Type="MOISESModel.Articulos" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Articulos">
+              <PropertyRef Name="Codigo" />
+            </Principal>
+            <Dependent Role="Articulos1">
+              <PropertyRef Name="OfferItemID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Clientes__ARResp__382F5661">
+          <End Role="Empleados" Type="MOISESModel.Empleados" Multiplicity="0..1" />
+          <End Role="Clientes" Type="MOISESModel.Clientes" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Empleados">
+              <PropertyRef Name="Codigo" />
+            </Principal>
+            <Dependent Role="Clientes">
+              <PropertyRef Name="ARResponsible" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Clientes__Curren__3BFFE745">
+          <End Role="Monedas" Type="MOISESModel.Monedas" Multiplicity="0..1" />
+          <End Role="Clientes" Type="MOISESModel.Clientes" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Monedas">
+              <PropertyRef Name="Codigo" />
+            </Principal>
+            <Dependent Role="Clientes">
+              <PropertyRef Name="CurrencyID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Clientes__Termin__467D75B8">
+          <End Role="Terminos" Type="MOISESModel.Terminos" Multiplicity="0..1" />
+          <End Role="Clientes" Type="MOISESModel.Clientes" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Terminos">
+              <PropertyRef Name="Codigo" />
+            </Principal>
+            <Dependent Role="Clientes">
+              <PropertyRef Name="Terminos" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Clientes__Vended__4A4E069C">
+          <End Role="Empleados" Type="MOISESModel.Empleados" Multiplicity="0..1" />
+          <End Role="Clientes" Type="MOISESModel.Clientes" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Empleados">
+              <PropertyRef Name="Codigo" />
+            </Principal>
+            <Dependent Role="Clientes">
+              <PropertyRef Name="Vendedor" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Pedidos__Cliente__6F7F8B4B">
+          <End Role="Clientes" Type="MOISESModel.Clientes" Multiplicity="0..1" />
+          <End Role="Pedidos" Type="MOISESModel.Pedidos" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Clientes">
+              <PropertyRef Name="Codigo" />
+            </Principal>
+            <Dependent Role="Pedidos">
+              <PropertyRef Name="Cliente" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Clientes_Repartidor">
+          <End Role="Empleados" Type="MOISESModel.Empleados" Multiplicity="0..1" />
+          <End Role="Clientes" Type="MOISESModel.Clientes" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Empleados">
+              <PropertyRef Name="Codigo" />
+            </Principal>
+            <Dependent Role="Clientes">
+              <PropertyRef Name="Repartidor" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Pedidos_ShipToCustomerID">
+          <End Role="Clientes" Type="MOISESModel.Clientes" Multiplicity="0..1" />
+          <End Role="Pedidos" Type="MOISESModel.Pedidos" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Clientes">
+              <PropertyRef Name="Codigo" />
+            </Principal>
+            <Dependent Role="Pedidos">
+              <PropertyRef Name="ShipToCustomerID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Pedidos__Vendedo__7908F585">
+          <End Role="Empleados" Type="MOISESModel.Empleados" Multiplicity="0..1" />
+          <End Role="Pedidos" Type="MOISESModel.Pedidos" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Empleados">
+              <PropertyRef Name="Codigo" />
+            </Principal>
+            <Dependent Role="Pedidos">
+              <PropertyRef Name="Vendedor" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Empleados_SupervisorID">
+          <End Role="Empleados" Type="MOISESModel.Empleados" Multiplicity="0..1" />
+          <End Role="Empleados1" Type="MOISESModel.Empleados" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Empleados">
+              <PropertyRef Name="Codigo" />
+            </Principal>
+            <Dependent Role="Empleados1">
+              <PropertyRef Name="SupervisorID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Pedidos__Termino__7814D14C">
+          <End Role="Terminos" Type="MOISESModel.Terminos" Multiplicity="0..1" />
+          <End Role="Pedidos" Type="MOISESModel.Pedidos" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Terminos">
+              <PropertyRef Name="Codigo" />
+            </Principal>
+            <Dependent Role="Pedidos">
+              <PropertyRef Name="Terminos" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Pedidos_D__Numer__7EC1CEDB">
+          <End Role="Pedidos" Type="MOISESModel.Pedidos" Multiplicity="1" />
+          <End Role="Pedidos_Detalles" Type="MOISESModel.Pedidos_Detalles" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Pedidos">
+              <PropertyRef Name="Numero" />
+            </Principal>
+            <Dependent Role="Pedidos_Detalles">
+              <PropertyRef Name="Numero" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="MOISESModelStoreContainer" CdmEntityContainer="MOISESEntities">
+          <EntitySetMapping Name="Almacenes">
+            <EntityTypeMapping TypeName="MOISESModel.Almacenes">
+              <MappingFragment StoreEntitySet="Almacenes">
+                <ScalarProperty Name="Codigo" ColumnName="Codigo" />
+                <ScalarProperty Name="Descripcion" ColumnName="Descripcion" />
+                <ScalarProperty Name="CuentaContable" ColumnName="CuentaContable" />
+                <ScalarProperty Name="Encargado" ColumnName="Encargado" />
+                <ScalarProperty Name="Direccion" ColumnName="Direccion" />
+                <ScalarProperty Name="Ciudad" ColumnName="Ciudad" />
+                <ScalarProperty Name="Pais" ColumnName="Pais" />
+                <ScalarProperty Name="Telefono" ColumnName="Telefono" />
+                <ScalarProperty Name="Facsimil" ColumnName="Facsimil" />
+                <ScalarProperty Name="Observaciones" ColumnName="Observaciones" />
+                <ScalarProperty Name="DivisionID" ColumnName="DivisionID" />
+                <ScalarProperty Name="ARDivisionID" ColumnName="ARDivisionID" />
+                <ScalarProperty Name="PermitirLotesCuarentenaPendiente" ColumnName="PermitirLotesCuarentenaPendiente" />
+                <ScalarProperty Name="PermitirLotesCuarentenaAceptado" ColumnName="PermitirLotesCuarentenaAceptado" />
+                <ScalarProperty Name="PermitirLotesCuarentenaRechazado" ColumnName="PermitirLotesCuarentenaRechazado" />
+                <ScalarProperty Name="DefaultUOMSalesDocs" ColumnName="DefaultUOMSalesDocs" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Articulos">
+            <EntityTypeMapping TypeName="MOISESModel.Articulos">
+              <MappingFragment StoreEntitySet="Articulos">
+                <ScalarProperty Name="Codigo" ColumnName="Codigo" />
+                <ScalarProperty Name="Descripcion" ColumnName="Descripcion" />
+                <ScalarProperty Name="DescripcionLarga" ColumnName="DescripcionLarga" />
+                <ScalarProperty Name="Tipo" ColumnName="Tipo" />
+                <ScalarProperty Name="CodigoBarra" ColumnName="CodigoBarra" />
+                <ScalarProperty Name="Categoria" ColumnName="Categoria" />
+                <ScalarProperty Name="SubCategoria" ColumnName="SubCategoria" />
+                <ScalarProperty Name="UnidadCompra" ColumnName="UnidadCompra" />
+                <ScalarProperty Name="UnidadVenta" ColumnName="UnidadVenta" />
+                <ScalarProperty Name="UnidadReporte" ColumnName="UnidadReporte" />
+                <ScalarProperty Name="Costo" ColumnName="Costo" />
+                <ScalarProperty Name="CostoPromedio" ColumnName="CostoPromedio" />
+                <ScalarProperty Name="Activo" ColumnName="Activo" />
+                <ScalarProperty Name="ClasificacionABC" ColumnName="ClasificacionABC" />
+                <ScalarProperty Name="ConfiabilidadServicio" ColumnName="ConfiabilidadServicio" />
+                <ScalarProperty Name="Observaciones" ColumnName="Observaciones" />
+                <ScalarProperty Name="Impuesto" ColumnName="Impuesto" />
+                <ScalarProperty Name="SuplidorPreferido" ColumnName="SuplidorPreferido" />
+                <ScalarProperty Name="FrecuenciaInventario" ColumnName="FrecuenciaInventario" />
+                <ScalarProperty Name="RequiereLote" ColumnName="RequiereLote" />
+                <ScalarProperty Name="MultiploCompra" ColumnName="MultiploCompra" />
+                <ScalarProperty Name="MultiploVenta" ColumnName="MultiploVenta" />
+                <ScalarProperty Name="MetodoCosteo" ColumnName="MetodoCosteo" />
+                <ScalarProperty Name="Peso" ColumnName="Peso" />
+                <ScalarProperty Name="UnidadPeso" ColumnName="UnidadPeso" />
+                <ScalarProperty Name="Familia" ColumnName="Familia" />
+                <ScalarProperty Name="Fabricante" ColumnName="Fabricante" />
+                <ScalarProperty Name="PrecioCompra" ColumnName="PrecioCompra" />
+                <ScalarProperty Name="PermitirNegativos" ColumnName="PermitirNegativos" />
+                <ScalarProperty Name="DescripcionCompras" ColumnName="DescripcionCompras" />
+                <ScalarProperty Name="Serializable" ColumnName="Serializable" />
+                <ScalarProperty Name="Assambly" ColumnName="Assambly" />
+                <ScalarProperty Name="Photo" ColumnName="Photo" />
+                <ScalarProperty Name="QuantityDecimals" ColumnName="QuantityDecimals" />
+                <ScalarProperty Name="AmountDecimals" ColumnName="AmountDecimals" />
+                <ScalarProperty Name="ComissionPercent" ColumnName="ComissionPercent" />
+                <ScalarProperty Name="TaxSchedule" ColumnName="TaxSchedule" />
+                <ScalarProperty Name="Reference" ColumnName="Reference" />
+                <ScalarProperty Name="NonInventory" ColumnName="NonInventory" />
+                <ScalarProperty Name="Attribute1" ColumnName="Attribute1" />
+                <ScalarProperty Name="Attribute2" ColumnName="Attribute2" />
+                <ScalarProperty Name="Income_Account" ColumnName="Income_Account" />
+                <ScalarProperty Name="Inventory_Account" ColumnName="Inventory_Account" />
+                <ScalarProperty Name="Cost_Sales_Account" ColumnName="Cost_Sales_Account" />
+                <ScalarProperty Name="Sales_Discount_Account" ColumnName="Sales_Discount_Account" />
+                <ScalarProperty Name="Sales_Returns_Account" ColumnName="Sales_Returns_Account" />
+                <ScalarProperty Name="Adjustments_Account" ColumnName="Adjustments_Account" />
+                <ScalarProperty Name="Commisionable" ColumnName="Commisionable" />
+                <ScalarProperty Name="OriginID" ColumnName="OriginID" />
+                <ScalarProperty Name="ColorID" ColumnName="ColorID" />
+                <ScalarProperty Name="SubFamilyID" ColumnName="SubFamilyID" />
+                <ScalarProperty Name="Presentation" ColumnName="Presentation" />
+                <ScalarProperty Name="MaxQuantity" ColumnName="MaxQuantity" />
+                <ScalarProperty Name="MinQuantity" ColumnName="MinQuantity" />
+                <ScalarProperty Name="ProductionItem" ColumnName="ProductionItem" />
+                <ScalarProperty Name="SalesItem" ColumnName="SalesItem" />
+                <ScalarProperty Name="Common" ColumnName="Common" />
+                <ScalarProperty Name="ComissionLevelID" ColumnName="ComissionLevelID" />
+                <ScalarProperty Name="WarrantyDays" ColumnName="WarrantyDays" />
+                <ScalarProperty Name="WarrantyCriteria" ColumnName="WarrantyCriteria" />
+                <ScalarProperty Name="WarrantyQuantity" ColumnName="WarrantyQuantity" />
+                <ScalarProperty Name="OfferID" ColumnName="OfferID" />
+                <ScalarProperty Name="Billable" ColumnName="Billable" />
+                <ScalarProperty Name="SubCostCenterID" ColumnName="SubCostCenterID" />
+                <ScalarProperty Name="BrandID" ColumnName="BrandID" />
+                <ScalarProperty Name="Height" ColumnName="Height" />
+                <ScalarProperty Name="Width" ColumnName="Width" />
+                <ScalarProperty Name="ProductionCostAccount" ColumnName="ProductionCostAccount" />
+                <ScalarProperty Name="BarUOID" ColumnName="BarUOID" />
+                <ScalarProperty Name="CreateEquipmentRecord" ColumnName="CreateEquipmentRecord" />
+                <ScalarProperty Name="ExigirDiasEntrega" ColumnName="ExigirDiasEntrega" />
+                <ScalarProperty Name="ExigirDiasInstalacion" ColumnName="ExigirDiasInstalacion" />
+                <ScalarProperty Name="ExigirDiasGarantia" ColumnName="ExigirDiasGarantia" />
+                <ScalarProperty Name="PreviousID" ColumnName="PreviousID" />
+                <ScalarProperty Name="ProductionFactor" ColumnName="ProductionFactor" />
+                <ScalarProperty Name="ReportUOMID3" ColumnName="ReportUOMID3" />
+                <ScalarProperty Name="ManufacturerReference" ColumnName="ManufacturerReference" />
+                <ScalarProperty Name="UOMPlanID" ColumnName="UOMPlanID" />
+                <ScalarProperty Name="FreightAmount" ColumnName="FreightAmount" />
+                <ScalarProperty Name="PurchasesName" ColumnName="PurchasesName" />
+                <ScalarProperty Name="AlternateName" ColumnName="AlternateName" />
+                <ScalarProperty Name="PlannerID" ColumnName="PlannerID" />
+                <ScalarProperty Name="Margin" ColumnName="Margin" />
+                <ScalarProperty Name="DeductVendorComission" ColumnName="DeductVendorComission" />
+                <ScalarProperty Name="BonusAccount" ColumnName="BonusAccount" />
+                <ScalarProperty Name="WarnIfNegativeOnQuote" ColumnName="WarnIfNegativeOnQuote" />
+                <ScalarProperty Name="LandedCostFactor" ColumnName="LandedCostFactor" />
+                <ScalarProperty Name="PurchaseItem" ColumnName="PurchaseItem" />
+                <ScalarProperty Name="AttributeList1ID" ColumnName="AttributeList1ID" />
+                <ScalarProperty Name="AttributeList2ID" ColumnName="AttributeList2ID" />
+                <ScalarProperty Name="RequiresItemLocations" ColumnName="RequiresItemLocations" />
+                <ScalarProperty Name="PurchaseAccountID" ColumnName="PurchaseAccountID" />
+                <ScalarProperty Name="ItemTaxAmount" ColumnName="ItemTaxAmount" />
+                <ScalarProperty Name="ItemTaxAccount" ColumnName="ItemTaxAccount" />
+                <ScalarProperty Name="ItemTaxPercent" ColumnName="ItemTaxPercent" />
+                <ScalarProperty Name="Custom1" ColumnName="Custom1" />
+                <ScalarProperty Name="Custom2" ColumnName="Custom2" />
+                <ScalarProperty Name="Custom3" ColumnName="Custom3" />
+                <ScalarProperty Name="Custom4" ColumnName="Custom4" />
+                <ScalarProperty Name="Custom5" ColumnName="Custom5" />
+                <ScalarProperty Name="Custom6" ColumnName="Custom6" />
+                <ScalarProperty Name="CreditSaleExpirationWarning" ColumnName="CreditSaleExpirationWarning" />
+                <ScalarProperty Name="CashSaleExpirationWarning" ColumnName="CashSaleExpirationWarning" />
+                <ScalarProperty Name="Sales_Dispatchs_AccountID" ColumnName="Sales_Dispatchs_AccountID" />
+                <ScalarProperty Name="DocClassID" ColumnName="DocClassID" />
+                <ScalarProperty Name="CalculatePrices" ColumnName="CalculatePrices" />
+                <ScalarProperty Name="PurchasePriceCurrencyID" ColumnName="PurchasePriceCurrencyID" />
+                <ScalarProperty Name="WarehouseID" ColumnName="WarehouseID" />
+                <ScalarProperty Name="EquivalentItemID" ColumnName="EquivalentItemID" />
+                <ScalarProperty Name="EquivalentGroup" ColumnName="EquivalentGroup" />
+                <ScalarProperty Name="QuarantineDays" ColumnName="QuarantineDays" />
+                <ScalarProperty Name="ItemCubicaciones" ColumnName="ItemCubicaciones" />
+                <ScalarProperty Name="ItemAvances" ColumnName="ItemAvances" />
+                <ScalarProperty Name="ItemRetenciones" ColumnName="ItemRetenciones" />
+                <ScalarProperty Name="AllowUseOnHold" ColumnName="AllowUseOnHold" />
+                <ScalarProperty Name="TechnicalComission" ColumnName="TechnicalComission" />
+                <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+                <ScalarProperty Name="AllowChangeItemDescription" ColumnName="AllowChangeItemDescription" />
+                <ScalarProperty Name="OfferItemID" ColumnName="OfferItemID" />
+                <ScalarProperty Name="DontAllowReceptionsWithNoCost" ColumnName="DontAllowReceptionsWithNoCost" />
+                <ScalarProperty Name="ManufacturingTolerance" ColumnName="ManufacturingTolerance" />
+                <ScalarProperty Name="MaterialTolerance" ColumnName="MaterialTolerance" />
+                <ScalarProperty Name="ManagerComissionPercent" ColumnName="ManagerComissionPercent" />
+                <ScalarProperty Name="PlacementDate" ColumnName="PlacementDate" />
+                <ScalarProperty Name="UnitB_ID" ColumnName="UnitB_ID" />
+                <ScalarProperty Name="IsSparePart" ColumnName="IsSparePart" />
+                <ScalarProperty Name="MaterialType" ColumnName="MaterialType" />
+                <ScalarProperty Name="TransitInventoryAccount" ColumnName="TransitInventoryAccount" />
+                <ScalarProperty Name="LotItemDuplicate" ColumnName="LotItemDuplicate" />
+                <ScalarProperty Name="CargoDevolucion" ColumnName="CargoDevolucion" />
+                <ScalarProperty Name="CtaCostoContrato" ColumnName="CtaCostoContrato" />
+                <ScalarProperty Name="CtaCostoCompMenuda" ColumnName="CtaCostoCompMenuda" />
+                <ScalarProperty Name="CtaCostoComision" ColumnName="CtaCostoComision" />
+                <ScalarProperty Name="DevContrato" ColumnName="DevContrato" />
+                <ScalarProperty Name="DevCompMenuda" ColumnName="DevCompMenuda" />
+                <ScalarProperty Name="DevComision" ColumnName="DevComision" />
+                <ScalarProperty Name="PublishAdmWebOrders" ColumnName="PublishAdmWebOrders" />
+                <ScalarProperty Name="Contrato" ColumnName="Contrato" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="ArticulosSuplidores">
+            <EntityTypeMapping TypeName="MOISESModel.ArticulosSuplidores">
+              <MappingFragment StoreEntitySet="ArticulosSuplidores">
+                <ScalarProperty Name="Contador" ColumnName="Contador" />
+                <ScalarProperty Name="Suplidor" ColumnName="Suplidor" />
+                <ScalarProperty Name="Articulo" ColumnName="Articulo" />
+                <ScalarProperty Name="Referencia" ColumnName="Referencia" />
+                <ScalarProperty Name="Precio1" ColumnName="Precio1" />
+                <ScalarProperty Name="DeliveryTime" ColumnName="DeliveryTime" />
+                <ScalarProperty Name="OfferQuantity" ColumnName="OfferQuantity" />
+                <ScalarProperty Name="Offer" ColumnName="Offer" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Clientes">
+            <EntityTypeMapping TypeName="MOISESModel.Clientes">
+              <MappingFragment StoreEntitySet="Clientes">
+                <ScalarProperty Name="Codigo" ColumnName="Codigo" />
+                <ScalarProperty Name="RazonSocial" ColumnName="RazonSocial" />
+                <ScalarProperty Name="Contacto" ColumnName="Contacto" />
+                <ScalarProperty Name="Cedula" ColumnName="Cedula" />
+                <ScalarProperty Name="Contrato" ColumnName="Contrato" />
+                <ScalarProperty Name="Telefono" ColumnName="Telefono" />
+                <ScalarProperty Name="Telefono2" ColumnName="Telefono2" />
+                <ScalarProperty Name="Facsimil" ColumnName="Facsimil" />
+                <ScalarProperty Name="CorreoElectronico" ColumnName="CorreoElectronico" />
+                <ScalarProperty Name="Territorio" ColumnName="Territorio" />
+                <ScalarProperty Name="Tipo" ColumnName="Tipo" />
+                <ScalarProperty Name="LimiteCredito" ColumnName="LimiteCredito" />
+                <ScalarProperty Name="Condiciones" ColumnName="Condiciones" />
+                <ScalarProperty Name="Observaciones" ColumnName="Observaciones" />
+                <ScalarProperty Name="MontoUltimaCompra" ColumnName="MontoUltimaCompra" />
+                <ScalarProperty Name="NumeroRegistro" ColumnName="NumeroRegistro" />
+                <ScalarProperty Name="Categoria" ColumnName="Categoria" />
+                <ScalarProperty Name="Descuento" ColumnName="Descuento" />
+                <ScalarProperty Name="Vendedor" ColumnName="Vendedor" />
+                <ScalarProperty Name="PaginaWeb" ColumnName="PaginaWeb" />
+                <ScalarProperty Name="Anticipos" ColumnName="Anticipos" />
+                <ScalarProperty Name="ChequesDevueltos" ColumnName="ChequesDevueltos" />
+                <ScalarProperty Name="Terminos" ColumnName="Terminos" />
+                <ScalarProperty Name="FechaCreacion" ColumnName="FechaCreacion" />
+                <ScalarProperty Name="EmployeeQuantity" ColumnName="EmployeeQuantity" />
+                <ScalarProperty Name="CurrentVolume" ColumnName="CurrentVolume" />
+                <ScalarProperty Name="PotentialVolume" ColumnName="PotentialVolume" />
+                <ScalarProperty Name="Profile" ColumnName="Profile" />
+                <ScalarProperty Name="Inactive" ColumnName="Inactive" />
+                <ScalarProperty Name="CurrencyID" ColumnName="CurrencyID" />
+                <ScalarProperty Name="PriceLevelID" ColumnName="PriceLevelID" />
+                <ScalarProperty Name="BillingContact" ColumnName="BillingContact" />
+                <ScalarProperty Name="Apellidos" ColumnName="Apellidos" />
+                <ScalarProperty Name="Nombres" ColumnName="Nombres" />
+                <ScalarProperty Name="Asistant" ColumnName="Asistant" />
+                <ScalarProperty Name="Mobile" ColumnName="Mobile" />
+                <ScalarProperty Name="Asistant_Phone" ColumnName="Asistant_Phone" />
+                <ScalarProperty Name="GroupID" ColumnName="GroupID" />
+                <ScalarProperty Name="Prospect" ColumnName="Prospect" />
+                <ScalarProperty Name="StatusID" ColumnName="StatusID" />
+                <ScalarProperty Name="TypeID" ColumnName="TypeID" />
+                <ScalarProperty Name="RecurringInvoiceID" ColumnName="RecurringInvoiceID" />
+                <ScalarProperty Name="Birthday" ColumnName="Birthday" />
+                <ScalarProperty Name="CancelationDate" ColumnName="CancelationDate" />
+                <ScalarProperty Name="CancelationReasonID" ColumnName="CancelationReasonID" />
+                <ScalarProperty Name="ReferenceID" ColumnName="ReferenceID" />
+                <ScalarProperty Name="ARResponsible" ColumnName="ARResponsible" />
+                <ScalarProperty Name="Owner" ColumnName="Owner" />
+                <ScalarProperty Name="Owner_SSN" ColumnName="Owner_SSN" />
+                <ScalarProperty Name="MaxSale" ColumnName="MaxSale" />
+                <ScalarProperty Name="InactiveDays" ColumnName="InactiveDays" />
+                <ScalarProperty Name="LocationID" ColumnName="LocationID" />
+                <ScalarProperty Name="InstallationCode" ColumnName="InstallationCode" />
+                <ScalarProperty Name="StateID" ColumnName="StateID" />
+                <ScalarProperty Name="SectorID" ColumnName="SectorID" />
+                <ScalarProperty Name="SubClassID" ColumnName="SubClassID" />
+                <ScalarProperty Name="ShipToAddressID" ColumnName="ShipToAddressID" />
+                <ScalarProperty Name="BillToAddressID" ColumnName="BillToAddressID" />
+                <ScalarProperty Name="TaxScheduleID" ColumnName="TaxScheduleID" />
+                <ScalarProperty Name="ComissionLevelID" ColumnName="ComissionLevelID" />
+                <ScalarProperty Name="ManagementComissionLevelID" ColumnName="ManagementComissionLevelID" />
+                <ScalarProperty Name="VendorID" ColumnName="VendorID" />
+                <ScalarProperty Name="Gender" ColumnName="Gender" />
+                <ScalarProperty Name="RegionID" ColumnName="RegionID" />
+                <ScalarProperty Name="ComercialName" ColumnName="ComercialName" />
+                <ScalarProperty Name="GenerateNCF" ColumnName="GenerateNCF" />
+                <ScalarProperty Name="NCF_Sequence" ColumnName="NCF_Sequence" />
+                <ScalarProperty Name="Custom1" ColumnName="Custom1" />
+                <ScalarProperty Name="Custom2" ColumnName="Custom2" />
+                <ScalarProperty Name="Custom3" ColumnName="Custom3" />
+                <ScalarProperty Name="Custom4" ColumnName="Custom4" />
+                <ScalarProperty Name="Custom5" ColumnName="Custom5" />
+                <ScalarProperty Name="Custom6" ColumnName="Custom6" />
+                <ScalarProperty Name="FechaInactivo" ColumnName="FechaInactivo" />
+                <ScalarProperty Name="CustomInvoiceFormat" ColumnName="CustomInvoiceFormat" />
+                <ScalarProperty Name="RequireQuoteOnService" ColumnName="RequireQuoteOnService" />
+                <ScalarProperty Name="ShipToAddress" ColumnName="ShipToAddress" />
+                <ScalarProperty Name="ShipToCityID" ColumnName="ShipToCityID" />
+                <ScalarProperty Name="ShipToStateID" ColumnName="ShipToStateID" />
+                <ScalarProperty Name="ShipToCountryID" ColumnName="ShipToCountryID" />
+                <ScalarProperty Name="ShipToPhone1" ColumnName="ShipToPhone1" />
+                <ScalarProperty Name="ShipToPhone2" ColumnName="ShipToPhone2" />
+                <ScalarProperty Name="ShipToFax" ColumnName="ShipToFax" />
+                <ScalarProperty Name="ShipToContact" ColumnName="ShipToContact" />
+                <ScalarProperty Name="BillToAddress" ColumnName="BillToAddress" />
+                <ScalarProperty Name="BillToCityID" ColumnName="BillToCityID" />
+                <ScalarProperty Name="BillToStateID" ColumnName="BillToStateID" />
+                <ScalarProperty Name="BillToCountryID" ColumnName="BillToCountryID" />
+                <ScalarProperty Name="BillToPhone1" ColumnName="BillToPhone1" />
+                <ScalarProperty Name="BillToPhone2" ColumnName="BillToPhone2" />
+                <ScalarProperty Name="BillToFax" ColumnName="BillToFax" />
+                <ScalarProperty Name="BillToContact" ColumnName="BillToContact" />
+                <ScalarProperty Name="Legal" ColumnName="Legal" />
+                <ScalarProperty Name="Repartidor" ColumnName="Repartidor" />
+                <ScalarProperty Name="BusinessActivity" ColumnName="BusinessActivity" />
+                <ScalarProperty Name="VisitDay1" ColumnName="VisitDay1" />
+                <ScalarProperty Name="VisitDay2" ColumnName="VisitDay2" />
+                <ScalarProperty Name="VisitDay3" ColumnName="VisitDay3" />
+                <ScalarProperty Name="VisitDay4" ColumnName="VisitDay4" />
+                <ScalarProperty Name="VisitDay5" ColumnName="VisitDay5" />
+                <ScalarProperty Name="VisitDay6" ColumnName="VisitDay6" />
+                <ScalarProperty Name="VisitDay7" ColumnName="VisitDay7" />
+                <ScalarProperty Name="Role" ColumnName="Role" />
+                <ScalarProperty Name="DontAllowServiceRequests" ColumnName="DontAllowServiceRequests" />
+                <ScalarProperty Name="TechnicalContactEMail" ColumnName="TechnicalContactEMail" />
+                <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+                <ScalarProperty Name="ContactInterval" ColumnName="ContactInterval" />
+                <ScalarProperty Name="ISCustomer" ColumnName="ISCustomer" />
+                <ScalarProperty Name="ISPromoContact" ColumnName="ISPromoContact" />
+                <ScalarProperty Name="Visitday8" ColumnName="Visitday8" />
+                <ScalarProperty Name="Visitday9" ColumnName="Visitday9" />
+                <ScalarProperty Name="Visitweek" ColumnName="Visitweek" />
+                <ScalarProperty Name="IsEmployee" ColumnName="IsEmployee" />
+                <ScalarProperty Name="UnitB_ID" ColumnName="UnitB_ID" />
+                <ScalarProperty Name="Empleado" ColumnName="Empleado" />
+                <ScalarProperty Name="Week1" ColumnName="Week1" />
+                <ScalarProperty Name="Week2" ColumnName="Week2" />
+                <ScalarProperty Name="Week3" ColumnName="Week3" />
+                <ScalarProperty Name="Week4" ColumnName="Week4" />
+                <ScalarProperty Name="Week5" ColumnName="Week5" />
+                <ScalarProperty Name="PersonaFisica" ColumnName="PersonaFisica" />
+                <ScalarProperty Name="Pais" ColumnName="Pais" />
+                <ScalarProperty Name="ZonaGeografica" ColumnName="ZonaGeografica" />
+                <ScalarProperty Name="NoImportacion" ColumnName="NoImportacion" />
+                <ScalarProperty Name="IdentificadorFiscal" ColumnName="IdentificadorFiscal" />
+                <ScalarProperty Name="PublishAdmWebOrders" ColumnName="PublishAdmWebOrders" />
+                <ScalarProperty Name="AdmWebOrdersPassword" ColumnName="AdmWebOrdersPassword" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Empleados">
+            <EntityTypeMapping TypeName="MOISESModel.Empleados">
+              <MappingFragment StoreEntitySet="Empleados">
+                <ScalarProperty Name="Codigo" ColumnName="Codigo" />
+                <ScalarProperty Name="Apellidos" ColumnName="Apellidos" />
+                <ScalarProperty Name="Nombres" ColumnName="Nombres" />
+                <ScalarProperty Name="Activo" ColumnName="Activo" />
+                <ScalarProperty Name="Cedula" ColumnName="Cedula" />
+                <ScalarProperty Name="Telefono" ColumnName="Telefono" />
+                <ScalarProperty Name="Telefono2" ColumnName="Telefono2" />
+                <ScalarProperty Name="Telefono3" ColumnName="Telefono3" />
+                <ScalarProperty Name="Celular" ColumnName="Celular" />
+                <ScalarProperty Name="Beeper" ColumnName="Beeper" />
+                <ScalarProperty Name="Nacionalidad" ColumnName="Nacionalidad" />
+                <ScalarProperty Name="Sexo" ColumnName="Sexo" />
+                <ScalarProperty Name="Pensionado" ColumnName="Pensionado" />
+                <ScalarProperty Name="FechaNacimiento" ColumnName="FechaNacimiento" />
+                <ScalarProperty Name="EstadoCivil" ColumnName="EstadoCivil" />
+                <ScalarProperty Name="NombreConyugue" ColumnName="NombreConyugue" />
+                <ScalarProperty Name="NumeroDependientes" ColumnName="NumeroDependientes" />
+                <ScalarProperty Name="LugarNacimiento" ColumnName="LugarNacimiento" />
+                <ScalarProperty Name="Tipo" ColumnName="Tipo" />
+                <ScalarProperty Name="Direccion" ColumnName="Direccion" />
+                <ScalarProperty Name="Sector" ColumnName="Sector" />
+                <ScalarProperty Name="Ciudad" ColumnName="Ciudad" />
+                <ScalarProperty Name="Provincia" ColumnName="Provincia" />
+                <ScalarProperty Name="CodigoPostal" ColumnName="CodigoPostal" />
+                <ScalarProperty Name="Pais" ColumnName="Pais" />
+                <ScalarProperty Name="DireccionTemporal" ColumnName="DireccionTemporal" />
+                <ScalarProperty Name="SectorTemporal" ColumnName="SectorTemporal" />
+                <ScalarProperty Name="CiudadTemporal" ColumnName="CiudadTemporal" />
+                <ScalarProperty Name="ProvinciaTemporal" ColumnName="ProvinciaTemporal" />
+                <ScalarProperty Name="CodigoPostalTemporal" ColumnName="CodigoPostalTemporal" />
+                <ScalarProperty Name="PaisTemporal" ColumnName="PaisTemporal" />
+                <ScalarProperty Name="Posicion" ColumnName="Posicion" />
+                <ScalarProperty Name="Departamento" ColumnName="Departamento" />
+                <ScalarProperty Name="Sucursal" ColumnName="Sucursal" />
+                <ScalarProperty Name="Categoria" ColumnName="Categoria" />
+                <ScalarProperty Name="FechaInicio" ColumnName="FechaInicio" />
+                <ScalarProperty Name="FechaTermino" ColumnName="FechaTermino" />
+                <ScalarProperty Name="Vendedor" ColumnName="Vendedor" />
+                <ScalarProperty Name="DescontarSeguro" ColumnName="DescontarSeguro" />
+                <ScalarProperty Name="Salario" ColumnName="Salario" />
+                <ScalarProperty Name="FechaCambio" ColumnName="FechaCambio" />
+                <ScalarProperty Name="NoAfiliacion" ColumnName="NoAfiliacion" />
+                <ScalarProperty Name="CuentaBancaria" ColumnName="CuentaBancaria" />
+                <ScalarProperty Name="MetodoPago" ColumnName="MetodoPago" />
+                <ScalarProperty Name="FrecuenciaPago" ColumnName="FrecuenciaPago" />
+                <ScalarProperty Name="NivelComision" ColumnName="NivelComision" />
+                <ScalarProperty Name="VacacionesFecha" ColumnName="VacacionesFecha" />
+                <ScalarProperty Name="VacacionesDias" ColumnName="VacacionesDias" />
+                <ScalarProperty Name="VacacionesTomados" ColumnName="VacacionesTomados" />
+                <ScalarProperty Name="VacacionesPendientes" ColumnName="VacacionesPendientes" />
+                <ScalarProperty Name="Observaciones" ColumnName="Observaciones" />
+                <ScalarProperty Name="Foto" ColumnName="Foto" />
+                <ScalarProperty Name="Personalizado1" ColumnName="Personalizado1" />
+                <ScalarProperty Name="Personalizado2" ColumnName="Personalizado2" />
+                <ScalarProperty Name="Personalizado3" ColumnName="Personalizado3" />
+                <ScalarProperty Name="Personalizado4" ColumnName="Personalizado4" />
+                <ScalarProperty Name="Personalizado5" ColumnName="Personalizado5" />
+                <ScalarProperty Name="Acumulated_Periods" ColumnName="Acumulated_Periods" />
+                <ScalarProperty Name="Acumulated_Salary" ColumnName="Acumulated_Salary" />
+                <ScalarProperty Name="Acumulated_Tax" ColumnName="Acumulated_Tax" />
+                <ScalarProperty Name="ARS" ColumnName="ARS" />
+                <ScalarProperty Name="AFP" ColumnName="AFP" />
+                <ScalarProperty Name="Laboral_Risk" ColumnName="Laboral_Risk" />
+                <ScalarProperty Name="Acumulated_Income" ColumnName="Acumulated_Income" />
+                <ScalarProperty Name="ComisionPayablesAccount" ColumnName="ComisionPayablesAccount" />
+                <ScalarProperty Name="ComisionExpenseAccount" ColumnName="ComisionExpenseAccount" />
+                <ScalarProperty Name="ComissionPercent" ColumnName="ComissionPercent" />
+                <ScalarProperty Name="Initials" ColumnName="Initials" />
+                <ScalarProperty Name="HourFee" ColumnName="HourFee" />
+                <ScalarProperty Name="Segment1" ColumnName="Segment1" />
+                <ScalarProperty Name="Segment2" ColumnName="Segment2" />
+                <ScalarProperty Name="PayablesAccount" ColumnName="PayablesAccount" />
+                <ScalarProperty Name="Segment0" ColumnName="Segment0" />
+                <ScalarProperty Name="ReceivablesAccount" ColumnName="ReceivablesAccount" />
+                <ScalarProperty Name="SegmentCompany" ColumnName="SegmentCompany" />
+                <ScalarProperty Name="Segment1_Liability" ColumnName="Segment1_Liability" />
+                <ScalarProperty Name="Segment1_Expense" ColumnName="Segment1_Expense" />
+                <ScalarProperty Name="Segment2_Liability" ColumnName="Segment2_Liability" />
+                <ScalarProperty Name="Segment2_Expense" ColumnName="Segment2_Expense" />
+                <ScalarProperty Name="Bank" ColumnName="Bank" />
+                <ScalarProperty Name="PaymentMethod" ColumnName="PaymentMethod" />
+                <ScalarProperty Name="StateID" ColumnName="StateID" />
+                <ScalarProperty Name="TerritoryID" ColumnName="TerritoryID" />
+                <ScalarProperty Name="Account" ColumnName="Account" />
+                <ScalarProperty Name="BankAccountID" ColumnName="BankAccountID" />
+                <ScalarProperty Name="ProductionComissionCalculation" ColumnName="ProductionComissionCalculation" />
+                <ScalarProperty Name="ProductionFactor" ColumnName="ProductionFactor" />
+                <ScalarProperty Name="HourCost" ColumnName="HourCost" />
+                <ScalarProperty Name="Custom1" ColumnName="Custom1" />
+                <ScalarProperty Name="Custom2" ColumnName="Custom2" />
+                <ScalarProperty Name="Custom3" ColumnName="Custom3" />
+                <ScalarProperty Name="Custom4" ColumnName="Custom4" />
+                <ScalarProperty Name="Custom5" ColumnName="Custom5" />
+                <ScalarProperty Name="Custom6" ColumnName="Custom6" />
+                <ScalarProperty Name="Tecnitian" ColumnName="Tecnitian" />
+                <ScalarProperty Name="Email" ColumnName="Email" />
+                <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+                <ScalarProperty Name="SupervisorID" ColumnName="SupervisorID" />
+                <ScalarProperty Name="CreationDate" ColumnName="CreationDate" />
+                <ScalarProperty Name="CreatedHour" ColumnName="CreatedHour" />
+                <ScalarProperty Name="EditDate" ColumnName="EditDate" />
+                <ScalarProperty Name="EditHour" ColumnName="EditHour" />
+                <ScalarProperty Name="Acumulate_Tax" ColumnName="Acumulate_Tax" />
+                <ScalarProperty Name="ISR" ColumnName="ISR" />
+                <ScalarProperty Name="EndDate" ColumnName="EndDate" />
+                <ScalarProperty Name="LastPayrollMonth" ColumnName="LastPayrollMonth" />
+                <ScalarProperty Name="LastPayrollYear" ColumnName="LastPayrollYear" />
+                <ScalarProperty Name="Acumulated_OtherIncome" ColumnName="Acumulated_OtherIncome" />
+                <ScalarProperty Name="ARS_Periodo" ColumnName="ARS_Periodo" />
+                <ScalarProperty Name="AFP_Periodo" ColumnName="AFP_Periodo" />
+                <ScalarProperty Name="ISR_Periodo" ColumnName="ISR_Periodo" />
+                <ScalarProperty Name="ShiftID" ColumnName="ShiftID" />
+                <ScalarProperty Name="TipoNomina" ColumnName="TipoNomina" />
+                <ScalarProperty Name="VacacionesInicio" ColumnName="VacacionesInicio" />
+                <ScalarProperty Name="VacacionesFinal" ColumnName="VacacionesFinal" />
+                <ScalarProperty Name="CorreoElectronico" ColumnName="CorreoElectronico" />
+                <ScalarProperty Name="Delivery" ColumnName="Delivery" />
+                <ScalarProperty Name="CentroCosto" ColumnName="CentroCosto" />
+                <ScalarProperty Name="Estado_ID" ColumnName="Estado_ID" />
+                <ScalarProperty Name="EmergenciaApellidos" ColumnName="EmergenciaApellidos" />
+                <ScalarProperty Name="EmergenciaNombres" ColumnName="EmergenciaNombres" />
+                <ScalarProperty Name="EmergenciaParentesco" ColumnName="EmergenciaParentesco" />
+                <ScalarProperty Name="EmergenciaTelefono" ColumnName="EmergenciaTelefono" />
+                <ScalarProperty Name="TipoSangre" ColumnName="TipoSangre" />
+                <ScalarProperty Name="Alergias" ColumnName="Alergias" />
+                <ScalarProperty Name="HorasCorrientes" ColumnName="HorasCorrientes" />
+                <ScalarProperty Name="HorasExtras" ColumnName="HorasExtras" />
+                <ScalarProperty Name="HorasEspeciales" ColumnName="HorasEspeciales" />
+                <ScalarProperty Name="HorasNocturnas" ColumnName="HorasNocturnas" />
+                <ScalarProperty Name="Manteinance" ColumnName="Manteinance" />
+                <ScalarProperty Name="Manufactura" ColumnName="Manufactura" />
+                <ScalarProperty Name="DivisionID" ColumnName="DivisionID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="GruposImpuestos_Impuestos">
+            <EntityTypeMapping TypeName="MOISESModel.GruposImpuestos_Impuestos">
+              <MappingFragment StoreEntitySet="GruposImpuestos_Impuestos">
+                <ScalarProperty Name="Contador" ColumnName="Contador" />
+                <ScalarProperty Name="GrupoImpuesto" ColumnName="GrupoImpuesto" />
+                <ScalarProperty Name="Impuesto" ColumnName="Impuesto" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Monedas">
+            <EntityTypeMapping TypeName="MOISESModel.Monedas">
+              <MappingFragment StoreEntitySet="Monedas">
+                <ScalarProperty Name="Codigo" ColumnName="Codigo" />
+                <ScalarProperty Name="Descripcion" ColumnName="Descripcion" />
+                <ScalarProperty Name="TasaCambio" ColumnName="TasaCambio" />
+                <ScalarProperty Name="CuentaAjustes" ColumnName="CuentaAjustes" />
+                <ScalarProperty Name="Observaciones" ColumnName="Observaciones" />
+                <ScalarProperty Name="Sign" ColumnName="Sign" />
+                <ScalarProperty Name="RoundingsAccount" ColumnName="RoundingsAccount" />
+                <ScalarProperty Name="AdjustmentsDivisionID" ColumnName="AdjustmentsDivisionID" />
+                <ScalarProperty Name="RoundingsDivisionID" ColumnName="RoundingsDivisionID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Pedidos">
+            <EntityTypeMapping TypeName="MOISESModel.Pedidos">
+              <MappingFragment StoreEntitySet="Pedidos">
+                <ScalarProperty Name="Numero" ColumnName="Numero" />
+                <ScalarProperty Name="NumeroTrans" ColumnName="NumeroTrans" />
+                <ScalarProperty Name="Fecha" ColumnName="Fecha" />
+                <ScalarProperty Name="Tipo" ColumnName="Tipo" />
+                <ScalarProperty Name="Cliente" ColumnName="Cliente" />
+                <ScalarProperty Name="Vendedor" ColumnName="Vendedor" />
+                <ScalarProperty Name="Terminos" ColumnName="Terminos" />
+                <ScalarProperty Name="Descuento" ColumnName="Descuento" />
+                <ScalarProperty Name="Impuesto" ColumnName="Impuesto" />
+                <ScalarProperty Name="GrupoImpuesto" ColumnName="GrupoImpuesto" />
+                <ScalarProperty Name="Observaciones" ColumnName="Observaciones" />
+                <ScalarProperty Name="Nulo" ColumnName="Nulo" />
+                <ScalarProperty Name="Total" ColumnName="Total" />
+                <ScalarProperty Name="MontoImpuesto" ColumnName="MontoImpuesto" />
+                <ScalarProperty Name="SubTotal" ColumnName="SubTotal" />
+                <ScalarProperty Name="Pedido" ColumnName="Pedido" />
+                <ScalarProperty Name="Cerrado" ColumnName="Cerrado" />
+                <ScalarProperty Name="Almacen" ColumnName="Almacen" />
+                <ScalarProperty Name="FreightAmount" ColumnName="FreightAmount" />
+                <ScalarProperty Name="CurrencyID" ColumnName="CurrencyID" />
+                <ScalarProperty Name="SendTo" ColumnName="SendTo" />
+                <ScalarProperty Name="BillTo" ColumnName="BillTo" />
+                <ScalarProperty Name="Quote" ColumnName="Quote" />
+                <ScalarProperty Name="SubCompany" ColumnName="SubCompany" />
+                <ScalarProperty Name="NoteID" ColumnName="NoteID" />
+                <ScalarProperty Name="PriceExchangeRate" ColumnName="PriceExchangeRate" />
+                <ScalarProperty Name="DeliveryDate" ColumnName="DeliveryDate" />
+                <ScalarProperty Name="RTFNotes" ColumnName="RTFNotes" />
+                <ScalarProperty Name="JobID" ColumnName="JobID" />
+                <ScalarProperty Name="SubstractForecast" ColumnName="SubstractForecast" />
+                <ScalarProperty Name="FreightFactor" ColumnName="FreightFactor" />
+                <ScalarProperty Name="CustomerPO" ColumnName="CustomerPO" />
+                <ScalarProperty Name="Custom1" ColumnName="Custom1" />
+                <ScalarProperty Name="Custom2" ColumnName="Custom2" />
+                <ScalarProperty Name="Custom3" ColumnName="Custom3" />
+                <ScalarProperty Name="Custom4" ColumnName="Custom4" />
+                <ScalarProperty Name="Custom5" ColumnName="Custom5" />
+                <ScalarProperty Name="Custom6" ColumnName="Custom6" />
+                <ScalarProperty Name="RequiresService" ColumnName="RequiresService" />
+                <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+                <ScalarProperty Name="OnHoldStatus" ColumnName="OnHoldStatus" />
+                <ScalarProperty Name="ReferencedBy" ColumnName="ReferencedBy" />
+                <ScalarProperty Name="ComissionLevelID" ColumnName="ComissionLevelID" />
+                <ScalarProperty Name="Printed" ColumnName="Printed" />
+                <ScalarProperty Name="YourReference" ColumnName="YourReference" />
+                <ScalarProperty Name="ShipToCustomerID" ColumnName="ShipToCustomerID" />
+                <ScalarProperty Name="DocHour" ColumnName="DocHour" />
+                <ScalarProperty Name="Cash" ColumnName="Cash" />
+                <ScalarProperty Name="AlmacenEntrada" ColumnName="AlmacenEntrada" />
+                <ScalarProperty Name="OpportunityID" ColumnName="OpportunityID" />
+                <ScalarProperty Name="ReserveStock" ColumnName="ReserveStock" />
+                <ScalarProperty Name="BillToAddress" ColumnName="BillToAddress" />
+                <ScalarProperty Name="ShipToAddress" ColumnName="ShipToAddress" />
+                <ScalarProperty Name="TripQuantity" ColumnName="TripQuantity" />
+                <ScalarProperty Name="ShipToAddressID" ColumnName="ShipToAddressID" />
+                <ScalarProperty Name="BillToAddressID" ColumnName="BillToAddressID" />
+                <ScalarProperty Name="BillToCityID" ColumnName="BillToCityID" />
+                <ScalarProperty Name="BillToStateID" ColumnName="BillToStateID" />
+                <ScalarProperty Name="BillToCountryID" ColumnName="BillToCountryID" />
+                <ScalarProperty Name="BillToContact" ColumnName="BillToContact" />
+                <ScalarProperty Name="BillToPhone" ColumnName="BillToPhone" />
+                <ScalarProperty Name="ShipToContact" ColumnName="ShipToContact" />
+                <ScalarProperty Name="ShipToCityID" ColumnName="ShipToCityID" />
+                <ScalarProperty Name="ShipToStateID" ColumnName="ShipToStateID" />
+                <ScalarProperty Name="ShipToCountryID" ColumnName="ShipToCountryID" />
+                <ScalarProperty Name="ShipToPhone" ColumnName="ShipToPhone" />
+                <ScalarProperty Name="AuthorizationNumber" ColumnName="AuthorizationNumber" />
+                <ScalarProperty Name="LocationID" ColumnName="LocationID" />
+                <ScalarProperty Name="Secuence" ColumnName="Secuence" />
+                <ScalarProperty Name="ReasonsID" ColumnName="ReasonsID" />
+                <ScalarProperty Name="SalesStatus" ColumnName="SalesStatus" />
+                <ScalarProperty Name="FreightTax" ColumnName="FreightTax" />
+                <ScalarProperty Name="DateCreaty" ColumnName="DateCreaty" />
+                <ScalarProperty Name="DateAutorization" ColumnName="DateAutorization" />
+                <ScalarProperty Name="Beneficiario" ColumnName="Beneficiario" />
+                <ScalarProperty Name="ClienteCedula" ColumnName="ClienteCedula" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Pedidos_Detalles">
+            <EntityTypeMapping TypeName="MOISESModel.Pedidos_Detalles">
+              <MappingFragment StoreEntitySet="Pedidos_Detalles">
+                <ScalarProperty Name="Contador" ColumnName="Contador" />
+                <ScalarProperty Name="Numero" ColumnName="Numero" />
+                <ScalarProperty Name="Renglon" ColumnName="Renglon" />
+                <ScalarProperty Name="Articulo" ColumnName="Articulo" />
+                <ScalarProperty Name="Descripcion" ColumnName="Descripcion" />
+                <ScalarProperty Name="Precio" ColumnName="Precio" />
+                <ScalarProperty Name="Descuento" ColumnName="Descuento" />
+                <ScalarProperty Name="Cantidad" ColumnName="Cantidad" />
+                <ScalarProperty Name="CantidadVendida" ColumnName="CantidadVendida" />
+                <ScalarProperty Name="Unidad" ColumnName="Unidad" />
+                <ScalarProperty Name="RenglonCombo" ColumnName="RenglonCombo" />
+                <ScalarProperty Name="MontoImpuesto" ColumnName="MontoImpuesto" />
+                <ScalarProperty Name="Proyecto" ColumnName="Proyecto" />
+                <ScalarProperty Name="CostCenter" ColumnName="CostCenter" />
+                <ScalarProperty Name="Lot" ColumnName="Lot" />
+                <ScalarProperty Name="Parameter1" ColumnName="Parameter1" />
+                <ScalarProperty Name="Parameter2" ColumnName="Parameter2" />
+                <ScalarProperty Name="ParameterUOM" ColumnName="ParameterUOM" />
+                <ScalarProperty Name="IsPromo" ColumnName="IsPromo" />
+                <ScalarProperty Name="FechaPromesa" ColumnName="FechaPromesa" />
+                <ScalarProperty Name="Parameter1Quantity" ColumnName="Parameter1Quantity" />
+                <ScalarProperty Name="Parameter2Quantity" ColumnName="Parameter2Quantity" />
+                <ScalarProperty Name="Closed" ColumnName="Closed" />
+                <ScalarProperty Name="Attribute1" ColumnName="Attribute1" />
+                <ScalarProperty Name="Attribute2" ColumnName="Attribute2" />
+                <ScalarProperty Name="ItemTaxAmount" ColumnName="ItemTaxAmount" />
+                <ScalarProperty Name="Status" ColumnName="Status" />
+                <ScalarProperty Name="Tax" ColumnName="Tax" />
+                <ScalarProperty Name="DiscountAmount" ColumnName="DiscountAmount" />
+                <ScalarProperty Name="TaxSchedule" ColumnName="TaxSchedule" />
+                <ScalarProperty Name="DateReject" ColumnName="DateReject" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Terminos">
+            <EntityTypeMapping TypeName="MOISESModel.Terminos">
+              <MappingFragment StoreEntitySet="Terminos">
+                <ScalarProperty Name="Codigo" ColumnName="Codigo" />
+                <ScalarProperty Name="Descripcion" ColumnName="Descripcion" />
+                <ScalarProperty Name="Dias" ColumnName="Dias" />
+                <ScalarProperty Name="DiasBloqueo" ColumnName="DiasBloqueo" />
+                <ScalarProperty Name="DiasDescuento" ColumnName="DiasDescuento" />
+                <ScalarProperty Name="PorcientoDescuento" ColumnName="PorcientoDescuento" />
+                <ScalarProperty Name="Observaciones" ColumnName="Observaciones" />
+                <ScalarProperty Name="DiscountDays2" ColumnName="DiscountDays2" />
+                <ScalarProperty Name="DiscountPercent2" ColumnName="DiscountPercent2" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="False" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="True" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

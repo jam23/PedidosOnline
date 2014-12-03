@@ -1,0 +1,981 @@
+﻿@model PedidosOnline.Models.Articulos
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<fieldset>
+    <legend>Articulos</legend>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Codigo)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Codigo)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Descripcion)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Descripcion)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.DescripcionLarga)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.DescripcionLarga)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Tipo)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Tipo)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.CodigoBarra)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.CodigoBarra)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Categoria)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Categoria)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.SubCategoria)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.SubCategoria)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.UnidadCompra)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.UnidadCompra)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.UnidadVenta)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.UnidadVenta)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.UnidadReporte)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.UnidadReporte)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Costo)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Costo)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.CostoPromedio)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.CostoPromedio)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Activo)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Activo)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.ClasificacionABC)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.ClasificacionABC)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.ConfiabilidadServicio)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.ConfiabilidadServicio)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Observaciones)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Observaciones)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Impuesto)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Impuesto)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.SuplidorPreferido)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.SuplidorPreferido)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.FrecuenciaInventario)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.FrecuenciaInventario)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.RequiereLote)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.RequiereLote)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.MultiploCompra)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.MultiploCompra)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.MultiploVenta)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.MultiploVenta)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.MetodoCosteo)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.MetodoCosteo)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Peso)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Peso)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.UnidadPeso)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.UnidadPeso)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Familia)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Familia)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Fabricante)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Fabricante)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.PrecioCompra)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.PrecioCompra)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.PermitirNegativos)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.PermitirNegativos)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.DescripcionCompras)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.DescripcionCompras)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Serializable)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Serializable)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Assambly)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Assambly)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Photo)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Photo)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.QuantityDecimals)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.QuantityDecimals)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.AmountDecimals)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.AmountDecimals)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.ComissionPercent)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.ComissionPercent)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.TaxSchedule)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.TaxSchedule)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Reference)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Reference)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.NonInventory)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.NonInventory)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Attribute1)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Attribute1)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Attribute2)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Attribute2)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Income_Account)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Income_Account)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Inventory_Account)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Inventory_Account)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Cost_Sales_Account)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Cost_Sales_Account)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Sales_Discount_Account)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Sales_Discount_Account)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Sales_Returns_Account)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Sales_Returns_Account)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Adjustments_Account)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Adjustments_Account)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Commisionable)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Commisionable)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.OriginID)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.OriginID)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.ColorID)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.ColorID)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.SubFamilyID)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.SubFamilyID)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Presentation)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Presentation)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.MaxQuantity)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.MaxQuantity)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.MinQuantity)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.MinQuantity)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.ProductionItem)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.ProductionItem)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.SalesItem)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.SalesItem)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Common)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Common)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.ComissionLevelID)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.ComissionLevelID)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.WarrantyDays)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.WarrantyDays)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.WarrantyCriteria)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.WarrantyCriteria)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.WarrantyQuantity)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.WarrantyQuantity)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.OfferID)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.OfferID)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Billable)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Billable)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.SubCostCenterID)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.SubCostCenterID)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.BrandID)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.BrandID)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Height)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Height)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Width)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Width)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.ProductionCostAccount)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.ProductionCostAccount)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.BarUOID)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.BarUOID)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.CreateEquipmentRecord)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.CreateEquipmentRecord)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.ExigirDiasEntrega)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.ExigirDiasEntrega)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.ExigirDiasInstalacion)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.ExigirDiasInstalacion)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.ExigirDiasGarantia)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.ExigirDiasGarantia)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.PreviousID)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.PreviousID)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.ProductionFactor)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.ProductionFactor)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.ReportUOMID3)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.ReportUOMID3)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.ManufacturerReference)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.ManufacturerReference)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.UOMPlanID)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.UOMPlanID)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.FreightAmount)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.FreightAmount)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.PurchasesName)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.PurchasesName)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.AlternateName)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.AlternateName)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.PlannerID)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.PlannerID)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Margin)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Margin)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.DeductVendorComission)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.DeductVendorComission)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.BonusAccount)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.BonusAccount)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.WarnIfNegativeOnQuote)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.WarnIfNegativeOnQuote)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.LandedCostFactor)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.LandedCostFactor)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.PurchaseItem)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.PurchaseItem)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.AttributeList1ID)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.AttributeList1ID)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.AttributeList2ID)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.AttributeList2ID)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.RequiresItemLocations)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.RequiresItemLocations)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.PurchaseAccountID)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.PurchaseAccountID)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.ItemTaxAmount)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.ItemTaxAmount)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.ItemTaxAccount)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.ItemTaxAccount)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.ItemTaxPercent)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.ItemTaxPercent)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Custom1)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Custom1)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Custom2)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Custom2)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Custom3)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Custom3)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Custom4)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Custom4)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Custom5)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Custom5)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Custom6)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Custom6)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.CreditSaleExpirationWarning)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.CreditSaleExpirationWarning)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.CashSaleExpirationWarning)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.CashSaleExpirationWarning)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Sales_Dispatchs_AccountID)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Sales_Dispatchs_AccountID)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.DocClassID)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.DocClassID)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.CalculatePrices)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.CalculatePrices)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.PurchasePriceCurrencyID)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.PurchasePriceCurrencyID)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.WarehouseID)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.WarehouseID)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Articulos2.Descripcion)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Articulos2.Descripcion)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.EquivalentGroup)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.EquivalentGroup)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.QuarantineDays)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.QuarantineDays)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.ItemCubicaciones)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.ItemCubicaciones)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.ItemAvances)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.ItemAvances)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.ItemRetenciones)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.ItemRetenciones)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.AllowUseOnHold)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.AllowUseOnHold)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.TechnicalComission)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.TechnicalComission)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.CreatedBy)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.CreatedBy)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.AllowChangeItemDescription)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.AllowChangeItemDescription)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Articulos3.Descripcion)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Articulos3.Descripcion)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.DontAllowReceptionsWithNoCost)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.DontAllowReceptionsWithNoCost)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.ManufacturingTolerance)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.ManufacturingTolerance)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.MaterialTolerance)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.MaterialTolerance)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.ManagerComissionPercent)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.ManagerComissionPercent)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.PlacementDate)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.PlacementDate)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.UnitB_ID)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.UnitB_ID)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.IsSparePart)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.IsSparePart)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.MaterialType)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.MaterialType)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.TransitInventoryAccount)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.TransitInventoryAccount)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.LotItemDuplicate)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.LotItemDuplicate)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.CargoDevolucion)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.CargoDevolucion)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.CtaCostoContrato)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.CtaCostoContrato)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.CtaCostoCompMenuda)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.CtaCostoCompMenuda)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.CtaCostoComision)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.CtaCostoComision)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.DevContrato)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.DevContrato)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.DevCompMenuda)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.DevCompMenuda)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.DevComision)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.DevComision)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.PublishAdmWebOrders)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.PublishAdmWebOrders)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Contrato)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Contrato)
+    </div>
+</fieldset>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { /* id=Model.PrimaryKey */ }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

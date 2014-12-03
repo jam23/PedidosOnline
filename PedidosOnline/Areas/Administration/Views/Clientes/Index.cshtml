@@ -1,0 +1,789 @@
+﻿@model IEnumerable<PedidosOnline.Models.Clientes>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table>
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Codigo)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.RazonSocial)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Contacto)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Cedula)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Contrato)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Telefono)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Telefono2)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Facsimil)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.CorreoElectronico)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Territorio)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Tipo)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.LimiteCredito)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Condiciones)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Observaciones)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.MontoUltimaCompra)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.NumeroRegistro)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Categoria)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Descuento)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Empleados1.Apellidos)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.PaginaWeb)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Anticipos)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ChequesDevueltos)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Terminos1.Descripcion)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.FechaCreacion)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.EmployeeQuantity)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.CurrentVolume)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.PotentialVolume)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Profile)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Inactive)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Monedas.Descripcion)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.PriceLevelID)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.BillingContact)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Apellidos)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Nombres)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Asistant)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Mobile)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Asistant_Phone)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.GroupID)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Prospect)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.StatusID)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.TypeID)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.RecurringInvoiceID)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Birthday)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.CancelationDate)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.CancelationReasonID)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ReferenceID)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Empleados.Apellidos)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Owner)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Owner_SSN)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.MaxSale)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.InactiveDays)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.LocationID)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.InstallationCode)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.StateID)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.SectorID)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.SubClassID)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ShipToAddressID)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.BillToAddressID)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.TaxScheduleID)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ComissionLevelID)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ManagementComissionLevelID)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.VendorID)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Gender)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.RegionID)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ComercialName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.GenerateNCF)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.NCF_Sequence)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Custom1)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Custom2)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Custom3)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Custom4)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Custom5)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Custom6)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.FechaInactivo)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.CustomInvoiceFormat)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.RequireQuoteOnService)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ShipToAddress)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ShipToCityID)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ShipToStateID)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ShipToCountryID)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ShipToPhone1)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ShipToPhone2)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ShipToFax)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ShipToContact)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.BillToAddress)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.BillToCityID)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.BillToStateID)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.BillToCountryID)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.BillToPhone1)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.BillToPhone2)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.BillToFax)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.BillToContact)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Legal)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Empleados2.Apellidos)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.BusinessActivity)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.VisitDay1)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.VisitDay2)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.VisitDay3)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.VisitDay4)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.VisitDay5)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.VisitDay6)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.VisitDay7)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Role)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.DontAllowServiceRequests)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.TechnicalContactEMail)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.CreatedBy)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ContactInterval)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ISCustomer)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ISPromoContact)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Visitday8)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Visitday9)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Visitweek)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.IsEmployee)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.UnitB_ID)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Empleado)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Week1)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Week2)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Week3)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Week4)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Week5)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.PersonaFisica)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Pais)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ZonaGeografica)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.NoImportacion)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.IdentificadorFiscal)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.PublishAdmWebOrders)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.AdmWebOrdersPassword)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Codigo)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.RazonSocial)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Contacto)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Cedula)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Contrato)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Telefono)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Telefono2)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Facsimil)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.CorreoElectronico)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Territorio)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Tipo)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.LimiteCredito)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Condiciones)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Observaciones)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.MontoUltimaCompra)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.NumeroRegistro)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Categoria)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Descuento)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Empleados1.Apellidos)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.PaginaWeb)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Anticipos)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ChequesDevueltos)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Terminos1.Descripcion)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.FechaCreacion)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.EmployeeQuantity)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.CurrentVolume)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.PotentialVolume)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Profile)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Inactive)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Monedas.Descripcion)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.PriceLevelID)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.BillingContact)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Apellidos)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Nombres)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Asistant)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Mobile)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Asistant_Phone)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.GroupID)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Prospect)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.StatusID)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.TypeID)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.RecurringInvoiceID)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Birthday)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.CancelationDate)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.CancelationReasonID)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ReferenceID)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Empleados.Apellidos)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Owner)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Owner_SSN)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.MaxSale)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.InactiveDays)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.LocationID)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.InstallationCode)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.StateID)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.SectorID)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.SubClassID)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ShipToAddressID)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.BillToAddressID)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.TaxScheduleID)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ComissionLevelID)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ManagementComissionLevelID)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.VendorID)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Gender)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.RegionID)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ComercialName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.GenerateNCF)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.NCF_Sequence)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Custom1)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Custom2)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Custom3)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Custom4)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Custom5)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Custom6)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.FechaInactivo)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.CustomInvoiceFormat)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.RequireQuoteOnService)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ShipToAddress)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ShipToCityID)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ShipToStateID)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ShipToCountryID)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ShipToPhone1)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ShipToPhone2)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ShipToFax)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ShipToContact)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.BillToAddress)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.BillToCityID)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.BillToStateID)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.BillToCountryID)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.BillToPhone1)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.BillToPhone2)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.BillToFax)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.BillToContact)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Legal)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Empleados2.Apellidos)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.BusinessActivity)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.VisitDay1)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.VisitDay2)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.VisitDay3)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.VisitDay4)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.VisitDay5)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.VisitDay6)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.VisitDay7)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Role)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.DontAllowServiceRequests)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.TechnicalContactEMail)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.CreatedBy)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ContactInterval)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ISCustomer)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ISPromoContact)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Visitday8)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Visitday9)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Visitweek)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.IsEmployee)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.UnitB_ID)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Empleado)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Week1)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Week2)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Week3)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Week4)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Week5)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.PersonaFisica)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Pais)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ZonaGeografica)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.NoImportacion)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.IdentificadorFiscal)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.PublishAdmWebOrders)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.AdmWebOrdersPassword)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { /* id=item.PrimaryKey */ }) |
+            @Html.ActionLink("Details", "Details", new { /* id=item.PrimaryKey */ }) |
+            @Html.ActionLink("Delete", "Delete", new { /* id=item.PrimaryKey */ })
+        </td>
+    </tr>
+}
+
+</table>
