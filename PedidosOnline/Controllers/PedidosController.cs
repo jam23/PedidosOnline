@@ -4,6 +4,8 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 using PedidosOnline.Models;
+using PedidosOnline.Models.DTO;
+
 
 namespace PedidosOnline.Controllers
 {
@@ -19,11 +21,12 @@ namespace PedidosOnline.Controllers
             return View();
         }
 
-        public JsonResult GetClient(string name) {
+        public JsonResult GetClient(string name)
+        {
             var client = db.Clientes.FirstOrDefault(c => c.Nombres.Contains(name));
             if (client == null)
-	        {
-		        return Json(new {}, JsonRequestBehavior.AllowGet);
+            {
+                return Json(new { }, JsonRequestBehavior.AllowGet);
             }
             return Json(client, JsonRequestBehavior.AllowGet);
         }
@@ -52,5 +55,24 @@ namespace PedidosOnline.Controllers
                 Descripcion = stores.Descripcion
             }, JsonRequestBehavior.AllowGet);
         }
+
+        [HttpPost]
+        public JsonResult SaveRequest(Pedido pedido)
+        {
+            return Json(new { });
+        }
+
+
+
+        public JsonResult AutoComplete(string term)
+        {
+            string query = term.Trim().ToUpper();
+            var articulos = db.Articulos.Where(a => a.Codigo.ToUpper().Contains(query) || a.Descripcion.ToUpper().Contains(query)).Select(a => new { a.Codigo, a.Descripcion, a.PrecioCompra, a.Impuesto });
+
+            return Json(articulos, JsonRequestBehavior.AllowGet);
+
+        }
+
+
     }
 }

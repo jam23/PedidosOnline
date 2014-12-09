@@ -10,27 +10,6 @@ namespace PedidosOnline.Models.DTO
     public class Pedido {
         public PedidoHeader Header { get; set; }
         public PedidoBody Body { get; set; }
-        public decimal Total
-        {
-            get
-            {
-                return Body.SubTotal + this.Impuestos;
-            }
-        }
-        public decimal Impuestos
-        {
-            get
-            {
-                return Body.TotalImpuestos;
-            }
-        }
-        public decimal Descuentos
-        {
-            get
-            {
-                return Body.TotalDescuentos;
-            }
-        }
     }
 
     public class PedidoHeader
@@ -42,26 +21,17 @@ namespace PedidosOnline.Models.DTO
     public class PedidoBody 
     {
         public List<Articulo> Articulos { get; set; }
-        public decimal SubTotal
+        public decimal SubTotal { get; set; }
+        public decimal TotalImpuestos { get; set; }
+        public decimal TotalDescuentos { get; set; }
+             
+        public PedidoBody()
         {
-            get
+            if (this.Articulos != null && this.Articulos.Any())
             {
-                return this.Articulos.Sum(a => a.Precio * a.Cantidad);
-            }
-        }
-        public decimal TotalImpuestos
-        {
-            get
-            {
-                return this.Articulos.Sum(a => a.Precio - ((a.Impuesto / 100) * a.Precio));
-            }
-
-        }
-        public decimal TotalDescuentos
-        {
-            get
-            {
-                return this.Articulos.Sum(a => a.Precio - ((a.Descuento / 100) * a.Precio));
+                this.TotalImpuestos = this.Articulos.Sum(a => a.Precio - ((a.Impuesto / 100) * a.Precio));
+                this.TotalDescuentos = this.Articulos.Sum(a => a.Precio - ((a.Descuento / 100) * a.Precio));
+                this.SubTotal = this.Articulos.Sum(a => a.Precio * a.Cantidad);
             }
         }
 

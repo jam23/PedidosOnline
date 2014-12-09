@@ -1,7 +1,7 @@
 ﻿@{
     ViewBag.Title = "Pedidos";
 }
-
+<link href="http://code.jquery.com/ui/1.11.2/themes/smoothness/jquery-ui.css" rel="stylesheet" />
 <div class="row">
     <div class="col-sm-12">
         <h2>Pedidos</h2>
@@ -26,6 +26,9 @@
             </div>
             <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#article-modal">
                 Agregar articulo
+            </button>
+            <button type="button" id="guardar" class="btn btn-primary">
+                Guardar pedido
             </button>
         </form>
     </div>
@@ -96,7 +99,7 @@
                 </div>
                 <div class="form-group">
                     <label for="precio">Precio</label>
-                    <input id="precio" class="form-control" type="text" name="precio" value="" />
+                    <input id="precio" class="form-control" type="text" name="precio" value="" disabled />
                 </div>
                 <div class="form-group">
                     <label for="descuento">Descuento</label>
@@ -119,14 +122,25 @@
 <!-- /.modal -->
 
 @section scripts{
-    <script src="~/Scripts/mustache.js"></script>  
+    <script src="~/Scripts/jquery-ui.min.js"></script>
+    <script src="~/Scripts/mustache.js"></script>
     <script>
+        var pedido = {
+            Header: {
+                ClienteId: 001,
+                Fecha: '2012-01-01'
+            },
+            Body: {
+                Articulos: []
+            }
+        };
+
         $(function () {
             $('#agregar').click(function (e) {
                 e.preventDefault();
 
                 var template = ['<tr>', '<td>{{codigo}}</td>', '<td>{{descripcion}}</td>', '<td>{{cantidad}}</td>', '<td>{{precio}}</td>', '<td>{{descuento}}</td>', '<td>{{impuesto}}</td>', '</tr>'].join('');
-                var article = {
+                var articulo = {
                     codigo: $('#codigo').val(),
                     descripcion: $('#descripcion').val(),
                     cantidad: $('#cantidad').val(),
@@ -134,11 +148,21 @@
                     descuento: $('#descuento').val(),
                     impuesto: $('#impuesto').val()
                 };
-                var html = Mustache.render(template, article);
-               
+                var html = Mustache.render(template, articulo);
+
+                pedido.Body.Articulos.push(articulo);
+
                 $('#articles-body').append(html);
                 $('#article-modal').modal('hide');
                 clear();
+            });
+
+            $('#guardar').click(function (e) {
+                e.preventDefault();
+
+                $.postJSON('@Url.Action("SaveRequest")', pedido, function (data) {
+                    // algo
+                });
             });
 
             var clear = function () {
@@ -149,6 +173,39 @@
                 $('#descuento').val('');
                 $('#impuesto').val('');
             };
+
+            $.postJSON = function (url, data, SuccessCallback, FailCallback) {
+                return jQuery.ajax({
+                    'type': 'POST',
+                    'url': url,
+                    'contentType': 'application/json',
+                    'data': JSON.stringify(data),
+                    'dataType': 'json',
+                    'success': SuccessCallback,
+                    'fail': FailCallback
+                });
+            };
+
+
+            $("#codigo").autocomplete({
+                source: '@Url.Action("AutoComplete")',
+                minLength: 2,
+                select: function (event, ui) {
+
+                    $("#codigo").val(ui.item.Codigo);
+                    document.getElementById("descripcion").value = ui.item.Descripcion;
+                    document.getElementById("precio").value = ui.item.PrecioCompra;
+                    document.getElementById("impuesto").disabled = ui.item.Impuesto;
+
+                    return false;
+                }
+            }).autocomplete("instance")._renderItem = function (ul, item) {
+                return $("<li>")
+                  .append("<a>" + item.Descripcion + "</a>")
+                  .appendTo(ul);
+            };
+
         });
+
     </script>
 }
