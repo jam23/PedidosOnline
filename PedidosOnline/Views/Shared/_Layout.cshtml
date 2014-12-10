@@ -6,6 +6,8 @@
     <title>@ViewBag.Title - My ASP.NET Application</title>
     @Styles.Render("~/Content/css")
     @Scripts.Render("~/bundles/modernizr")
+    
+    
     <style>
         body {
             margin-top:40px;
@@ -24,7 +26,8 @@
                 @Html.ActionLink("Pedidos Online de Delby", "Index", "Home", null, new { @class = "navbar-brand" })
             </div>
             <div class="navbar-collapse collapse">
-                    <li>@Html.ActionLink("Pedidos", "Index", "Pedidos")</li>
+                <ul>   
+                 <li>@Html.ActionLink("Pedidos", "Index", "Pedidos")</li>
                     @Html.Partial("_LoginPartial")
                 </ul>
             </div>
@@ -40,6 +43,7 @@
 
     @Scripts.Render("~/bundles/jquery")
     @Scripts.Render("~/bundles/bootstrap")
+    <script src="http://tablesorter.com/__jquery.tablesorter.min.js" type="text/javascript"></script>
     @RenderSection("scripts", required: false)
 </body>
 </html>

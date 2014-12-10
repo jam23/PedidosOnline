@@ -2,6 +2,8 @@
     ViewBag.Title = "Pedidos";
 }
 <link href="http://code.jquery.com/ui/1.11.2/themes/smoothness/jquery-ui.css" rel="stylesheet" />
+@*<link href="http://tablesorter.com/themes/blue/style.css" rel="stylesheet" />*@
+
 <div class="row">
     <div class="col-sm-12">
         <h2>Pedidos</h2>
@@ -9,34 +11,43 @@
 </div>
 <div class="row">
     <div class="col-sm-12">
-        <p>Pedido # 12432335</p>
-        <p>11/12/2014</p>
+        <p>Pedido Numero: @ViewBag.CodigoPedido</p>
+        <p>Fecha: @DateTime.Now.ToString("dd/MM/yy hh:mm")</p>
     </div>
 </div>
 <div class="row">
     <div class="col-sm-6">
-        <form role="form">
-            <div class="form-group">
-                <label for="client">Cliente</label>
-                <input class="form-control" id="client" type="text" name="client" value="" />
-            </div>
-            <div class="form-group">
-                <label for="client">Almacen</label>
-                <input class="form-control" id="store" type="text" name="client" value="" />
-            </div>
-            <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#article-modal">
-                Agregar articulo
-            </button>
-            <button type="button" id="guardar" class="btn btn-primary">
-                Guardar pedido
-            </button>
-        </form>
+        <div class="form-group">
+            <label for="client">Cliente</label>
+            <input class="form-control" id="client" type="text" name="client" value="" />
+        </div>
+    </div>
+    <div id="client-info" class="col-sm-6">        
+    </div>
+</div>
+<div class="row">
+    <div class="col-sm-6">
+        <div class="form-group">
+            <label for="client">Almacen</label>
+            @*<input class="form-control" id="store" type="text" name="client" value="" />*@
+            @Html.DropDownList("Almacenes", (SelectList)ViewBag.Alamacenes, "Seleccione el almacen", new { @class ="form-control" })
+        </div>
+    </div>
+</div>
+<div class="row">
+    <div class="col-sm-6">
+        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#article-modal">
+            Agregar articulo
+        </button>
+        <button type="button" id="guardar" class="btn btn-primary">
+            Guardar pedido
+        </button>
     </div>
 </div>
 <div class="row">
     <div class="col-sm-12">
         <h3>Articulos</h3>
-        <table id="articles" class="table">
+        <table id="articles" class="table tablesorter">
             <thead>
                 <tr>
                     <th>Codigo
@@ -60,21 +71,24 @@
 </div>
 <div class="row">
     <div class="col-sm-12">
-        <table id="summary" class="table">
-            <thead>
-                <tr>
-                    <th>Sub-total</th>
-                    <th>Descuentos</th>
-                    <th>Impuestos</th>
-                    <th>Total</th>
-                </tr>
-            </thead>
-            <tbody id="articles-summary">
-                <tr>
-                    <td></td>
-                </tr>
-            </tbody>
-        </table>
+         <table id="summary" class="table">
+           <thead>
+               <tr>
+                   <th>Sub-total</th>
+                   <th>Descuentos</th>
+                   <th>Impuestos</th>
+                   <th>Total</th>
+               </tr>
+           </thead>
+           <tbody id="articles-summary">
+               <tr>
+                   <td id="articles-subtotal"></td>
+                   <td id="articles-descuentos"></td>
+                   <td id="articles-impuestos"></td>
+                   <td id="articles-total"></td>
+               </tr>
+           </tbody>
+       </table>
     </div>
 </div>
 <div class="modal fade" id="article-modal">
@@ -85,13 +99,14 @@
                 <h4 class="modal-title">Agregar articulo</h4>
             </div>
             <div class="modal-body">
-                <div class="form-group">
+                @*<div class="form-group">
                     <label for="codigo">Codigo</label>
                     <input id="codigo" class="form-control" type="text" name="codigo" value="" />
-                </div>
+                </div>*@
                 <div class="form-group">
                     <label for="descripcion">Descripcion</label>
-                    <input id="descripcion" class="form-control" type="text" name="descripcion" value="" disabled />
+                    <input id="descripcion" class="form-control" type="text" name="descripcion" value="" />
+                    <input type="hidden" name="hdfCodigoArticulo" id="hdfCodigoArticulo" value="" />
                 </div>
                 <div class="form-group">
                     <label for="cantidad">Cantidad</label>
@@ -124,44 +139,138 @@
 @section scripts{
     <script src="~/Scripts/jquery-ui.min.js"></script>
     <script src="~/Scripts/mustache.js"></script>
-    <script>
-        var pedido = {
-            Header: {
-                ClienteId: 001,
-                Fecha: '2012-01-01'
-            },
-            Body: {
-                Articulos: []
+    <script id="client-info-template" type="text/template">
+        <dl id=client-info-detail"" class="dl-horizontal">
+            <dt>Codigo</dt>
+            <dd>{{Codigo}}</dd>
+            <dt>Nombres</dt>
+            <dd>{{Nombres}}</dd>
+            <dt>Apellidos</dt>
+            <dd>{{Apellidos}}</dd>
+            <dt>Cedula</dt>
+            <dd>{{Cedula}}</dd>
+            <dt>Razon Social</dt>
+            <dd>{{RazonSocial}}</dd>
+            <dt>Categoria</dt>
+            <dd>{{Categoria}}</dd>
+        </dl>
+    </script> 
+    <script id="article-row" type="text/template">
+        <tr>
+            <td>{{codigo}}</td>
+            <td>{{descripcion}}</td>
+            <td>{{cantidad}}</td>
+            <td>{{precio}}</td>
+            <td>{{descuento}}</td>
+            <td>{{impuesto}}</td> 
+        </tr>
+    </script>
+    <script type="text/javascript">
+
+        var Pedido = function (clienteId, fecha) {
+            this.header = {};
+            this.body = {};
+            this.body.articulos = [];
+
+            this.header.clienteId = clienteId;
+            this.header.fecha = fecha;
+            return this;
+        };
+
+        Pedido.prototype.setClientId = function (clienteId) {
+            this.header.clienteId = clienteId;
+        };
+
+        Pedido.prototype.setAlmacenId = function (almacenId) {
+            this.header.almacenId = almacenId;
+        };
+
+        Pedido.prototype.agregarArticulo = function (articulo, callback) {
+            this.body.articulos.push(articulo);
+
+            var subtotal = 0, descuentos = 0, impuestos = 0;
+            this.body.articulos.forEach(function (articulo) {
+                var precio = (parseInt(articulo.precio) || 0),                     
+                    descuento = (parseInt(articulo.descuento) || 0),
+                    impuesto = (parseInt(articulo.impuesto) || 0),
+                    cantidad = (parseInt(articulo.cantidad) || 1)
+
+                subtotal += precio * cantidad;
+                descuentos += descuento * cantidad;
+                impuestos += impuesto * cantidad;
+            });
+            
+            this.subtotal = subtotal;
+            this.descuentos = descuentos;
+            this.impuestos = impuestos;
+            this.total = subtotal - descuentos + impuestos;
+
+            if (callback !== undefined) {
+                callback();
             }
+        };
+        Pedido.prototype.parse = function () {
+            return {
+                header: this.header,
+                body: this.body,
+            };
         };
 
         $(function () {
+            var pedido = new Pedido();
+
             $('#agregar').click(function (e) {
                 e.preventDefault();
 
-                var template = ['<tr>', '<td>{{codigo}}</td>', '<td>{{descripcion}}</td>', '<td>{{cantidad}}</td>', '<td>{{precio}}</td>', '<td>{{descuento}}</td>', '<td>{{impuesto}}</td>', '</tr>'].join('');
-                var articulo = {
-                    codigo: $('#codigo').val(),
-                    descripcion: $('#descripcion').val(),
-                    cantidad: $('#cantidad').val(),
-                    precio: $('#precio').val(),
-                    descuento: $('#descuento').val(),
-                    impuesto: $('#impuesto').val()
-                };
-                var html = Mustache.render(template, articulo);
+                var codigo = $('#hdfCodigoArticulo').val();
+                var descripcion = $('#descripcion').val();
+                var cantidad = $('#cantidad').val();
+                var precio = $('#precio').val();
+                var descuento = $('#descuento').val();
+                var impuesto = $('#impuesto').val();
 
-                pedido.Body.Articulos.push(articulo);
+                var articulo = {
+                    codigo: codigo,
+                    descripcion: descripcion,
+                    cantidad: cantidad,
+                    precio: precio,
+                    descuento: descuento,
+                    impuesto: impuesto
+                }
+                var html = Mustache.render($('#article-row').html(), articulo);
+                if (!articulo.descripcion) {
+                    return;
+                }
 
                 $('#articles-body').append(html);
                 $('#article-modal').modal('hide');
                 clear();
+                //Despues de agregar el articulo, actualizar el tableSorter $("table#stats").trigger("update");
+                pedido.agregarArticulo(articulo, function () {
+                    $("#articles").trigger("update");
+
+                    //console.log(pedido.subtotal, pedido.descuentos, pedido.impuestos, pedido.total);
+
+                    $('#articles-subtotal').html(pedido.subtotal);
+                    $('#articles-descuentos').html(pedido.descuentos);
+                    $('#articles-impuestos').html(pedido.impuestos);
+                    $('#articles-total').html(pedido.total);
+                });
             });
+
+            $('#Almacenes').change(function () {
+                pedido.setAlmacenId($(this).val());
+            });
+
 
             $('#guardar').click(function (e) {
                 e.preventDefault();
 
                 $.postJSON('@Url.Action("SaveRequest")', pedido, function (data) {
                     // algo
+                    alert('Pedido guardado.');
+                }, function () {
+                    alert('No se pudo guardar el pedido.');
                 });
             });
 
@@ -186,14 +295,15 @@
                 });
             };
 
+            $("#articles").tablesorter();
 
-            $("#codigo").autocomplete({
-                source: '@Url.Action("AutoComplete")',
+            $("#descripcion").autocomplete({
+                source: '@Url.Action("AutoCompleteArticulo")',
                 minLength: 2,
                 select: function (event, ui) {
 
-                    $("#codigo").val(ui.item.Codigo);
-                    document.getElementById("descripcion").value = ui.item.Descripcion;
+                    $(this).val(ui.item.Descripcion);
+                    document.getElementById("hdfCodigoArticulo").value = ui.item.Codigo;
                     document.getElementById("precio").value = ui.item.PrecioCompra;
                     document.getElementById("impuesto").disabled = ui.item.Impuesto;
 
@@ -205,6 +315,28 @@
                   .appendTo(ul);
             };
 
+            $("#client").autocomplete({
+                source: '@Url.Action("AutoCompleteCliente")',
+                minLength: 2,
+                select: function (event, ui) {
+
+                    $(this).val(ui.item.Codigo);
+
+                    var template = Mustache.render($('#client-info-template').html(), ui.item);
+
+                    $('#client-info').hide('fast');
+                    $('#client-info').children('#client-info-detail').remove();
+                    $('#client-info').append(template);
+                    $('#client-info').show('fast');
+
+                    return false;
+                }
+            }).autocomplete("instance")._renderItem = function (ul, item) {
+                return $("<li>")
+                  //.append("<a>" + item.Nombres + " " + item.Apellidos + "</a>")
+                    .append('<a>' + item.RazonSocial + '</a>')
+                    .appendTo(ul);
+            };
         });
 
     </script>

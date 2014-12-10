@@ -16,6 +16,7 @@ namespace PedidosOnline.Models.DTO
     {
         public int ClienteId { get; set; }
         public DateTime Fecha { get; set; }
+        public string AlmacenId { get; set; }
     }
 
     public class PedidoBody 

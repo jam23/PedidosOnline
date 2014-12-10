@@ -18,58 +18,86 @@ namespace PedidosOnline.Controllers
 
         public ActionResult Index()
         {
+            ViewBag.CodigoPedido = String.Format("{0:ddMMyyhhmmss}-{1}",
+                DateTime.Now, Guid.NewGuid().ToString().Substring(0, 4));
+
+            ViewBag.Almacenes = new SelectList(db.Almacenes.Select(a => new
+            {
+                a.Codigo,
+                a.Descripcion
+            }), "Codigo", "Descripcion");
+
             return View();
         }
 
-        public JsonResult GetClient(string name)
-        {
-            var client = db.Clientes.FirstOrDefault(c => c.Nombres.Contains(name));
-            if (client == null)
-            {
-                return Json(new { }, JsonRequestBehavior.AllowGet);
-            }
-            return Json(client, JsonRequestBehavior.AllowGet);
-        }
-
-        public JsonResult GetArticle(string code, string description)
-        {
-            var article = db.Articulos.FirstOrDefault(a => !String.IsNullOrEmpty(code) ? a.Codigo.Contains(code) : !String.IsNullOrEmpty(description) ? a.Descripcion.Contains(description) : false);
-            if (article == null)
-            {
-                return Json(new { }, JsonRequestBehavior.AllowGet);
-            }
-            return Json(new
-            {
-                Codigo = article.Codigo,
-                Descripcion = article.Descripcion,
-                Precio = article.PrecioCompra
-            }, JsonRequestBehavior.AllowGet);
-        }
-
-        public JsonResult GetStore(string code, string name, string description)
-        {
-            var stores = db.Almacenes.FirstOrDefault(a => !String.IsNullOrEmpty(code) ? a.Codigo.Contains(code) : !String.IsNullOrEmpty(description) ? a.Descripcion.Contains(description) : false);
-            return Json(new
-            {
-                Codigo = stores.Codigo,
-                Descripcion = stores.Descripcion
-            }, JsonRequestBehavior.AllowGet);
-        }
 
         [HttpPost]
         public JsonResult SaveRequest(Pedido pedido)
         {
+
+            var _pedido = new Pedidos
+            {
+                Cliente = pedido.Header.ClienteId.ToString(),
+                Almacen = pedido.Header.AlmacenId.ToString()
+            };
+            db.Pedidos.Add(_pedido);
+            pedido.Body.Articulos.ForEach(a => {
+                var _detalle = new Pedidos_Detalles
+                {
+                    Pedidos = _pedido,
+                    Articulos = new Articulos
+                    {
+                        Codigo = a.Codigo
+                    },
+                    Descuento = a.Descuento,
+                    Cantidad = a.Cantidad,
+                    MontoImpuesto = a.Impuesto
+                };
+                db.Pedidos_Detalles.Add(_detalle);
+            });
+            try
+            {
+                db.SaveChanges();
+            }
+            catch (Exception e)
+            {                
+                throw e;
+            }
             return Json(new { });
         }
 
-
-
-        public JsonResult AutoComplete(string term)
+        public JsonResult AutoCompleteArticulo(string term)
         {
             string query = term.Trim().ToUpper();
-            var articulos = db.Articulos.Where(a => a.Codigo.ToUpper().Contains(query) || a.Descripcion.ToUpper().Contains(query)).Select(a => new { a.Codigo, a.Descripcion, a.PrecioCompra, a.Impuesto });
 
+            var articulos = db.Articulos.Where(a => a.Codigo.ToUpper().Contains(query) || a.Descripcion.ToUpper().Contains(query))
+                                     .Select(a => new
+                                     {
+                                         a.Codigo,
+                                         a.Descripcion,
+                                         a.PrecioCompra,
+                                         a.Impuesto
+                                     });
             return Json(articulos, JsonRequestBehavior.AllowGet);
+        }
+
+
+        public JsonResult AutoCompleteCliente(string term)
+        {
+            string query = term.Trim().ToUpper();
+            var cliente = db.Clientes.Where(c => c.Codigo.ToUpper().Contains(query) || c.Nombres.ToUpper().Contains(query) || c.Apellidos.ToUpper().Contains(query))
+                           .Select(c => new
+                           {
+                               c.RazonSocial,
+                               c.Categoria,
+                               c.Repartidor,
+                               c.Codigo,
+                               c.Nombres,
+                               c.Apellidos,
+                               c.Cedula
+                           });
+
+            return Json(cliente, JsonRequestBehavior.AllowGet);
 
         }
 
